@@ -19,12 +19,12 @@ class Apple{
 
 			std::random_device rd;
 			gen.seed( rd() );
-			std::uniform_int_distribution<int>::param_type p( 1, x_ou_y-1);
+			std::uniform_int_distribution<int>::param_type p( 1, x_ou_y-2);
 			dis.param( p );
 
 			int value = dis(gen);
 
-			return  value;
+			return  value-1;
 
 		}
 
@@ -33,7 +33,10 @@ class Apple{
 		}
 
 		void set_coordenadas(std::pair<int,int> coor){
-			coordenadas = coor;
+			int x = coor.first;
+			int y = coor.second;
+
+			coordenadas = std::make_pair(x+1, y+1);
 		}
 
 		void lost_quantity(){

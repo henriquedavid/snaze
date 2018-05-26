@@ -27,7 +27,7 @@ int main(int argc, char * args[]){
 	sg.initialize_game(inputData);
 
 	
-	/*while( sg.game_over() ){
+	while( sg.game_over() ){
 
 		// Recebe as ações dos usuários.
 		sg.process_events();
@@ -38,7 +38,8 @@ int main(int argc, char * args[]){
 		// Mostra para o usuário visualmente o jogo.
 		sg.render();
 
-	}*/
+	}
+
 
 	// Saída do jogo.
 	return 0;
