@@ -20,6 +20,7 @@ std::vector<Maps> readMaps( std::string name_input ){
 	std::string xey = "";
 	// Verifica se é um novo mapa
 	bool space = false;
+	bool cobra = false;
 	bool muda_x_y = true;
 	int x = 0;
 	int y = 0;
@@ -48,8 +49,10 @@ std::vector<Maps> readMaps( std::string name_input ){
 			}
 
 			muda_x_y = true;
+			cobra = false;
 
 		} else{
+
 
 			if(v != "-"){
 
@@ -64,6 +67,9 @@ std::vector<Maps> readMaps( std::string name_input ){
 				}
 
 				for( auto & i : v ){
+					// Trata caso o usuário não colocou a cobra no mapa.
+					if( i == '<' || i == '>' || i == '^' || i == 'v')
+						cobra = true;
 					valores.push_back(i);
 				}
 
@@ -82,7 +88,12 @@ std::vector<Maps> readMaps( std::string name_input ){
 
 	file_input.close();
 
-	std::cout << "done!\n";
+	if(cobra == true)
+		std::cout << "done!\n";
+	else{
+		std::cout << "sorry, this isn't a valid file!\n";
+		exit(-1);
+	}
 
 	return mapas;
 
