@@ -3,6 +3,7 @@
 #include <vector>
 #include <fstream>
 
+#include "../include/snake.h"
 #include "../include/maps.h"
 #include "../include/support.h"
 #include "../include/game.h"	// Configurações e controle do jogo.
