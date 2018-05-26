@@ -74,4 +74,16 @@ public:
 
 	}
 
+	/// Retorna a posição da cobra.
+	std::pair<int,int> snaze_position(){
+
+		for( auto i(0) ; i < x_total; ++i ){
+			for( auto j(0); j < y_total ; ++j )
+				if(mapa[i][j] == '>' || mapa[i][j] == '<' || mapa[i][j] == 'v' || mapa[i][j] == '^')
+					return std::make_pair(i+1,j+1);
+		}
+
+		return std::make_pair(0,0);
+	}
+
 };
