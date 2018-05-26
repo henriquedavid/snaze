@@ -33,6 +33,10 @@ public:
 		mapa.clear();
 	}
 
+	char get_value(int x, int y){
+		return mapa[x][y];
+	}
+
 	void changexey(int x, int y){
 		x_total = x;
 		y_total = y;

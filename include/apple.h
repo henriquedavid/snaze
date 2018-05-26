@@ -7,9 +7,9 @@ class Apple{
 
 	public:
 
-		Apple( int quant = 5, Maps mapa ) : quantidade(quant) {
-			aparencia = '🍎';
-			coordenadas = std::make_pair(gerarCoordenadas(mapa.return_x), gerarCoordenadas(mapa.return_y));
+		Apple( int quant = 5 ){
+			quantidade = quant;
+			aparencia = 'o';
 		}
 
 		/// Gera posições randomicas.
@@ -28,6 +28,14 @@ class Apple{
 
 		}
 
+		std::pair<int,int> get_coordenadas(){
+			return coordenadas;
+		}
+
+		void set_coordenadas(std::pair<int,int> coor){
+			coordenadas = coor;
+		}
+
 		void lost_quantity(){
 			quantidade--;
 		}
@@ -42,6 +50,10 @@ class Apple{
 
 		void hide_apple(){
 			aparencia = ' ';
+		}
+
+		char get_aparencia(){
+			return aparencia;
 		}
 
 
