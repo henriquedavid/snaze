@@ -4,11 +4,13 @@
 #include <fstream>
 #include <random>
 
+
 #include "../include/maps.h"
 #include "../include/apple.h"
 #include "../include/level.h"
 #include "../include/snake.h"
 #include "../include/support.h"
+#include "../include/player.h"
 #include "../include/game.h"	// Configurações e controle do jogo.
 
 int main(int argc, char * args[]){
@@ -27,7 +29,7 @@ int main(int argc, char * args[]){
 	sg.initialize_game(inputData);
 
 	
-	while( sg.game_over() ){
+	while( !sg.game_over() ){
 
 		// Recebe as ações dos usuários.
 		sg.process_events();
@@ -39,6 +41,11 @@ int main(int argc, char * args[]){
 		sg.render();
 
 	}
+
+	if(sg.get_state() == SnazeGame::Estados::WON)
+		won_message();
+	else
+		loser_message();
 
 
 	// Saída do jogo.
