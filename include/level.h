@@ -4,12 +4,18 @@ class Level{
 		unsigned int nivel;
 
 	public:
-		Apple apple;
+		
 
 		Level( int niv = 0 ) : nivel(niv) {/*empty*/}
 
-		void level_up(){
-			nivel++;
+		void level_up( Apple & apple){
+			if(apple.get_quantity() == 0){
+				nivel++;
+				apple.set_quantity(5);
+				apple.show_apple();
+			} else{
+				eat_apple(apple);
+			}
 		}
 
 		void add_maps(std::vector<Maps> map){
@@ -18,6 +24,10 @@ class Level{
 
 		int all_levels(){
 			return levels.size();
+		}
+
+		void eat_apple(Apple & apple){
+			apple.lost_quantity();
 		}
 
 
@@ -31,24 +41,27 @@ class Level{
 			return false;
 		}
 
-		void configurar_apple(){
+		void configurar_apple(Apple & apple){
 			int v_x = apple.gerarCoordenadas(levels[nivel].return_x());
 			int v_y = apple.gerarCoordenadas(levels[nivel].return_y());
 			
 			char elemento = levels[nivel].get_value(v_x, v_y);
 
-			if( elemento != '#' || elemento != '.')
+			if( elemento != '#' && elemento != '.'){
+				apple.show_apple();
 				apple.set_coordenadas(std::make_pair(v_x, v_y));
+				insert_apple(apple);
+				}
 			else
-				configurar_apple();
+				configurar_apple(apple);
 		}
 
-		void insert_apple(){
+		void insert_apple(Apple & apple){
 			std::pair<int,int> coord = apple.get_coordenadas();
 			levels[nivel].change_value(coord.first, coord.second, apple.get_aparencia());
 		}
 
-		bool snake_in_apple(){
+		bool snake_in_apple(Apple & apple){
 			std::pair<int,int> posSnake = levels[nivel].snaze_position();
 			std::pair<int,int> posApple = apple.get_coordenadas();
 			int x_snake = posSnake.first;

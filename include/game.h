@@ -21,6 +21,7 @@ private:
 	Level nivel;
 	Estados state;
 	Player player;
+	Apple apple;
 
 
 public:
@@ -34,16 +35,16 @@ public:
 		// Envia os mapas para a classe nível.
 		nivel.add_maps(mapas);
 		// Verifica e configura as posições da apple.
-		nivel.configurar_apple();
+		nivel.configurar_apple(apple);
 		// Insere a apple na posição configurada no mapa.
-		nivel.insert_apple();
+		nivel.insert_apple(apple);
 
 		// Configura a posição da cobrinha.
 		Maps atual = nivel.get_current_level();
 		cobrinha.set_position(atual.snaze_position());
 
-		std::cout << "Level atual = " << nivel.get_level() << "  Total de Levels = " << nivel.all_levels() << std::endl;
-		std::cout << "Vidas = " << cobrinha.get_life() << std::endl;
+		std::cout << "Level atual = " << (nivel.get_level()+1) << "  Total de Levels = " << nivel.all_levels() << std::endl;
+		std::cout << "Vidas = " << cobrinha.get_life() << "  Maças: " << apple.get_quantity() << " de 5." << std::endl;
 
 		nivel.print_current_map();
 
@@ -78,10 +79,12 @@ public:
 	/// Atualiza as informações no mapa
 	void update(){
 		state = UPDATING;
-		if( nivel.snake_in_apple() || nivel.apple.mordida() ){
+		if( nivel.snake_in_apple(apple) || apple.mordida() ){
 			state = LEVEL_UP;
 			render();
-			nivel.level_up();
+			nivel.level_up(apple);
+			apple.show_apple();
+			nivel.configurar_apple(apple);
 		} else{
 			if(colisao())
 				cobrinha.perdervida();
@@ -89,12 +92,15 @@ public:
 				nivel.change_snaze_pos(cobrinha.get_position());
 		}
 
+
+
 	}
 
 	void render(){
 		system("clear");
-		std::cout << "Level atual = " << nivel.get_level() << "  Total de Levels = " << nivel.all_levels() << std::endl;
-		std::cout << "Vidas = " << cobrinha.get_life() << std::endl;
+		apple.show_position();
+		std::cout << "Level atual = " << (nivel.get_level()+1) << "  Total de Levels = " << nivel.all_levels() << std::endl;
+		std::cout << "Vidas = " << cobrinha.get_life() << "  Maças: " << apple.get_quantity() << " de 5." << std::endl;
 		nivel.print_current_map();
 	}
 
@@ -128,5 +134,7 @@ public:
 		}
 		return false;
 	}
+
+
 
 };

@@ -51,12 +51,20 @@ class Apple{
 			quantidade = v;
 		}
 
-		void hide_apple(){
+		/*void hide_apple(){
 			aparencia = ' ';
+		}*/
+
+		void show_apple(){
+			aparencia = 'o';
 		}
 
 		char get_aparencia(){
 			return aparencia;
+		}
+
+		void show_position(){
+			std::cout << "(" << coordenadas.first << "," << coordenadas.second << ")\n";
 		}
 
 		bool mordida(){
