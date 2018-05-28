@@ -84,10 +84,36 @@ public:
 		for( auto i(0) ; i < x_total; ++i ){
 			for( auto j(0); j < y_total ; ++j )
 				if(mapa[i][j] == '>' || mapa[i][j] == '<' || mapa[i][j] == 'v' || mapa[i][j] == '^')
-					return std::make_pair(i+1,j+1);
+					return std::make_pair(i,j);
 		}
 
 		return std::make_pair(0,0);
+	}
+
+	void change_snaze_position(std::pair<int,int> coordenadas){
+		int old_x = 0;
+		int old_y = 0;
+
+		for( auto i(0) ; i < x_total; ++i ){
+			for( auto j(0); j < y_total ; ++j )
+				if(mapa[i][j] == '>' || mapa[i][j] == '<' || mapa[i][j] == 'v' || mapa[i][j] == '^'){
+					mapa[i][j] = ' ';
+					old_x = i;
+					old_y = j;
+				}
+		}
+
+		int x_new = coordenadas.first;
+		int y_new = coordenadas.second;
+
+		if( old_x < x_new  && y_new == old_y )
+			mapa[x_new][y_new] = 'v';
+		else if( old_x > x_new && y_new == old_y )
+			mapa[x_new][y_new] = '^';
+		else if( old_y < y_new && x_new == old_x)
+			mapa[x_new][y_new] = '>';
+		else
+			mapa[x_new][y_new] = '<';
 	}
 
 };

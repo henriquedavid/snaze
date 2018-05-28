@@ -11,8 +11,8 @@ class Snaze{
 		Snaze( int pos1 = 1, int pos2 = 1, int pont = 0, int sz = 0 , int life = 5 ) : x(pos1), y(pos2), pontos(pont), tamanho(sz), vidas(life){ /*empty*/}
 
 		void set_position(std::pair<int,int> pos){
-			this->x = pos.first + 1;
-			this->y = pos.second + 1;
+			this->x = pos.first;
+			this->y = pos.second;
 		}
 
 		std::pair<int,int> get_position(){

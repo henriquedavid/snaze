@@ -1,5 +1,6 @@
 class SnazeGame{
 
+public:
 	enum Estados
 	{
 		START = 0,
@@ -19,6 +20,7 @@ private:
 	Snaze cobrinha;
 	Level nivel;
 	Estados state;
+	Player player;
 
 
 public:
@@ -36,45 +38,95 @@ public:
 		// Insere a apple na posição configurada no mapa.
 		nivel.insert_apple();
 
-		//print_all_maps();		
+		// Configura a posição da cobrinha.
+		Maps atual = nivel.get_current_level();
+		cobrinha.set_position(atual.snaze_position());
 
-		//cobrinha.set_position(mapas[0].snaze_position());
+		std::cout << "Level atual = " << nivel.get_level() << "  Total de Levels = " << nivel.all_levels() << std::endl;
+		std::cout << "Vidas = " << cobrinha.get_life() << std::endl;
+
+		nivel.print_current_map();
 
 	}
 
+	/// Processa todas as ações executas pela IA.
 	void process_events(){
 		state = PROCESSING_EVENTS;
+		std::pair<int,int> new_pos;
+		int sentido = 0;
+
+		// Ações de testes com jogador HUMANO
+		std::cout << "Insira a próxima posição da Cobra:\n";
+		std::cin >> sentido;
+
+		Player::Movimento mov;
+
+		if( sentido == 0 )
+			mov = Player::Movimento::NORTH;
+		else if( sentido == 1)
+			mov = Player::Movimento::SOUTH;
+		else if( sentido == 2 )
+			mov = Player::Movimento::EAST;
+		else
+			mov = Player::Movimento::WEST;
+
+		player.next_move(cobrinha, mov);
+
 		// A IA irá atuar aqui.
 	}
 
+	/// Atualiza as informações no mapa
 	void update(){
 		state = UPDATING;
-		if( nivel.snake_in_apple() ){
+		if( nivel.snake_in_apple() || nivel.apple.mordida() ){
 			state = LEVEL_UP;
 			render();
 			nivel.level_up();
+		} else{
+			if(colisao())
+				cobrinha.perdervida();
+			else
+				nivel.change_snaze_pos(cobrinha.get_position());
 		}
 
 	}
 
 	void render(){
-		state = RENDERING;
-		//system("clear");
-		nivel.print_all_maps();
+		system("clear");
+		std::cout << "Level atual = " << nivel.get_level() << "  Total de Levels = " << nivel.all_levels() << std::endl;
+		std::cout << "Vidas = " << cobrinha.get_life() << std::endl;
+		nivel.print_current_map();
 	}
 
 	bool game_over(){
-		state = GAME_OVER;
 		if(cobrinha.get_life() == 0){
 			state = APPLE_OVER;
-			return false;
-		}
-		if(nivel.win()){
-			state = WON;
-			return false;
+			return true;
 		}
 
-		return true;
+
+
+		if(nivel.win()){
+			state = WON;
+			return true;
+		}
+
+		return false;
+	}
+
+	Estados get_state(){
+		return state;
+	}
+
+	bool colisao(){
+		std::pair<int,int> cPos = cobrinha.get_position();
+		int x = cPos.first;
+		int y = cPos.second;
+		Maps atual = nivel.get_current_level();
+		if( atual.get_value(x,y) == '#' ){
+			return true;
+		}
+		return false;
 	}
 
 };

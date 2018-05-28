@@ -98,3 +98,17 @@ std::vector<Maps> readMaps( std::string name_input ){
 	return mapas;
 
 }
+
+void won_message(){
+
+	std::cout << "Tan tan... tan tan tan tan... tan tan tan\n";
+	std::cout << "We got a WINNER! Congratulations!\nMAY THE FORCE BE WITH YOU!\n";
+
+}
+
+void loser_message(){
+
+	std::cout << "Well... well...\n";
+	std::cout << "Oh dear! What an awkward situation\n";
+
+}

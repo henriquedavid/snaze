@@ -24,7 +24,7 @@ class Apple{
 
 			int value = dis(gen);
 
-			return  value-1;
+			return  value;
 
 		}
 
@@ -36,7 +36,7 @@ class Apple{
 			int x = coor.first;
 			int y = coor.second;
 
-			coordenadas = std::make_pair(x+1, y+1);
+			coordenadas = std::make_pair(x, y);
 		}
 
 		void lost_quantity(){
@@ -57,6 +57,13 @@ class Apple{
 
 		char get_aparencia(){
 			return aparencia;
+		}
+
+		bool mordida(){
+			if(aparencia == ' ')
+				return true;
+
+			return false;
 		}
 
 

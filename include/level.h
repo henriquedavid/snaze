@@ -20,12 +20,13 @@ class Level{
 			return levels.size();
 		}
 
+
 		int get_level(){
 			return nivel;
 		}
 
 		bool win(){
-			if(nivel > levels.size())
+			if(nivel >= levels.size())
 				return true;
 			return false;
 		}
@@ -36,7 +37,7 @@ class Level{
 			
 			char elemento = levels[nivel].get_value(v_x, v_y);
 
-			if( elemento != '#')
+			if( elemento != '#' || elemento != '.')
 				apple.set_coordenadas(std::make_pair(v_x, v_y));
 			else
 				configurar_apple();
@@ -58,9 +59,6 @@ class Level{
 			if(x_snake == x_apple && y_snake == y_apple)
 				return true;
 
-			std::cout << "APPLE = (" << x_apple << "," << y_apple << ")" << std::endl;
-			std::cout << "SNAKE = (" << x_snake << "," << y_snake << ")" << std::endl;
-
 			return false;
 		}
 
@@ -72,6 +70,18 @@ class Level{
 			//std::pair<int,int> pos = levels[nivel].snaze_position();
 			//std::cout << "A cobra está na posição: (" << pos.first << "," << pos.second << ")" << std::endl;
 
+		}
+
+		void print_current_map(){
+			levels[nivel].printVector();
+		}
+
+		void change_snaze_pos(std::pair<int,int> coordenadas){
+			levels[nivel].change_snaze_position(coordenadas);
+		}
+
+		Maps get_current_level(){
+			return levels[nivel];
 		}
 
 };
