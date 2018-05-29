@@ -8,13 +8,15 @@ class Level{
 
 		Level( int niv = 0 ) : nivel(niv) {/*empty*/}
 
-		void level_up( Apple & apple){
+		void level_up( Apple & apple, Snaze & cobra ){
 			if(apple.get_quantity() == 0){
 				nivel++;
 				apple.set_quantity(5);
 				apple.show_apple();
 			} else{
 				eat_apple(apple);
+				cobra.add_size();
+				inserir_calda(cobra);
 			}
 		}
 
@@ -35,8 +37,8 @@ class Level{
 			return nivel;
 		}
 
-		bool win(){
-			if(nivel >= levels.size())
+		bool win(Apple & apple){
+			if(nivel+1 >= levels.size() && apple.get_quantity() == 0)
 				return true;
 			return false;
 		}
@@ -47,7 +49,7 @@ class Level{
 			
 			char elemento = levels[nivel].get_value(v_x, v_y);
 
-			if( elemento != '#' && elemento != '.'){
+			if( elemento != '#' && elemento != '.' && elemento != '-'){
 				apple.show_apple();
 				apple.set_coordenadas(std::make_pair(v_x, v_y));
 				insert_apple(apple);
@@ -89,12 +91,24 @@ class Level{
 			levels[nivel].printVector();
 		}
 
-		void change_snaze_pos(std::pair<int,int> coordenadas){
-			levels[nivel].change_snaze_position(coordenadas);
+		void change_snaze_pos(std::pair<int,int> coordenadas, Snaze & cobra){
+			levels[nivel].change_snaze_position(coordenadas, cobra);
 		}
 
-		Maps get_current_level(){
+		Maps & get_current_level(){
 			return levels[nivel];
+		}
+
+		void inserir_calda(Snaze & cobra){
+
+			auto calda = cobra.get_tamanho();
+			auto current_level = levels[nivel];
+
+			for( auto & i : calda ){
+				levels[nivel].change_value(i.first, i.second, '-');
+				//std::cout << "Posição =" << "(" << i.first << "," << i.second << ")\n" ;
+			}
+
 		}
 
 };

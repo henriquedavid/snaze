@@ -3,12 +3,13 @@
 #include <vector>
 #include <fstream>
 #include <random>
+//#include <list>
 
-
+#include "../include/vector.h"
+#include "../include/snake.h"
 #include "../include/maps.h"
 #include "../include/apple.h"
 #include "../include/level.h"
-#include "../include/snake.h"
 #include "../include/support.h"
 #include "../include/player.h"
 #include "../include/game.h"	// Configurações e controle do jogo.

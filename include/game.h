@@ -82,23 +82,22 @@ public:
 		if( nivel.snake_in_apple(apple) || apple.mordida() ){
 			state = LEVEL_UP;
 			render();
-			nivel.level_up(apple);
+			nivel.level_up(apple, cobrinha);
 			apple.show_apple();
 			nivel.configurar_apple(apple);
 		} else{
 			if(colisao())
 				cobrinha.perdervida();
 			else
-				nivel.change_snaze_pos(cobrinha.get_position());
+				nivel.change_snaze_pos(cobrinha.get_position(), cobrinha);
 		}
-
-
 
 	}
 
 	void render(){
-		system("clear");
-		apple.show_position();
+		//system("clear");
+		std::cout << "Tamanho da cobra = " << cobrinha.get_tamanho_size() << std::endl ;
+		cobrinha.print_pos();
 		std::cout << "Level atual = " << (nivel.get_level()+1) << "  Total de Levels = " << nivel.all_levels() << std::endl;
 		std::cout << "Vidas = " << cobrinha.get_life() << "  Maças: " << apple.get_quantity() << " de 5." << std::endl;
 		nivel.print_current_map();
@@ -112,7 +111,7 @@ public:
 
 
 
-		if(nivel.win()){
+		if(nivel.win(apple)){
 			state = WON;
 			return true;
 		}
@@ -129,7 +128,7 @@ public:
 		int x = cPos.first;
 		int y = cPos.second;
 		Maps atual = nivel.get_current_level();
-		if( atual.get_value(x,y) == '#' ){
+		if( atual.get_value(x,y) == '#' || atual.get_value(x,y) == '-'){
 			return true;
 		}
 		return false;

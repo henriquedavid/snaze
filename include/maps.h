@@ -90,7 +90,7 @@ public:
 		return std::make_pair(0,0);
 	}
 
-	void change_snaze_position(std::pair<int,int> coordenadas){
+	void change_snaze_position(std::pair<int,int> coordenadas, Snaze & cobra){
 		int old_x = 0;
 		int old_y = 0;
 
