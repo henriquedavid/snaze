@@ -100,6 +100,8 @@ public:
 		cobrinha.print_pos();
 		std::cout << "Level atual = " << (nivel.get_level()+1) << "  Total de Levels = " << nivel.all_levels() << std::endl;
 		std::cout << "Vidas = " << cobrinha.get_life() << "  Maças: " << apple.get_quantity() << " de 5." << std::endl;
+		nivel.inserir_calda(cobrinha);
+
 		nivel.print_current_map();
 	}
 

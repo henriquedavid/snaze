@@ -71,12 +71,16 @@ class Snaze{
 		}
 
 		void mover_corpo(){
-			if( tamanho.size() > 1 ){
-			 	tamanho[0] = std::make_pair(x_old, y_old);
-			 	/*for( auto i(tamanho.size()-1) ; i != 0 ; i++  ){
+			if( tamanho.size() > 0 ){
+			 	for( auto i(tamanho.size()-1) ; i != 0 ; i--  ){
 			 		tamanho[i] = tamanho[i-1];
-			 	}*/
+			 	}
+			 	tamanho[0] = std::make_pair(x_old, y_old);
 			}
+		}
+
+		std::pair<int,int> get_calda(int i){
+			return tamanho[i];
 		}
 
 };

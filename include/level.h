@@ -32,7 +32,6 @@ class Level{
 			apple.lost_quantity();
 		}
 
-
 		int get_level(){
 			return nivel;
 		}
@@ -101,14 +100,22 @@ class Level{
 
 		void inserir_calda(Snaze & cobra){
 
-			auto calda = cobra.get_tamanho();
-			auto current_level = levels[nivel];
+			limpa_mapa();
 
-			for( auto & i : calda ){
-				levels[nivel].change_value(i.first, i.second, '-');
+			for( auto i(0); i < cobra.get_tamanho_size(); i++ ){
+				levels[nivel].change_value(cobra.get_calda(i).first, cobra.get_calda(i).second, '-');
 				//std::cout << "Posição =" << "(" << i.first << "," << i.second << ")\n" ;
 			}
 
+		}
+
+		void limpa_mapa(){
+			for(auto i(0); i < levels[nivel].return_x() ; i++){
+				for(auto j(0) ; j < levels[nivel].return_y(); j++){
+					if( levels[nivel].get_value(i,j) == '-')
+						levels[nivel].change_value(i,j, ' ');
+				}
+			}
 		}
 
 };
