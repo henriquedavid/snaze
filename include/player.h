@@ -1,7 +1,10 @@
 class Player{
 	private:
 
+
 	public:
+
+
 		enum Movimento{
 			SOUTH,
 			NORTH,
@@ -11,6 +14,8 @@ class Player{
 
 		/// Realiza a movimentação da Snaze
 		void next_move(Snaze & cobra, Movimento movimento){
+
+
 			std::pair<int,int> posSnaze = cobra.get_position();
 			int x = posSnaze.first;
 			int y = posSnaze.second;
@@ -22,7 +27,10 @@ class Player{
 			else if( movimento == EAST)
 				cobra.set_position(std::make_pair(x,y+1));
 			else
-				cobra.set_position(std::make_pair(x,y-1));
-			
+				cobra.set_position(std::make_pair(x,y-1));			
+		}
+
+		void next_move_IA( Maze & maze, Position start, Apple & apple){
+			solve_maze();
 		}
 };

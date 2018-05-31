@@ -12,6 +12,7 @@
 #include "../include/level.h"
 #include "../include/support.h"
 #include "../include/player.h"
+#include "../include/IA.h"
 #include "../include/game.h"	// Configurações e controle do jogo.
 
 int main(int argc, char * args[]){
