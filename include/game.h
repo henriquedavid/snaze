@@ -1,5 +1,6 @@
 #include "player.h"
 #include "human.h"
+// #include "IA.h"
 #include <memory>
 
 // ALIAS
@@ -59,7 +60,7 @@ public:
 
 		nivel.print_current_map();
         
-        player = PlayerRef(new Human());
+        player = PlayerRef(new IA(mapas[mapas.size()-1], cobrinha, apple));
 
 	}
 
