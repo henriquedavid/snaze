@@ -1,3 +1,11 @@
+#include "player.h"
+#include "human.h"
+#include <memory>
+
+// ALIAS
+using PlayerRef = std::unique_ptr<Player>;
+
+
 class SnazeGame{
 
 public:
@@ -20,7 +28,10 @@ private:
 	Snaze cobrinha;
 	Level nivel;
 	Estados state;
-	Player player;
+    /* Devido ser uma tipo abstrato, não poderemos simplesmente fazer 
+     * uma cópia comum, temos que guardar uma referencia da qual sabemos
+     * que contém o método next_move() implementado. */
+	PlayerRef player; 
 	Apple apple;
 
 
@@ -47,33 +58,28 @@ public:
 		std::cout << "Vidas = " << cobrinha.get_life() << "  Maças: " << apple.get_quantity() << " de 5." << std::endl;
 
 		nivel.print_current_map();
+        
+        player = PlayerRef(new Human());
 
 	}
 
 	/// Processa todas as ações executas pela IA.
 	void process_events(){
 		state = PROCESSING_EVENTS;
-		std::pair<int,int> new_pos;
-		int sentido = 0;
+        std::pair<int,int> posSnaze = cobrinha.get_position();
+        Player::Movimento mov = player->next_move();
+        
+        int x = posSnaze.first;
+        int y = posSnaze.second;
 
-		// Ações de testes com jogador HUMANO
-		std::cout << "Insira a próxima posição da Cobra:\n";
-		std::cin >> sentido;
-
-		Player::Movimento mov;
-
-		if( sentido == 0 )
-			mov = Player::Movimento::NORTH;
-		else if( sentido == 1)
-			mov = Player::Movimento::SOUTH;
-		else if( sentido == 2 )
-			mov = Player::Movimento::EAST;
-		else
-			mov = Player::Movimento::WEST;
-
-		player.next_move(cobrinha, mov);
-
-		// A IA irá atuar aqui.
+        if(mov == Player::Movimento::NORTH)
+            cobrinha.set_position(std::make_pair(x+1,y));
+        else if(mov == Player::Movimento::SOUTH)
+            cobrinha.set_position(std::make_pair(x-1,y));
+        else if(mov == Player::Movimento::EAST)
+            cobrinha.set_position(std::make_pair(x,y+1));
+        else
+            cobrinha.set_position(std::make_pair(x,y-1));
 	}
 
 	/// Atualiza as informações no mapa

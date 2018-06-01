@@ -1,36 +1,24 @@
+#ifndef PLAYER_H
+#define PLAYER_H
+
+/*
+ * O player é uma entidade abststrata que tem a responsabilidade de dizer pro jogo qual seu proximo movimento
+ */
+
 class Player{
-	private:
-
-
 	public:
-
-
 		enum Movimento{
 			SOUTH,
 			NORTH,
 			EAST,
 			WEST
 		};
-
 		/// Realiza a movimentação da Snaze
-		void next_move(Snaze & cobra, Movimento movimento){
-
-
-			std::pair<int,int> posSnaze = cobra.get_position();
-			int x = posSnaze.first;
-			int y = posSnaze.second;
-
-			if(movimento == NORTH)
-				cobra.set_position(std::make_pair(x+1,y));
-			else if(movimento == SOUTH)
-				cobra.set_position(std::make_pair(x-1,y));
-			else if( movimento == EAST)
-				cobra.set_position(std::make_pair(x,y+1));
-			else
-				cobra.set_position(std::make_pair(x,y-1));			
-		}
-
-		void next_move_IA( Maze & maze, Position start, Apple & apple){
-			solve_maze();
-		}
+		virtual Movimento next_move() = 0;
+        // se o jogo suportar dois players, o player terá que processar eventos globais, pois a IA
+        // terá que saber, por exemplo, se a maça já foi comida por outro player para achar a solução
+        // novamente
+        
 };
+
+#endif
