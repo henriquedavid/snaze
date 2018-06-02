@@ -121,7 +121,7 @@ class IA : public Player{
                         return true;
                     }
             }
-            
+            mz.unmark_cell(start);
             return false;
         }
         
@@ -159,6 +159,8 @@ Player::Movimento IA::next_move()
     {
         for(int j = -1; j <= 1 and posSnake.second + j >= 0 and posSnake.second + j < (int) maze.maze_.size(); j++)
         {
+            if(i == 0 and j == 0)
+                continue;
             Position pos(posSnake.first + i, posSnake.second + j);
             if(maze.is_marked(pos))
             {
