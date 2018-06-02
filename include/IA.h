@@ -63,13 +63,12 @@ class IA : public Player{
             }
 
             bool is_blocked( Position & pos,  direction_t dir ){
-
                 if(dir == direction_t::NORTH)
-                    if(maze_[pos.x+1][pos.y] == '#' || maze_[pos.x+1][pos.y] == '-')
+                    if(maze_[pos.x-1][pos.y] == '#' || maze_[pos.x-1][pos.y] == '-')
                         return true;
 
                 if(dir == direction_t::SOUTH)
-                    if(maze_[pos.x-1][pos.y] == '#' || maze_[pos.x-1][pos.y] == '-')
+                    if(maze_[pos.x+1][pos.y] == '#' || maze_[pos.x+1][pos.y] == '-')
                         return true;
 
                 if(dir == direction_t::WEST)
@@ -101,8 +100,8 @@ class IA : public Player{
 
         Position walk_to_cell( Position & p, const Maze::direction_t & d ){
             switch(d){
-                case Maze::direction_t::NORTH: return Position(p.x+1, p.y);
-                case Maze::direction_t::SOUTH: return Position( p.x-1, p.y );
+                case Maze::direction_t::NORTH: return Position(p.x-1, p.y);
+                case Maze::direction_t::SOUTH: return Position( p.x+1, p.y );
                 case Maze::direction_t::EAST: return Position( p.x, p.y+1 );
                 default: return Position( p.x, p.y-1 );
             }
@@ -115,9 +114,9 @@ class IA : public Player{
             if(mz.is_apple(start, apple)) return true;
             if(mz.is_marked(start)) return false;
             mz.mark_cell( start );
-            for( auto i(Maze::direction_t::NORTH) ; i < 4 ; ){
-                if( not mz.is_blocked(start, i))
-                    if(solve_maze(mz,walk_to_cell(start, i), apple)){
+            for( auto i(0u) ; i < 4; ++i){
+                if( not mz.is_blocked(start, (Maze::direction_t) i))
+                    if(solve_maze(mz, walk_to_cell(start, (Maze::direction_t) i), apple)){
                         std::cout << "ACHOU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
                         return true;
                     }
@@ -137,8 +136,9 @@ class IA : public Player{
 
 Player::Movimento IA::next_move()
 {
-    std::pair<int,int> posSnake = cobrinha->get_position();
     
+    
+    std::pair<int,int> posSnake = cobrinha->get_position();
     std::pair<int,int> next_marked;
     bool next_marked_found = false;
     
@@ -146,6 +146,14 @@ Player::Movimento IA::next_move()
     char c;
     std::cin >> c;
     
+    for(uint i = 0; i < maze.maze_.size(); ++i)
+    {
+        for(uint j = 0; j < maze.maze_[i].size(); ++j)
+        {
+            std::cout << maze.maze_[i][j];
+        }
+        std::cout << "\n";
+    }
     
     for(int i = -1; i <= 1 and !next_marked_found and posSnake.first + i >= 0 and posSnake.first + i < (int) maze.maze_.size(); i++)
     {
@@ -157,6 +165,7 @@ Player::Movimento IA::next_move()
                 maze.unmark_cell(pos);
                 next_marked = {posSnake.first + i, posSnake.second + j};
                 next_marked_found = true;
+                
                 break;
             }
         }
@@ -164,8 +173,6 @@ Player::Movimento IA::next_move()
     
     if(next_marked_found)
     {
-       
-        
         int dx = next_marked.first - posSnake.first;
         int dy = next_marked.second - posSnake.second;
         if(dx == 0){
@@ -184,12 +191,11 @@ Player::Movimento IA::next_move()
     }
     else
     {
-     
         Position start(posSnake.first, posSnake.second);
         if(solve_maze(maze, start, *apple))
             return next_move();
         else 
-            return Player::Movimento::EAST;
+            return Player::Movimento::WEST;
     }
 }
 
@@ -202,12 +208,13 @@ IA::IA(Maps& atual, Snaze& cobrinha, Apple& apple)
     int w = atual.return_y();
     
     sc::vector<sc::vector<char>> map;
+    map.assign(h, sc::vector<char>());
     for(int i = 0; i < h; ++i)
     {
-        map[i].reserve(w);
+        map[i].assign(w, ' ');
         for(int j = 0; j < w; ++j)
         {
-            map[i].push_back(atual.get_value(i, j));
+            map[i][j] = atual.get_value(i, j);
         }
     }
     

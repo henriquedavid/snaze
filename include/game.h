@@ -61,7 +61,7 @@ public:
 		nivel.print_current_map();
         
         player = PlayerRef(new IA(mapas[mapas.size()-1], cobrinha, apple));
-
+//         player = PlayerRef(new Human());
 	}
 
 	/// Processa todas as ações executas pela IA.
