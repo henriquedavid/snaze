@@ -1,3 +1,6 @@
+#ifndef PLAYER_H
+#define PLAYER_H 
+
 class Player{
 	private:
 
@@ -11,8 +14,10 @@ class Player{
 			EAST,
 			WEST
 		};
+		
+		void next_move(Maps & mapa, Snaze & snaze, Apple & apple);
 
-		/// Realiza a movimentação da Snaze
+		/*/// Realiza a movimentação da Snaze
 		void next_move(Snaze & cobra, Movimento movimento){
 
 
@@ -27,10 +32,9 @@ class Player{
 			else if( movimento == EAST)
 				cobra.set_position(std::make_pair(x,y+1));
 			else
-				cobra.set_position(std::make_pair(x,y-1));			
-		}
+				cobra.set_position(std::make_pair(x,y-1));
+		}*/
 
-		void next_move_IA( Maze & maze, Position start, Apple & apple){
-			solve_maze();
-		}
 };
+
+#endif

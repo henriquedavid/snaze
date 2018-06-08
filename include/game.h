@@ -1,3 +1,7 @@
+#include "memory"
+
+using PlayerRef = std::unique_ptr<Player>;
+
 class SnazeGame{
 
 public:
@@ -22,6 +26,8 @@ private:
 	Estados state;
 	Player player;
 	Apple apple;
+	AI ia;
+
 
 
 public:
@@ -29,6 +35,8 @@ public:
 	/// Inicializa o jogo.
 	void initialize_game(std::string inputdata){
 		state = START;
+
+
 		// Realiza a leitura dos dados.
 		this->mapas = readMaps(inputdata);
 		
@@ -39,25 +47,27 @@ public:
 		// Insere a apple na posição configurada no mapa.
 		nivel.insert_apple(apple);
 
+
 		// Configura a posição da cobrinha.
 		Maps atual = nivel.get_current_level();
 		cobrinha.set_position(atual.snaze_position());
+
 
 		std::cout << "Level atual = " << (nivel.get_level()+1) << "  Total de Levels = " << nivel.all_levels() << std::endl;
 		std::cout << "Vidas = " << cobrinha.get_life() << "  Maças: " << apple.get_quantity() << " de 5." << std::endl;
 
 		nivel.print_current_map();
-
+		
 	}
 
 	/// Processa todas as ações executas pela IA.
 	void process_events(){
 		state = PROCESSING_EVENTS;
 		std::pair<int,int> new_pos;
-		int sentido = 0;
+		//int sentido = 0;
 
 		// Ações de testes com jogador HUMANO
-		std::cout << "Insira a próxima posição da Cobra:\n";
+		/*std::cout << "Insira a próxima posição da Cobra:\n";
 		std::cin >> sentido;
 
 		Player::Movimento mov;
@@ -71,9 +81,30 @@ public:
 		else
 			mov = Player::Movimento::WEST;
 
-		player.next_move(cobrinha, mov);
+		player.next_move(cobrinha, mov);*/
+
+		auto coordCobra = cobrinha.get_position();
 
 		// A IA irá atuar aqui.
+		switch(ia.next_move(nivel, apple, cobrinha)){
+
+			case Direction::N:
+				cobrinha.set_position(std::make_pair(--coordCobra.first,coordCobra.second));
+				break;
+			case Direction::S:
+				cobrinha.set_position(std::make_pair(++coordCobra.first,coordCobra.second));
+				break;
+			case Direction::E:
+				cobrinha.set_position(std::make_pair(coordCobra.first,++coordCobra.second));
+				break;
+			case Direction::W:
+				cobrinha.set_position(std::make_pair(coordCobra.first,--coordCobra.second));
+				break;
+			default:
+				throw std::runtime_error("[ERROR]: Invalid player movement detected.");
+
+		}
+
 	}
 
 	/// Atualiza as informações no mapa

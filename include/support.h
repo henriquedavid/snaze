@@ -55,13 +55,15 @@ std::vector<Maps> readMaps( std::string name_input ){
 
 
 			if(v != "-"){
-
+				
 				if( muda_x_y == true ){
 					std::string::size_type sz;
 					x = std::stoi(x_s, &sz);
 					y = std::stoi(y_s, &sz);
 
+
 					mapa.changexey(x, y);
+					
 
 					muda_x_y = false;
 				}
@@ -78,8 +80,14 @@ std::vector<Maps> readMaps( std::string name_input ){
 
 		// A condição de que esse mapa terminou é encontrar uma string com "-" no final do mapa
 		if( v == "-"){
+			std::cout << "TESTE" << std::endl;
 
 			mapa.add_objects(valores);
+
+			x_s = "";
+			y_s = "";
+			x = 0;
+			y = 0;
 
 			mapas.push_back(mapa);
 		}
