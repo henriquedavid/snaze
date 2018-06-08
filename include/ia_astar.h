@@ -130,13 +130,13 @@ bool AI::aStarSearch( Level & lvl, Apple & app, Snaze & sna )
 //         snake_copy.pop();
 //     }
  
-    m_cellDetails.resize(map.return_y());
+    //m_cellDetails.resize(map.return_y());
  
     int i, j;
  
     for (i = 0; i < map.return_x(); ++i)
     {
-        m_cellDetails[i].resize(map.return_x());
+        //m_cellDetails[i].resize(map.return_x());
         for (j = 0; j < map.return_y(); ++j)
         {
             m_cellDetails[i][j].f = UINT_MAX;
@@ -259,14 +259,12 @@ Direction AI::next_move( Level & lvl, Apple & app, Snaze & sna)
     Point src(coord.first, coord.second);
     if(isDestination(src, app))
     {
-        std::cout << "Está no destino, indo para caminho livre.\n";
         return goto_free_way(lvl, app, sna);
     }
     
     if(!m_path.empty())
     {
         auto dir = m_path.top();
-        std::cout << "Seguindo camnhinho traçado, direção: "  << dir << "\n";
         m_path.pop();
         return dir;
     }
@@ -275,13 +273,9 @@ Direction AI::next_move( Level & lvl, Apple & app, Snaze & sna)
     {
         auto dir = m_path.top();
         m_path.pop();
-        std::cout << "Seguindo camnhinho traçado, direção: "  << dir << "\n";
         return dir;
     }
 
     auto dir = goto_free_way(lvl, app, sna);
-    std::cout << "indo para caminho livre, direção: "  << dir << "\n";
-    std::cout << "player em: ("  << src.x << ", " << src.y << ")\n";
-    std::cout << "maca em: ("  << m_goal.first << ", " << m_goal.second << ")\n";
     return dir;
 }

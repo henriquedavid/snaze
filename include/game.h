@@ -57,7 +57,6 @@ public:
 		std::cout << "Vidas = " << cobrinha.get_life() << "  Maças: " << apple.get_quantity() << " de 5." << std::endl;
 
 		nivel.print_current_map();
-		
 	}
 
 	/// Processa todas as ações executas pela IA.
