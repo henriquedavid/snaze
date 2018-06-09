@@ -1,4 +1,5 @@
 #include "memory"
+#include <chrono>
 
 using PlayerRef = std::unique_ptr<Player>;
 
@@ -16,7 +17,7 @@ public:
 		LEVEL_UP,
 		DEAD,
 		WON,
-		GAME_OVER
+        GAME_OVER
 	};
 
 private:
@@ -27,6 +28,7 @@ private:
 	Player player;
 	Apple apple;
 	AI ia;
+    std::chrono::steady_clock::time_point m_clock;
 
 
 
@@ -57,16 +59,23 @@ public:
 		std::cout << "Vidas = " << cobrinha.get_life() << "  Maças: " << apple.get_quantity() << " de 5." << std::endl;
 
 		nivel.print_current_map();
+        m_clock = std::chrono::steady_clock::now();
 	}
 
 	/// Processa todas as ações executas pela IA.
 	void process_events(){
+        std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
+
+        double elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(now-m_clock).count();
+        if(elapsed_time < 150.0)
+            return;
+        m_clock = std::chrono::steady_clock::now();
 		state = PROCESSING_EVENTS;
 		std::pair<int,int> new_pos;
 		//int sentido = 0;
 
 		// Ações de testes com jogador HUMANO
-		/*std::cout << "Insira a próxima posição da Cobra:\n";
+        /*std::cout << "Insira a próxima posição da Cobra:\n";
 		std::cin >> sentido;
 
 		Player::Movimento mov;
@@ -80,12 +89,12 @@ public:
 		else
 			mov = Player::Movimento::WEST;
 
-		player.next_move(cobrinha, mov);*/
+        player.next_move(cobrinha, mov);*/
 
 		auto coordCobra = cobrinha.get_position();
 
-		// A IA irá atuar aqui.
-		switch(ia.next_move(nivel, apple, cobrinha)){
+        // A IA irá atuar aqui.
+        switch(ia.next_move(nivel, apple, cobrinha)){
 
 			case Direction::N:
 				cobrinha.set_position(std::make_pair(--coordCobra.first,coordCobra.second));
@@ -102,7 +111,7 @@ public:
 			default:
 				throw std::runtime_error("[ERROR]: Invalid player movement detected.");
 
-		}
+        }
 
 	}
 
@@ -125,7 +134,7 @@ public:
 	}
 
 	void render(){
-		//system("clear");
+        system("clear");
 		std::cout << "Tamanho da cobra = " << cobrinha.get_tamanho_size() << std::endl ;
 		cobrinha.print_pos();
 		std::cout << "Level atual = " << (nivel.get_level()+1) << "  Total de Levels = " << nivel.all_levels() << std::endl;

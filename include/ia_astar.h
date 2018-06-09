@@ -74,8 +74,8 @@ double AI::calculateHValue(Point p, Apple & apple)
 void AI::tracePath( Apple & apple)
 {
     auto applePos = apple.get_coordenadas();
-    Cell current_cell = Cell(apple.get_coordenadas());
-    Cell current_parent = m_cellDetails[applePos.first][applePos.second];
+    Cell current_cell = Cell(applePos);
+    Cell current_parent = m_cellDetails[current_cell.parent.first][current_cell.parent.second];
 
     Direction dir;
 
@@ -115,10 +115,10 @@ bool AI::aStarSearch( Level & lvl, Apple & app, Snaze & sna )
     // Either the source or the destination is blocked
     if (!isUnBlocked(src,lvl) or !isUnBlocked(appll, lvl))
         throw std::runtime_error("Source or the destination is blocked\n");
-    
+
     Maps map = lvl.get_current_level();
 
-    bool closedList[map.return_x()][map.return_y()];
+    bool closedList[map.return_y()][map.return_x()];
     memset(closedList, false, sizeof (closedList));
     
     // Add snake coords to closed list 
@@ -130,13 +130,12 @@ bool AI::aStarSearch( Level & lvl, Apple & app, Snaze & sna )
 //         snake_copy.pop();
 //     }
  
-    //m_cellDetails.resize(map.return_y());
+    m_cellDetails.resize(map.return_x());
  
     int i, j;
- 
     for (i = 0; i < map.return_x(); ++i)
     {
-        //m_cellDetails[i].resize(map.return_x());
+        m_cellDetails[i].resize(map.return_y());
         for (j = 0; j < map.return_y(); ++j)
         {
             m_cellDetails[i][j].f = UINT_MAX;
@@ -146,13 +145,12 @@ bool AI::aStarSearch( Level & lvl, Apple & app, Snaze & sna )
 
         }
     }
- 
     i = src.x, j = src.y;
     m_cellDetails[i][j].f = 0;
     m_cellDetails[i][j].g = 0;
     m_cellDetails[i][j].h = 0;
     m_cellDetails[i][j].HasParent = true;
-    m_cellDetails[i][j].parent = std::make_pair(src.x,src.y);
+    m_cellDetails[i][j].parent = std::make_pair(i, j);
 
     std::set<pPair> openList;
 
@@ -269,9 +267,12 @@ Direction AI::next_move( Level & lvl, Apple & app, Snaze & sna)
         return dir;
     }
     m_cellDetails.clear();
+
     if(aStarSearch( lvl, app, sna ))
     {
         auto dir = m_path.top();
+        if(m_path.empty())
+            throw std::runtime_error("[ERROR]: invalid search return\n");
         m_path.pop();
         return dir;
     }
