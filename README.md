@@ -55,4 +55,4 @@ Organização dos dados em githubs diferentes.
 
 O algoritmo A* (ou A star) é um dos principais meios de se encontrar um determinado caminho utilizando vias.
 A sua utilização garante que seja possivel encontrar um caminho mesmo com obstáculos, como no jogo é necessário
-encontrar um caminho, em que possui paredes o qual pode atrapalhar o caminho então é uma boa forma de resolver o problema.
+encontrar um caminho, em que possui paredes o qual pode atrapalhar o caminho, então é uma boa forma de resolver o problema.
