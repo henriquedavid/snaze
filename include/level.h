@@ -13,6 +13,7 @@ class Level{
 				nivel++;
 				apple.set_quantity(5);
 				apple.show_apple();
+				cobra.begin_size();
 			} else{
 				eat_apple(apple);
 				cobra.add_size();

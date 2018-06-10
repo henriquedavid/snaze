@@ -83,4 +83,8 @@ class Snaze{
 			return tamanho[i];
 		}
 
+		void begin_size(){
+			tamanho.clear();
+		}
+
 };
