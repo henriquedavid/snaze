@@ -171,6 +171,7 @@ public:
 
 		// Verifica se a maça foi mordida.
 		if( nivel.snake_in_apple(apple) || apple.mordida() ){
+			cobrinha.marcarpontuacao();
 			// Renderiza as informações.
 			render();
 			// Verifica se é possível passar de nível.
@@ -192,12 +193,12 @@ public:
 	/// Gera a situação do jogo para o usuário.
 	void render(){
         system("clear");
-		std::cout << "Tamanho da cobra = " << cobrinha.get_tamanho_size() << std::endl ;
+		//std::cout << "Tamanho da cobra = " << cobrinha.get_tamanho_size() << std::endl ;
 		//cobrinha.print_pos();
 		// Mostra os dados de level atual e o total de levels.
-		std::cout << "Level atual = " << (nivel.get_level()+1) << "  Total de Levels = " << nivel.all_levels() << std::endl;
+		std::cout << "Level atual = " << (nivel.get_level()+1) << " | Total de Levels = " << nivel.all_levels() << std::endl;
 		// Mostra a quantidade de vidas e de maças.
-		std::cout << "Vidas = " << cobrinha.get_life() << "  Maças: " << apple.get_quantity() << " de 5." << std::endl;
+		std::cout << "Vidas = " << cobrinha.get_life() << " | Maças: " << apple.get_quantity() << " de 5." << " | Pontos: " << cobrinha.get_score() <<  std::endl;
 		// Faz com que a calda ande com a cobra.
 		nivel.inserir_calda(cobrinha);
 
