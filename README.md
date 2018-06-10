@@ -51,7 +51,7 @@ Organização dos dados em githubs diferentes.
 [Snaze](https://github.com/henriquedavidufrn/snaze) -> Jogo completo e funcional, sem erros. Branch master.
 [Snaze_SFML](https://github.com/pabloufrn/snaze_sfml) -> Versão visual, pode conter alguns erros.
 
-#### A* Algorithm (utilização na IA)
+#### [A* Algorithm (utilização na IA)](https://www.geeksforgeeks.org/a-search-algorithm/)
 
 O algoritmo A* (ou A star) é um dos principais meios de se encontrar um determinado caminho utilizando vias.
 A sua utilização garante que seja possivel encontrar um caminho mesmo com obstáculos, como no jogo é necessário
