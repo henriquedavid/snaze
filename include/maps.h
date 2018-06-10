@@ -27,16 +27,19 @@ public:
 		}
 	}
 
+	/// Limpa todo o mapa, tornando ele inutilizavel.
 	void clear_all(){
 		x_total = 0;
 		y_total = 0;
 		mapa.clear();
 	}
 
+	/// Retorna qual o que há naquela posição.
 	char get_value(int x, int y){
 		return mapa[x][y];
 	}
 
+	/// Modifica o valor de x e de y.
 	void changexey(int x, int y){
 		x_total = x;
 		y_total = y;
@@ -90,6 +93,7 @@ public:
 		return std::make_pair(0,0);
 	}
 
+	/// Modifica a posição da cobra no mapa, de forma que ela sempre estará apontando para a direção a qual ela está andando.
 	void change_snaze_position(std::pair<int,int> coordenadas, Snaze & cobra){
 		int old_x = 0;
 		int old_y = 0;

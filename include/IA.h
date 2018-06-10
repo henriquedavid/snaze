@@ -1,3 +1,4 @@
+/// Configurações da IA.
 class IA{
 
 	using pPair = std::pair< uint, pair<uint,uint>>;
@@ -7,17 +8,19 @@ private:
 
 public:
 
+	/// Construtor padrão para a IA.
 	IA( Maps & map ){
 		x_def = map.return_x();
 		y_def = map.return_y();
 	}
 
+	/// Atualiza os valores de x e de y.
 	void atualiza_x_y(int x, int y){
 		x_def = x;
 		y_def = y;
 	}
 	
-
+	/// Struct para configurar o valores das células, assim como calcular a distância ManHattan.
 	struct cell
 	{
 
@@ -27,10 +30,13 @@ public:
 			 
 	};
 
+	/// Verifica se a posição é válida, se está dentro do mapa.
 	bool isValid( int row, int col )
-{		return (row >= 1) && (row < x_def) && (col >= 1) && (col < y_def);
+	{		
+		return (row >= 1) && (row < x_def) && (col >= 1) && (col < y_def);
 	}
 
+	/// Verifica se em uma determinada posição está livre.
 	bool isUnBlocked( Maps map, int x, int y ){
 		if(map.get_value(x,y) == ' ' || map.get_value(x,y) == 'o' )
 			return true;
@@ -38,6 +44,7 @@ public:
 			return false;
 	}
 
+	/// Verifica se em uma determinada posição é onde está a maçã.
 	bool isDestination( int row, int col, Pair dest ){
 		if( row == dest.first && col == dest.second )
 			return true;
@@ -45,12 +52,13 @@ public:
 			return false;
 	}
 
+	/// Calcula o valor de H.
 	double calculateHValue( int row, int col, Pair dest ){
 		return ((double) sqrt ((row-dest.first)*(row-dest.first) + (col-dest.second)*(col-dest.second)));
 	}
 	
+	/// Gera o percurso da IA.
 	void tracePath( cell cellDetails[][y_def],, Pair dest ){
-		printf("\nThe path is ");
 		int row = dest.first;
 		int col = dest.second;
 
@@ -68,29 +76,34 @@ public:
 		while(!Path.empty()){
 			pair<int,int> p = Path.top();
 			Path.pop();
-			printf("-> (%d,%d) ", p.first, p.second);
 		}
 
 		return;
 	}
 
+	/// Realiza A* Search, que foi o método escolhido para encontrar o caminho.
 	void aStarSearch( int grid[][y_def], Snaze & src, Apple & dest )
 	{
+		/// Obter as posições da cobra e da maçã.
 		std::pair<int,int> snazepos = src.get_position();
 		std::pair<int,int> applepos = dest.get_coordenadas();
 
+		/// Verificar se a posição da cobra é válida.		
 		if(isValid(snazepos.first, snazepos.second) == false)
 			return;
 
+		/// Verificar se a posição da maçã é válida.
 		if(isValid(applepos.first, applepos.second) == false)
 			return;
 
+		/// Verifica se a posição da maçã e da cobra está bloqueadas ou não.
 		if( isUnBlocked(grid, snazepos.first, snazepos.second) == false ||
 			isUnBlocked(grid, applepos.first, applepos.second) == false )
 		{
 			return;
 		}
 
+		/// Verifica se a cobra já está na posição da maçã.
 		if( isDestination( snazepos.first, snazepos.second, applepos))
 			return;
 

@@ -7,19 +7,16 @@ class Player{
 
 	public:
 
-
+		/// Movimento o qual a cobra pode fazer.
 		enum Movimento{
-			SOUTH,
 			NORTH,
-			EAST,
+			SOUTH,
+			EAST ,
 			WEST
 		};
 		
-		void next_move(Maps & mapa, Snaze & snaze, Apple & apple);
-
-		/*/// Realiza a movimentação da Snaze
-		void next_move(Snaze & cobra, Movimento movimento){
-
+		/// Atribui o movimento que o humano escolheu para a cobra.
+		void next_move(Snaze & cobra, Apple & apple, Movimento & movimento){
 
 			std::pair<int,int> posSnaze = cobra.get_position();
 			int x = posSnaze.first;
@@ -33,7 +30,8 @@ class Player{
 				cobra.set_position(std::make_pair(x,y+1));
 			else
 				cobra.set_position(std::make_pair(x,y-1));
-		}*/
+
+		}
 
 };
 
