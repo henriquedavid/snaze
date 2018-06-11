@@ -96,7 +96,6 @@ std::vector<Maps> readMaps( std::string name_input ){
 
 		// A condição de que esse mapa terminou é encontrar uma string com "-" no final do mapa
 		if( v == "-"){
-			std::cout << "TESTE" << std::endl;
 
 			mapa.add_objects(valores);
 
