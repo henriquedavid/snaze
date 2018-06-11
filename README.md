@@ -15,7 +15,7 @@ g++ -Wall -std=c++11 snaze.cpp -o snaze
 
 ou
 
-Abra a pasta principal (snaze) no terminal e execute:
+Abra a pasta principal (snaze) no terminal e execute (é necessário ter instalado o cmake):
 
 ```
 cmake -H. -Bbuild
