@@ -35,7 +35,7 @@ class AI : public Player
         
         /// Retorna qual deve ser a próxima posição da IA.
         Direction next_move( Level & lvl, Apple & app, Snaze & sna);
-        /// 
+        /// Anda pelo caminho livre.
         Direction goto_free_way( Level & lvl, Apple & app, Snaze & sna );
         
         

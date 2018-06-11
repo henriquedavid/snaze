@@ -192,7 +192,7 @@ bool AI::aStarSearch( Level & lvl, Apple & app, Snaze & sna )
                         openList.insert( std::make_pair(fNew,
                                                 std::make_pair(current_point.x, current_point.y)));
     
-                        // Update the details of this cell
+                        // Atualiza as informações da célula (bloco).
                         m_cellDetails[current_point.x][current_point.y].f = fNew;
                         m_cellDetails[current_point.x][current_point.y].g = gNew;
                         m_cellDetails[current_point.x][current_point.y].h = hNew;
@@ -229,22 +229,27 @@ Direction AI::goto_free_way( Level & lvl, Apple & app, Snaze & sna )
     
     for(c = 0; c < 4; ++c)
     {
-
+        // Obtem qual a orientação a ser seguida.
         Point c_ = points[c];
         
+        // Obtem as posições.
         int x_ = c_.x;
         int y_ = c_.y;
         
+        // Obtem o que há naquela posição do mapa.
         auto object = map.get_value(x_, y_);
         
+        // Verifica se não está bloqueado.
         if(object != '#' and object != '-')
         {
             auto dir = src*points[c];
             if(dir == !m_last_move and sna.get_tamanho() == 1)
                 continue;
 
+            // Calcula o novo valor de H.
             auto h = calculateHValue(points[c], app);
             
+            // Verifica se o menor valor de h é h ou min_h, se sim muda.
             if(h < min_h)
             {
                 min_h = h;
@@ -253,6 +258,7 @@ Direction AI::goto_free_way( Level & lvl, Apple & app, Snaze & sna )
         }
     }
 
+    // Muda o último movimento realizado.
     m_last_move = min_h_dir;
     
     // Retorna o último movimento.
@@ -296,6 +302,7 @@ Direction AI::next_move( Level & lvl, Apple & app, Snaze & sna)
         return dir;
     }
 
+    // Percorre a direção para ver se é possível percorrer.
     auto dir = goto_free_way(lvl, app, sna);
     return dir;
 }
