@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projeto Snaze: Código-Fonte de include/player.h</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projeto Snaze
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Localizar');
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">player.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d3/d62/player_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PLAYER_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PLAYER_H </span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="../../d2/d4b/classPlayer.html">    4</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/d4b/classPlayer.html">Player</a>{</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540">   11</a></span>&#160;        <span class="keyword">enum</span> <a class="code" href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540">Movimento</a>{</div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540ac425a85dbaf6c7179ac7eaf197be9836">   12</a></span>&#160;            <a class="code" href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540ac425a85dbaf6c7179ac7eaf197be9836">NORTH</a>,</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540ad5c325d71833b9f18c5ca206fd493c9d">   13</a></span>&#160;            <a class="code" href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540ad5c325d71833b9f18c5ca206fd493c9d">SOUTH</a>,</div><div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540ad2bc6fb170bdfa34f5c2d98913266f36">   14</a></span>&#160;            <a class="code" href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540ad2bc6fb170bdfa34f5c2d98913266f36">EAST</a> ,</div><div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540ae41e6aa0c1dbf9513571b0dbacd43b6d">   15</a></span>&#160;            <a class="code" href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540ae41e6aa0c1dbf9513571b0dbacd43b6d">WEST</a></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        };</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        </div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d2/d4b/classPlayer.html#a35fe8a9a291d0d700882f7cc6620172c">   19</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d2/d4b/classPlayer.html#a35fe8a9a291d0d700882f7cc6620172c">next_move</a>(<a class="code" href="../../dd/db9/classSnaze.html">Snaze</a> &amp; cobra, <a class="code" href="../../de/db6/classApple.html">Apple</a> &amp; apple, <a class="code" href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540">Movimento</a> &amp; movimento){</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            std::pair&lt;int,int&gt; posSnaze = cobra.<a class="code" href="../../dd/db9/classSnaze.html#a81158f1529cf56aedb109a449fbba85b">get_position</a>();</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordtype">int</span> x = posSnaze.first;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordtype">int</span> y = posSnaze.second;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">if</span>(movimento == <a class="code" href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540ac425a85dbaf6c7179ac7eaf197be9836">NORTH</a>)</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                cobra.<a class="code" href="../../dd/db9/classSnaze.html#aa044b29757e0177ec1b386ca4765d3fa">set_position</a>(std::make_pair(x+1,y));</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(movimento == <a class="code" href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540ad5c325d71833b9f18c5ca206fd493c9d">SOUTH</a>)</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                cobra.<a class="code" href="../../dd/db9/classSnaze.html#aa044b29757e0177ec1b386ca4765d3fa">set_position</a>(std::make_pair(x-1,y));</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>( movimento == <a class="code" href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540ad2bc6fb170bdfa34f5c2d98913266f36">EAST</a>)</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                cobra.<a class="code" href="../../dd/db9/classSnaze.html#aa044b29757e0177ec1b386ca4765d3fa">set_position</a>(std::make_pair(x,y+1));</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <span class="keywordflow">else</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                cobra.<a class="code" href="../../dd/db9/classSnaze.html#aa044b29757e0177ec1b386ca4765d3fa">set_position</a>(std::make_pair(x,y-1));</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="classSnaze_html"><div class="ttname"><a href="../../dd/db9/classSnaze.html">Snaze</a></div><div class="ttdoc">Controle sobre as informações da cobra. </div><div class="ttdef"><b>Definition:</b> snake.h:2</div></div>
+<div class="ttc" id="classPlayer_html_acbe38ac3cf005ce5b63f0bd4e8a12540ad2bc6fb170bdfa34f5c2d98913266f36"><div class="ttname"><a href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540ad2bc6fb170bdfa34f5c2d98913266f36">Player::EAST</a></div><div class="ttdef"><b>Definition:</b> player.h:14</div></div>
+<div class="ttc" id="classPlayer_html_acbe38ac3cf005ce5b63f0bd4e8a12540"><div class="ttname"><a href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540">Player::Movimento</a></div><div class="ttdeci">Movimento</div><div class="ttdoc">Movimento o qual a cobra pode fazer. </div><div class="ttdef"><b>Definition:</b> player.h:11</div></div>
+<div class="ttc" id="classSnaze_html_a81158f1529cf56aedb109a449fbba85b"><div class="ttname"><a href="../../dd/db9/classSnaze.html#a81158f1529cf56aedb109a449fbba85b">Snaze::get_position</a></div><div class="ttdeci">std::pair&lt; int, int &gt; get_position()</div><div class="ttdoc">Retorna a posição da cobra. </div><div class="ttdef"><b>Definition:</b> snake.h:36</div></div>
+<div class="ttc" id="classPlayer_html_acbe38ac3cf005ce5b63f0bd4e8a12540ad5c325d71833b9f18c5ca206fd493c9d"><div class="ttname"><a href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540ad5c325d71833b9f18c5ca206fd493c9d">Player::SOUTH</a></div><div class="ttdef"><b>Definition:</b> player.h:13</div></div>
+<div class="ttc" id="classSnaze_html_aa044b29757e0177ec1b386ca4765d3fa"><div class="ttname"><a href="../../dd/db9/classSnaze.html#aa044b29757e0177ec1b386ca4765d3fa">Snaze::set_position</a></div><div class="ttdeci">void set_position(std::pair&lt; int, int &gt; pos)</div><div class="ttdoc">Modifica a posição da cobra para uma posição definida. </div><div class="ttdef"><b>Definition:</b> snake.h:26</div></div>
+<div class="ttc" id="classPlayer_html_a35fe8a9a291d0d700882f7cc6620172c"><div class="ttname"><a href="../../d2/d4b/classPlayer.html#a35fe8a9a291d0d700882f7cc6620172c">Player::next_move</a></div><div class="ttdeci">void next_move(Snaze &amp;cobra, Apple &amp;apple, Movimento &amp;movimento)</div><div class="ttdoc">Atribui o movimento que o humano escolheu para a cobra. </div><div class="ttdef"><b>Definition:</b> player.h:19</div></div>
+<div class="ttc" id="classPlayer_html_acbe38ac3cf005ce5b63f0bd4e8a12540ae41e6aa0c1dbf9513571b0dbacd43b6d"><div class="ttname"><a href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540ae41e6aa0c1dbf9513571b0dbacd43b6d">Player::WEST</a></div><div class="ttdef"><b>Definition:</b> player.h:15</div></div>
+<div class="ttc" id="classPlayer_html"><div class="ttname"><a href="../../d2/d4b/classPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> player.h:4</div></div>
+<div class="ttc" id="classPlayer_html_acbe38ac3cf005ce5b63f0bd4e8a12540ac425a85dbaf6c7179ac7eaf197be9836"><div class="ttname"><a href="../../d2/d4b/classPlayer.html#acbe38ac3cf005ce5b63f0bd4e8a12540ac425a85dbaf6c7179ac7eaf197be9836">Player::NORTH</a></div><div class="ttdef"><b>Definition:</b> player.h:12</div></div>
+<div class="ttc" id="classApple_html"><div class="ttname"><a href="../../de/db6/classApple.html">Apple</a></div><div class="ttdoc">Classe que controla todas as informações da maçã. </div><div class="ttdef"><b>Definition:</b> apple.h:2</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

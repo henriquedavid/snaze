@@ -1,0 +1,19 @@
+digraph "SnazeGame"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="SnazeGame",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" apple" ];
+  Node2 [label="Apple",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/db6/classApple.html",tooltip="Classe que controla todas as informações da maçã. "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ia" ];
+  Node3 [label="AI",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/df5/classAI.html",tooltip="Classe que controla a IA de forma a seguir o algoritmo A*. "];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Player",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d4b/classPlayer.html"];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" player" ];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" nivel" ];
+  Node5 [label="Level",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d9d/classLevel.html",tooltip="Configura todas as informações ocorridas nos níveis. "];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" cobrinha" ];
+  Node6 [label="Snaze",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/db9/classSnaze.html",tooltip="Controle sobre as informações da cobra. "];
+  Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" tamanho" ];
+  Node7 [label="sc::vector\< std::pair\l\< int, int \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/db6/classsc_1_1vector.html"];
+}

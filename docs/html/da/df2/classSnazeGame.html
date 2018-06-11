@@ -1,0 +1,602 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projeto Snaze: Referência à classe SnazeGame</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projeto Snaze
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Localizar');
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Tipos Públicos</a> &#124;
+<a href="#pub-methods">Membros públicos</a> &#124;
+<a href="#pri-attribs">Atributos Privados</a> &#124;
+<a href="../../da/dea/classSnazeGame-members.html">Mostrar lista completa dos membros</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência à classe SnazeGame</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d2/dd5/game_8h_source.html">game.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de colaboração para SnazeGame:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d3f/classSnazeGame__coll__graph.png" border="0" usemap="#SnazeGame_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a href="../../graph_legend.html">legenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Tipos Públicos</h2></td></tr>
+<tr class="memitem:a10ea6cb420042fdbfcade4f0261af5c1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1">Estados</a> { <br />
+&#160;&#160;<a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1afc64d93c34fbd8df2d79fefbb8513c8f">START</a> = 0, 
+<a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1a96daa8d1688cbf422ad289b82e3e1d49">RUNNING</a>, 
+<a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1a45fe6e347b32aabd0854ab91e434b633">PROCESSING_EVENTS</a>, 
+<a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1a30387f75fa4f94a804d1010ab5784276">UPDATING</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1af7314565e55dcf48d180288a376dccec">RENDERING</a>, 
+<a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1ac5e341ca42210bd95d5cf25621c7a613">APPLE_OVER</a>, 
+<a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1ad89c12ed069a00f65612ea3dc9f8a698">LEVEL_UP</a>, 
+<a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1a86eedf6a4b84c34f610f2a5c9e65a3a5">DEAD</a>, 
+<br />
+&#160;&#160;<a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1a25d7611aaf59f55bef9266b861ea7208">WON</a>, 
+<a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1a1d07a70b0238ff34f848549583262ee9">GAME_OVER</a>
+<br />
+ }<tr class="memdesc:a10ea6cb420042fdbfcade4f0261af5c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estados possíveis do jogo.  <a href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1">Mais...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:a10ea6cb420042fdbfcade4f0261af5c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Membros públicos</h2></td></tr>
+<tr class="memitem:ac104ea6197c75780b2e0f2da3a293caa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#ac104ea6197c75780b2e0f2da3a293caa">initialize_game</a> (std::string inputdata)</td></tr>
+<tr class="memdesc:ac104ea6197c75780b2e0f2da3a293caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o jogo, configurando todas as classes, como a maça, a cobra e o mapa (leitura).  <a href="#ac104ea6197c75780b2e0f2da3a293caa">Mais...</a><br /></td></tr>
+<tr class="separator:ac104ea6197c75780b2e0f2da3a293caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a9f2f626de17c2e592a579b15e1592f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#a8a9f2f626de17c2e592a579b15e1592f">process_events</a> ()</td></tr>
+<tr class="memdesc:a8a9f2f626de17c2e592a579b15e1592f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processa todas as ações executas pelo jogador, ou pela IA.  <a href="#a8a9f2f626de17c2e592a579b15e1592f">Mais...</a><br /></td></tr>
+<tr class="separator:a8a9f2f626de17c2e592a579b15e1592f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a288103ac611e57f980d595bca35e399a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#a288103ac611e57f980d595bca35e399a">update</a> ()</td></tr>
+<tr class="memdesc:a288103ac611e57f980d595bca35e399a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atualiza as informações no mapa, como se o usuário passou de nível, mordeu a maça ou houve colisão.  <a href="#a288103ac611e57f980d595bca35e399a">Mais...</a><br /></td></tr>
+<tr class="separator:a288103ac611e57f980d595bca35e399a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67f9c90252d094a048b1cda89f36b3a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#a67f9c90252d094a048b1cda89f36b3a0">render</a> ()</td></tr>
+<tr class="memdesc:a67f9c90252d094a048b1cda89f36b3a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gera a situação do jogo para o usuário.  <a href="#a67f9c90252d094a048b1cda89f36b3a0">Mais...</a><br /></td></tr>
+<tr class="separator:a67f9c90252d094a048b1cda89f36b3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5692397592a88a256071660b8bfe5231"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#a5692397592a88a256071660b8bfe5231">game_over</a> ()</td></tr>
+<tr class="memdesc:a5692397592a88a256071660b8bfe5231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se é possível que o jogo continue.  <a href="#a5692397592a88a256071660b8bfe5231">Mais...</a><br /></td></tr>
+<tr class="separator:a5692397592a88a256071660b8bfe5231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b3002a7863a8c3f6fb5d6689ebf400a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1">Estados</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#a9b3002a7863a8c3f6fb5d6689ebf400a">get_state</a> ()</td></tr>
+<tr class="memdesc:a9b3002a7863a8c3f6fb5d6689ebf400a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o estado do jogo.  <a href="#a9b3002a7863a8c3f6fb5d6689ebf400a">Mais...</a><br /></td></tr>
+<tr class="separator:a9b3002a7863a8c3f6fb5d6689ebf400a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a829f1052a228d6f8bc31fb064695389e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#a829f1052a228d6f8bc31fb064695389e">colisao</a> ()</td></tr>
+<tr class="memdesc:a829f1052a228d6f8bc31fb064695389e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se ocorreu alguma colisão.  <a href="#a829f1052a228d6f8bc31fb064695389e">Mais...</a><br /></td></tr>
+<tr class="separator:a829f1052a228d6f8bc31fb064695389e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atributos Privados</h2></td></tr>
+<tr class="memitem:a0bae7bc31a288d55714d90f574cc8bd1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../da/dbb/classMaps.html">Maps</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#a0bae7bc31a288d55714d90f574cc8bd1">mapas</a></td></tr>
+<tr class="memdesc:a0bae7bc31a288d55714d90f574cc8bd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Armazena todos os mapas recebidos do arquivo externo.  <a href="#a0bae7bc31a288d55714d90f574cc8bd1">Mais...</a><br /></td></tr>
+<tr class="separator:a0bae7bc31a288d55714d90f574cc8bd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86f1f0364ec7e8fe6559418236ea7e04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/db9/classSnaze.html">Snaze</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#a86f1f0364ec7e8fe6559418236ea7e04">cobrinha</a></td></tr>
+<tr class="memdesc:a86f1f0364ec7e8fe6559418236ea7e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cobra.  <a href="#a86f1f0364ec7e8fe6559418236ea7e04">Mais...</a><br /></td></tr>
+<tr class="separator:a86f1f0364ec7e8fe6559418236ea7e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5940b3ae2bdfe8ad2c38d8144a77e9b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d9d/classLevel.html">Level</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#a5940b3ae2bdfe8ad2c38d8144a77e9b2">nivel</a></td></tr>
+<tr class="memdesc:a5940b3ae2bdfe8ad2c38d8144a77e9b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Níveis.  <a href="#a5940b3ae2bdfe8ad2c38d8144a77e9b2">Mais...</a><br /></td></tr>
+<tr class="separator:a5940b3ae2bdfe8ad2c38d8144a77e9b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0305588eeb6fee59039ba51df01ebc2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1">Estados</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#aa0305588eeb6fee59039ba51df01ebc2">state</a></td></tr>
+<tr class="memdesc:aa0305588eeb6fee59039ba51df01ebc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estado do jogo.  <a href="#aa0305588eeb6fee59039ba51df01ebc2">Mais...</a><br /></td></tr>
+<tr class="separator:aa0305588eeb6fee59039ba51df01ebc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61268a99fe9578f17b7b6565349aa5a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d4b/classPlayer.html">Player</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#a61268a99fe9578f17b7b6565349aa5a9">player</a></td></tr>
+<tr class="memdesc:a61268a99fe9578f17b7b6565349aa5a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Jogador.  <a href="#a61268a99fe9578f17b7b6565349aa5a9">Mais...</a><br /></td></tr>
+<tr class="separator:a61268a99fe9578f17b7b6565349aa5a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a346b1696a5d5807c012e4b24bbba1e8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/db6/classApple.html">Apple</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#a346b1696a5d5807c012e4b24bbba1e8b">apple</a></td></tr>
+<tr class="memdesc:a346b1696a5d5807c012e4b24bbba1e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maça.  <a href="#a346b1696a5d5807c012e4b24bbba1e8b">Mais...</a><br /></td></tr>
+<tr class="separator:a346b1696a5d5807c012e4b24bbba1e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaf01e03323aed1a69936416e5aa44db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/df5/classAI.html">AI</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#adaf01e03323aed1a69936416e5aa44db">ia</a></td></tr>
+<tr class="memdesc:adaf01e03323aed1a69936416e5aa44db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcionamento da IA.  <a href="#adaf01e03323aed1a69936416e5aa44db">Mais...</a><br /></td></tr>
+<tr class="separator:adaf01e03323aed1a69936416e5aa44db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a394c65f61b0cf9c4a5fc5a24d0b5b4f4"><td class="memItemLeft" align="right" valign="top">std::chrono::steady_clock::time_point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#a394c65f61b0cf9c4a5fc5a24d0b5b4f4">m_clock</a></td></tr>
+<tr class="memdesc:a394c65f61b0cf9c4a5fc5a24d0b5b4f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controle do tempo antes do próximo movimento da IA.  <a href="#a394c65f61b0cf9c4a5fc5a24d0b5b4f4">Mais...</a><br /></td></tr>
+<tr class="separator:a394c65f61b0cf9c4a5fc5a24d0b5b4f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accfde443b3ec29be803b24cda85fd4fe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df2/classSnazeGame.html#accfde443b3ec29be803b24cda85fd4fe">player_Human</a> = false</td></tr>
+<tr class="separator:accfde443b3ec29be803b24cda85fd4fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentação das enumerações</h2>
+<a id="a10ea6cb420042fdbfcade4f0261af5c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10ea6cb420042fdbfcade4f0261af5c1">&#9670;&nbsp;</a></span>Estados</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1">SnazeGame::Estados</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estados possíveis do jogo. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumerações</th></tr><tr><td class="fieldname"><a id="a10ea6cb420042fdbfcade4f0261af5c1afc64d93c34fbd8df2d79fefbb8513c8f"></a>START&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a10ea6cb420042fdbfcade4f0261af5c1a96daa8d1688cbf422ad289b82e3e1d49"></a>RUNNING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a10ea6cb420042fdbfcade4f0261af5c1a45fe6e347b32aabd0854ab91e434b633"></a>PROCESSING_EVENTS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a10ea6cb420042fdbfcade4f0261af5c1a30387f75fa4f94a804d1010ab5784276"></a>UPDATING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a10ea6cb420042fdbfcade4f0261af5c1af7314565e55dcf48d180288a376dccec"></a>RENDERING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a10ea6cb420042fdbfcade4f0261af5c1ac5e341ca42210bd95d5cf25621c7a613"></a>APPLE_OVER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a10ea6cb420042fdbfcade4f0261af5c1ad89c12ed069a00f65612ea3dc9f8a698"></a>LEVEL_UP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a10ea6cb420042fdbfcade4f0261af5c1a86eedf6a4b84c34f610f2a5c9e65a3a5"></a>DEAD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a10ea6cb420042fdbfcade4f0261af5c1a25d7611aaf59f55bef9266b861ea7208"></a>WON&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a10ea6cb420042fdbfcade4f0261af5c1a1d07a70b0238ff34f848549583262ee9"></a>GAME_OVER&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos métodos</h2>
+<a id="a829f1052a228d6f8bc31fb064695389e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a829f1052a228d6f8bc31fb064695389e">&#9670;&nbsp;</a></span>colisao()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SnazeGame::colisao </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verifica se ocorreu alguma colisão. </p>
+
+</div>
+</div>
+<a id="a5692397592a88a256071660b8bfe5231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5692397592a88a256071660b8bfe5231">&#9670;&nbsp;</a></span>game_over()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SnazeGame::game_over </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Verifica se é possível que o jogo continue. </p>
+
+</div>
+</div>
+<a id="a9b3002a7863a8c3f6fb5d6689ebf400a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b3002a7863a8c3f6fb5d6689ebf400a">&#9670;&nbsp;</a></span>get_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1">Estados</a> SnazeGame::get_state </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retorna o estado do jogo. </p>
+
+</div>
+</div>
+<a id="ac104ea6197c75780b2e0f2da3a293caa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac104ea6197c75780b2e0f2da3a293caa">&#9670;&nbsp;</a></span>initialize_game()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SnazeGame::initialize_game </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>inputdata</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inicializa o jogo, configurando todas as classes, como a maça, a cobra e o mapa (leitura). </p>
+<p>Coloca o estado do jogo para iniciado. </p>
+
+</div>
+</div>
+<a id="a8a9f2f626de17c2e592a579b15e1592f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a9f2f626de17c2e592a579b15e1592f">&#9670;&nbsp;</a></span>process_events()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SnazeGame::process_events </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Processa todas as ações executas pelo jogador, ou pela IA. </p>
+<p>Recebe o tempo atual. </p>
+
+</div>
+</div>
+<a id="a67f9c90252d094a048b1cda89f36b3a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67f9c90252d094a048b1cda89f36b3a0">&#9670;&nbsp;</a></span>render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SnazeGame::render </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gera a situação do jogo para o usuário. </p>
+
+</div>
+</div>
+<a id="a288103ac611e57f980d595bca35e399a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a288103ac611e57f980d595bca35e399a">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SnazeGame::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Atualiza as informações no mapa, como se o usuário passou de nível, mordeu a maça ou houve colisão. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentação dos dados membro</h2>
+<a id="a346b1696a5d5807c012e4b24bbba1e8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a346b1696a5d5807c012e4b24bbba1e8b">&#9670;&nbsp;</a></span>apple</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/db6/classApple.html">Apple</a> SnazeGame::apple</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Maça. </p>
+
+</div>
+</div>
+<a id="a86f1f0364ec7e8fe6559418236ea7e04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86f1f0364ec7e8fe6559418236ea7e04">&#9670;&nbsp;</a></span>cobrinha</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/db9/classSnaze.html">Snaze</a> SnazeGame::cobrinha</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cobra. </p>
+
+</div>
+</div>
+<a id="adaf01e03323aed1a69936416e5aa44db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adaf01e03323aed1a69936416e5aa44db">&#9670;&nbsp;</a></span>ia</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/df5/classAI.html">AI</a> SnazeGame::ia</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Funcionamento da IA. </p>
+
+</div>
+</div>
+<a id="a394c65f61b0cf9c4a5fc5a24d0b5b4f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a394c65f61b0cf9c4a5fc5a24d0b5b4f4">&#9670;&nbsp;</a></span>m_clock</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::chrono::steady_clock::time_point SnazeGame::m_clock</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Controle do tempo antes do próximo movimento da IA. </p>
+
+</div>
+</div>
+<a id="a0bae7bc31a288d55714d90f574cc8bd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bae7bc31a288d55714d90f574cc8bd1">&#9670;&nbsp;</a></span>mapas</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../da/dbb/classMaps.html">Maps</a>&gt; SnazeGame::mapas</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Armazena todos os mapas recebidos do arquivo externo. </p>
+
+</div>
+</div>
+<a id="a5940b3ae2bdfe8ad2c38d8144a77e9b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5940b3ae2bdfe8ad2c38d8144a77e9b2">&#9670;&nbsp;</a></span>nivel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d9d/classLevel.html">Level</a> SnazeGame::nivel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Níveis. </p>
+
+</div>
+</div>
+<a id="a61268a99fe9578f17b7b6565349aa5a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61268a99fe9578f17b7b6565349aa5a9">&#9670;&nbsp;</a></span>player</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d2/d4b/classPlayer.html">Player</a> SnazeGame::player</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Jogador. </p>
+
+</div>
+</div>
+<a id="accfde443b3ec29be803b24cda85fd4fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accfde443b3ec29be803b24cda85fd4fe">&#9670;&nbsp;</a></span>player_Human</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SnazeGame::player_Human = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Controle de qual tipo de jogador deve ser executado. true = jogador humano ; false = IA. </p>
+
+</div>
+</div>
+<a id="aa0305588eeb6fee59039ba51df01ebc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0305588eeb6fee59039ba51df01ebc2">&#9670;&nbsp;</a></span>state</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1">Estados</a> SnazeGame::state</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Estado do jogo. </p>
+
+</div>
+</div>
+<hr/>A documentação para esta classe foi gerada a partir do seguinte ficheiro:<ul>
+<li>include/<a class="el" href="../../d2/dd5/game_8h_source.html">game.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

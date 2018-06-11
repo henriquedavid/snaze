@@ -1,0 +1,224 @@
+\hypertarget{classAI}{}\section{Referência à classe AI}
+\label{classAI}\index{AI@{AI}}
+
+
+Classe que controla a IA de forma a seguir o algoritmo A$\ast$.  
+
+
+
+
+{\ttfamily \#include $<$ai.\+hpp$>$}
+
+
+
+Diagrama de heranças da classe AI
+% FIG 0
+
+
+Diagrama de colaboração para AI\+:
+% FIG 1
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \hyperlink{classAI_a53dddd1401e27e826362de53d82b3f50}{next\+\_\+move} (\hyperlink{classLevel}{Level} \&lvl, \hyperlink{classApple}{Apple} \&app, \hyperlink{classSnaze}{Snaze} \&sna)
+\begin{DoxyCompactList}\small\item\em Retorna qual deve ser a próxima posição da IA. \end{DoxyCompactList}\item 
+\hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \hyperlink{classAI_ab74866f1d674f96d1a7ae37b6b677982}{goto\+\_\+free\+\_\+way} (\hyperlink{classLevel}{Level} \&lvl, \hyperlink{classApple}{Apple} \&app, \hyperlink{classSnaze}{Snaze} \&sna)
+\begin{DoxyCompactList}\small\item\em Anda pelo caminho livre. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Membros privados}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classAI_a1680ae2c44e5cb60bf0c4f9e50892e46}{is\+Valid} (\hyperlink{structPoint}{Point} p, \hyperlink{classLevel}{Level} \&niv)
+\begin{DoxyCompactList}\small\item\em Verifica se em uma determinada posição é válida. \end{DoxyCompactList}\item 
+bool \hyperlink{classAI_a5585946408be2dfe1111aa2bfc8b6869}{is\+Un\+Blocked} (\hyperlink{structPoint}{Point} p, \hyperlink{classLevel}{Level} \&niv)
+\begin{DoxyCompactList}\small\item\em Verifica se não possui nenhuma parede ou calda em determinada posição. \end{DoxyCompactList}\item 
+bool \hyperlink{classAI_a6b37ac577106682d3e8aa9a19b9ca9cc}{is\+Destination} (\hyperlink{structPoint}{Point} p, \hyperlink{classApple}{Apple} \&apple)
+\begin{DoxyCompactList}\small\item\em Verifica se é onde está a maçã. \end{DoxyCompactList}\item 
+double \hyperlink{classAI_a8984d85c80379ff81776016bfad5101f}{calculate\+H\+Value} (\hyperlink{structPoint}{Point} p, \hyperlink{classApple}{Apple} \&apple)
+\begin{DoxyCompactList}\small\item\em Calcula o valor de \textquotesingle{}h\textquotesingle{} de forma que seja um bom caminho. \end{DoxyCompactList}\item 
+void \hyperlink{classAI_a4cba0636ec1133d67a7cb77284beebe5}{trace\+Path} (\hyperlink{classApple}{Apple} \&apple)
+\begin{DoxyCompactList}\small\item\em Traça o caminho do ponto de partida ao destino. \end{DoxyCompactList}\item 
+bool \hyperlink{classAI_a9c11e5ad4d67d2afd2b1300189f96faf}{a\+Star\+Search} (\hyperlink{classLevel}{Level} \&lvl, \hyperlink{classApple}{Apple} \&app, \hyperlink{classSnaze}{Snaze} \&sna)
+\begin{DoxyCompactList}\small\item\em Função para encontrar o caminho mais curto entre a origem até o destino, de acordo com o algoritmo A$\ast$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{classLevel}{Level} $>$ \hyperlink{classAI_af93a09195c1d191c18db701128c57fc3}{m\+\_\+level}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classLevel}{Level} atual. \end{DoxyCompactList}\item 
+std\+::stack$<$ \hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} $>$ \hyperlink{classAI_a9d3bece93820828040d6193957da4343}{m\+\_\+path}
+\begin{DoxyCompactList}\small\item\em Quais serão os caminhos percorridos,. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ \hyperlink{structCell}{Cell} $>$ $>$ \hyperlink{classAI_a76b2682dd63290bcd1e095acc8d67327}{m\+\_\+cell\+Details}
+\begin{DoxyCompactList}\small\item\em Detalhes de cada célula, o que há nelas. \end{DoxyCompactList}\item 
+std\+::stack$<$ std\+::pair$<$ int, int $>$ $>$ \hyperlink{classAI_a9756fc935cc86172232373d70b86aa0c}{Path}
+\begin{DoxyCompactList}\small\item\em O caminho final. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \hyperlink{classAI_a7ba53175395b1ee06740384962980ea3}{m\+\_\+goal}
+\begin{DoxyCompactList}\small\item\em O ponto de destino. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \hyperlink{classAI_aad8433aa1c9caa89539d64ece68326b7}{m\+\_\+critical\+\_\+point}
+\begin{DoxyCompactList}\small\item\em Pontos que não é possível percorrer. \end{DoxyCompactList}\item 
+\hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \hyperlink{classAI_a397965e2d5b40c0081711e6e70cab343}{m\+\_\+last\+\_\+move} = \hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa5dbc98dcc983a70728bd082d1a47546e}{Direction\+::S}
+\begin{DoxyCompactList}\small\item\em Último movimento. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Outros membros herdados}
+
+
+\subsection{Descrição detalhada}
+Classe que controla a IA de forma a seguir o algoritmo A$\ast$. 
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classAI_a9c11e5ad4d67d2afd2b1300189f96faf}\label{classAI_a9c11e5ad4d67d2afd2b1300189f96faf}} 
+\index{AI@{AI}!a\+Star\+Search@{a\+Star\+Search}}
+\index{a\+Star\+Search@{a\+Star\+Search}!AI@{AI}}
+\subsubsection{\texorpdfstring{a\+Star\+Search()}{aStarSearch()}}
+{\footnotesize\ttfamily bool A\+I\+::a\+Star\+Search (\begin{DoxyParamCaption}\item[{\hyperlink{classLevel}{Level} \&}]{lvl,  }\item[{\hyperlink{classApple}{Apple} \&}]{app,  }\item[{\hyperlink{classSnaze}{Snaze} \&}]{sna }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Função para encontrar o caminho mais curto entre a origem até o destino, de acordo com o algoritmo A$\ast$. 
+
+Run A$\ast$ Search Algorithm. \mbox{\Hypertarget{classAI_a8984d85c80379ff81776016bfad5101f}\label{classAI_a8984d85c80379ff81776016bfad5101f}} 
+\index{AI@{AI}!calculate\+H\+Value@{calculate\+H\+Value}}
+\index{calculate\+H\+Value@{calculate\+H\+Value}!AI@{AI}}
+\subsubsection{\texorpdfstring{calculate\+H\+Value()}{calculateHValue()}}
+{\footnotesize\ttfamily double A\+I\+::calculate\+H\+Value (\begin{DoxyParamCaption}\item[{\hyperlink{structPoint}{Point}}]{p,  }\item[{\hyperlink{classApple}{Apple} \&}]{apple }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calcula o valor de \textquotesingle{}h\textquotesingle{} de forma que seja um bom caminho. 
+
+Retorna o valor utilizando a formula da distância. \mbox{\Hypertarget{classAI_ab74866f1d674f96d1a7ae37b6b677982}\label{classAI_ab74866f1d674f96d1a7ae37b6b677982}} 
+\index{AI@{AI}!goto\+\_\+free\+\_\+way@{goto\+\_\+free\+\_\+way}}
+\index{goto\+\_\+free\+\_\+way@{goto\+\_\+free\+\_\+way}!AI@{AI}}
+\subsubsection{\texorpdfstring{goto\+\_\+free\+\_\+way()}{goto\_free\_way()}}
+{\footnotesize\ttfamily \hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} A\+I\+::goto\+\_\+free\+\_\+way (\begin{DoxyParamCaption}\item[{\hyperlink{classLevel}{Level} \&}]{lvl,  }\item[{\hyperlink{classApple}{Apple} \&}]{app,  }\item[{\hyperlink{classSnaze}{Snaze} \&}]{sna }\end{DoxyParamCaption})}
+
+
+
+Anda pelo caminho livre. 
+
+\mbox{\Hypertarget{classAI_a6b37ac577106682d3e8aa9a19b9ca9cc}\label{classAI_a6b37ac577106682d3e8aa9a19b9ca9cc}} 
+\index{AI@{AI}!is\+Destination@{is\+Destination}}
+\index{is\+Destination@{is\+Destination}!AI@{AI}}
+\subsubsection{\texorpdfstring{is\+Destination()}{isDestination()}}
+{\footnotesize\ttfamily bool A\+I\+::is\+Destination (\begin{DoxyParamCaption}\item[{\hyperlink{structPoint}{Point}}]{p,  }\item[{\hyperlink{classApple}{Apple} \&}]{apple }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Verifica se é onde está a maçã. 
+
+\mbox{\Hypertarget{classAI_a5585946408be2dfe1111aa2bfc8b6869}\label{classAI_a5585946408be2dfe1111aa2bfc8b6869}} 
+\index{AI@{AI}!is\+Un\+Blocked@{is\+Un\+Blocked}}
+\index{is\+Un\+Blocked@{is\+Un\+Blocked}!AI@{AI}}
+\subsubsection{\texorpdfstring{is\+Un\+Blocked()}{isUnBlocked()}}
+{\footnotesize\ttfamily bool A\+I\+::is\+Un\+Blocked (\begin{DoxyParamCaption}\item[{\hyperlink{structPoint}{Point}}]{p,  }\item[{\hyperlink{classLevel}{Level} \&}]{niv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Verifica se não possui nenhuma parede ou calda em determinada posição. 
+
+\mbox{\Hypertarget{classAI_a1680ae2c44e5cb60bf0c4f9e50892e46}\label{classAI_a1680ae2c44e5cb60bf0c4f9e50892e46}} 
+\index{AI@{AI}!is\+Valid@{is\+Valid}}
+\index{is\+Valid@{is\+Valid}!AI@{AI}}
+\subsubsection{\texorpdfstring{is\+Valid()}{isValid()}}
+{\footnotesize\ttfamily bool A\+I\+::is\+Valid (\begin{DoxyParamCaption}\item[{\hyperlink{structPoint}{Point}}]{p,  }\item[{\hyperlink{classLevel}{Level} \&}]{niv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Verifica se em uma determinada posição é válida. 
+
+\mbox{\Hypertarget{classAI_a53dddd1401e27e826362de53d82b3f50}\label{classAI_a53dddd1401e27e826362de53d82b3f50}} 
+\index{AI@{AI}!next\+\_\+move@{next\+\_\+move}}
+\index{next\+\_\+move@{next\+\_\+move}!AI@{AI}}
+\subsubsection{\texorpdfstring{next\+\_\+move()}{next\_move()}}
+{\footnotesize\ttfamily \hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} A\+I\+::next\+\_\+move (\begin{DoxyParamCaption}\item[{\hyperlink{classLevel}{Level} \&}]{lvl,  }\item[{\hyperlink{classApple}{Apple} \&}]{app,  }\item[{\hyperlink{classSnaze}{Snaze} \&}]{sna }\end{DoxyParamCaption})}
+
+
+
+Retorna qual deve ser a próxima posição da IA. 
+
+\mbox{\Hypertarget{classAI_a4cba0636ec1133d67a7cb77284beebe5}\label{classAI_a4cba0636ec1133d67a7cb77284beebe5}} 
+\index{AI@{AI}!trace\+Path@{trace\+Path}}
+\index{trace\+Path@{trace\+Path}!AI@{AI}}
+\subsubsection{\texorpdfstring{trace\+Path()}{tracePath()}}
+{\footnotesize\ttfamily void A\+I\+::trace\+Path (\begin{DoxyParamCaption}\item[{\hyperlink{classApple}{Apple} \&}]{apple }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Traça o caminho do ponto de partida ao destino. 
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classAI_a76b2682dd63290bcd1e095acc8d67327}\label{classAI_a76b2682dd63290bcd1e095acc8d67327}} 
+\index{AI@{AI}!m\+\_\+cell\+Details@{m\+\_\+cell\+Details}}
+\index{m\+\_\+cell\+Details@{m\+\_\+cell\+Details}!AI@{AI}}
+\subsubsection{\texorpdfstring{m\+\_\+cell\+Details}{m\_cellDetails}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$\hyperlink{structCell}{Cell}$>$ $>$ A\+I\+::m\+\_\+cell\+Details\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Detalhes de cada célula, o que há nelas. 
+
+\mbox{\Hypertarget{classAI_aad8433aa1c9caa89539d64ece68326b7}\label{classAI_aad8433aa1c9caa89539d64ece68326b7}} 
+\index{AI@{AI}!m\+\_\+critical\+\_\+point@{m\+\_\+critical\+\_\+point}}
+\index{m\+\_\+critical\+\_\+point@{m\+\_\+critical\+\_\+point}!AI@{AI}}
+\subsubsection{\texorpdfstring{m\+\_\+critical\+\_\+point}{m\_critical\_point}}
+{\footnotesize\ttfamily std\+::pair$<$int,int$>$ A\+I\+::m\+\_\+critical\+\_\+point\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pontos que não é possível percorrer. 
+
+\mbox{\Hypertarget{classAI_a7ba53175395b1ee06740384962980ea3}\label{classAI_a7ba53175395b1ee06740384962980ea3}} 
+\index{AI@{AI}!m\+\_\+goal@{m\+\_\+goal}}
+\index{m\+\_\+goal@{m\+\_\+goal}!AI@{AI}}
+\subsubsection{\texorpdfstring{m\+\_\+goal}{m\_goal}}
+{\footnotesize\ttfamily std\+::pair$<$int,int$>$ A\+I\+::m\+\_\+goal\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+O ponto de destino. 
+
+\mbox{\Hypertarget{classAI_a397965e2d5b40c0081711e6e70cab343}\label{classAI_a397965e2d5b40c0081711e6e70cab343}} 
+\index{AI@{AI}!m\+\_\+last\+\_\+move@{m\+\_\+last\+\_\+move}}
+\index{m\+\_\+last\+\_\+move@{m\+\_\+last\+\_\+move}!AI@{AI}}
+\subsubsection{\texorpdfstring{m\+\_\+last\+\_\+move}{m\_last\_move}}
+{\footnotesize\ttfamily \hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} A\+I\+::m\+\_\+last\+\_\+move = \hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa5dbc98dcc983a70728bd082d1a47546e}{Direction\+::S}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Último movimento. 
+
+\mbox{\Hypertarget{classAI_af93a09195c1d191c18db701128c57fc3}\label{classAI_af93a09195c1d191c18db701128c57fc3}} 
+\index{AI@{AI}!m\+\_\+level@{m\+\_\+level}}
+\index{m\+\_\+level@{m\+\_\+level}!AI@{AI}}
+\subsubsection{\texorpdfstring{m\+\_\+level}{m\_level}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{classLevel}{Level} $>$ A\+I\+::m\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{classLevel}{Level} atual. 
+
+\mbox{\Hypertarget{classAI_a9d3bece93820828040d6193957da4343}\label{classAI_a9d3bece93820828040d6193957da4343}} 
+\index{AI@{AI}!m\+\_\+path@{m\+\_\+path}}
+\index{m\+\_\+path@{m\+\_\+path}!AI@{AI}}
+\subsubsection{\texorpdfstring{m\+\_\+path}{m\_path}}
+{\footnotesize\ttfamily std\+::stack$<$\hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}$>$ A\+I\+::m\+\_\+path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Quais serão os caminhos percorridos,. 
+
+\mbox{\Hypertarget{classAI_a9756fc935cc86172232373d70b86aa0c}\label{classAI_a9756fc935cc86172232373d70b86aa0c}} 
+\index{AI@{AI}!Path@{Path}}
+\index{Path@{Path}!AI@{AI}}
+\subsubsection{\texorpdfstring{Path}{Path}}
+{\footnotesize\ttfamily std\+::stack$<$std\+::pair$<$int,int$>$ $>$ A\+I\+::\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+O caminho final. 
+
+
+
+A documentação para esta classe foi gerada a partir dos seguintes ficheiros\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{ai_8hpp}{ai.\+hpp}\item 
+include/\hyperlink{ia__astar_8h}{ia\+\_\+astar.\+h}\end{DoxyCompactItemize}

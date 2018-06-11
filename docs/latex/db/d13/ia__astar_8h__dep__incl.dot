@@ -1,0 +1,11 @@
+digraph "include/ia_astar.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node12 [label="include/ia_astar.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="include/ai.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dd9/ai_8hpp.html"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="src/snaze.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d8b/snaze_8cpp.html"];
+  Node13 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

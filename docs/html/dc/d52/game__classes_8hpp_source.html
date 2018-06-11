@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Projeto Snaze: Código-Fonte de include/game_classes.hpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Projeto Snaze
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "../../search",false,'Localizar');
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('../../',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">game_classes.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/d52/game__classes_8hpp.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GAME_CLASSES_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define GAME_CLASSES_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aa">    7</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aaa8d9c307cb7f3c4a32822a51922d1ceaa">N</a>,</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aaa5dbc98dcc983a70728bd082d1a47546e">S</a>,</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aaa3a3ea00cfc35332cedf6e5e9a32e94da">E</a>,</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aaa61e9c06ea9a85a5088a499df6458d276">W</a></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;};</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d8/d43/structPoint.html">   16</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d8/d43/structPoint.html">Point</a></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div><div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d8/d43/structPoint.html#a8c779e11e694b20e0946105a9f5de842">   18</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d8/d43/structPoint.html#a8c779e11e694b20e0946105a9f5de842">x</a>;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d8/d43/structPoint.html#a2e1b5fb2b2a83571f5c0bc0f66a73cf7">   19</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d8/d43/structPoint.html#a2e1b5fb2b2a83571f5c0bc0f66a73cf7">y</a>;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="../../d8/d43/structPoint.html">Point</a>() = <span class="keywordflow">default</span>;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    </div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="../../d8/d43/structPoint.html">Point</a>(<span class="keywordtype">int</span> x_, <span class="keywordtype">int</span> y_);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../df/d5f/vector_8inl.html#a7c456a6a390a779890d09b7eb9fc9f47">operator==</a>(<span class="keyword">const</span> <a class="code" href="../../d8/d43/structPoint.html">Point</a>&amp; rhs) <span class="keyword">const</span>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../df/d5f/vector_8inl.html#aec5c54cbcb8ee83a1b0552d4a7a7a016">operator!=</a>(<span class="keyword">const</span> <a class="code" href="../../d8/d43/structPoint.html">Point</a>&amp; rhs) <span class="keyword">const</span>;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="../../d8/d43/structPoint.html">Point</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="../../d8/d43/structPoint.html">Point</a>&amp; rhs);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<a class="code" href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> <a class="code" href="../../dc/d52/game__classes_8hpp.html#a5dea3f07ccd43cf7042c728d769e92fc">operator!</a>(<a class="code" href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&amp; rhs);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<a class="code" href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a> <a class="code" href="../../dc/d52/game__classes_8hpp.html#abb33048118db6efb091a45294fffd538">operator*</a>(<a class="code" href="../../d8/d43/structPoint.html">Point</a> src, <a class="code" href="../../d8/d43/structPoint.html">Point</a> dest);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;std::ostream&amp; <a class="code" href="../../dc/d52/game__classes_8hpp.html#a1fe596e8b3805cf0dfdfe357d7574e86">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&amp; rhs);</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<a class="code" href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&amp; <a class="code" href="../../dc/d52/game__classes_8hpp.html#a16250dbe58d4580aa957b7086489498a">operator++</a>(<a class="code" href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a>&amp; rhs);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/ddc/game__classes_8cpp.html">game_classes.cpp</a>&quot;</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="structPoint_html_a8c779e11e694b20e0946105a9f5de842"><div class="ttname"><a href="../../d8/d43/structPoint.html#a8c779e11e694b20e0946105a9f5de842">Point::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition:</b> game_classes.hpp:18</div></div>
+<div class="ttc" id="structPoint_html_a2e1b5fb2b2a83571f5c0bc0f66a73cf7"><div class="ttname"><a href="../../d8/d43/structPoint.html#a2e1b5fb2b2a83571f5c0bc0f66a73cf7">Point::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition:</b> game_classes.hpp:19</div></div>
+<div class="ttc" id="vector_8inl_html_aec5c54cbcb8ee83a1b0552d4a7a7a016"><div class="ttname"><a href="../../df/d5f/vector_8inl.html#aec5c54cbcb8ee83a1b0552d4a7a7a016">operator!=</a></div><div class="ttdeci">bool operator!=(const vector&lt; T &gt; &amp;lhs, const vector&lt; T &gt; &amp;rhs)</div><div class="ttdef"><b>Definition:</b> vector.inl:604</div></div>
+<div class="ttc" id="vector_8inl_html_a7c456a6a390a779890d09b7eb9fc9f47"><div class="ttname"><a href="../../df/d5f/vector_8inl.html#a7c456a6a390a779890d09b7eb9fc9f47">operator==</a></div><div class="ttdeci">bool operator==(vector&lt; T &gt; &amp;lhs, vector&lt; T &gt; &amp;rhs)</div><div class="ttdef"><b>Definition:</b> vector.inl:591</div></div>
+<div class="ttc" id="game__classes_8hpp_html_a224b9163917ac32fc95a60d8c1eec3aaa61e9c06ea9a85a5088a499df6458d276"><div class="ttname"><a href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aaa61e9c06ea9a85a5088a499df6458d276">Direction::W</a></div></div>
+<div class="ttc" id="game__classes_8hpp_html_a224b9163917ac32fc95a60d8c1eec3aa"><div class="ttname"><a href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aa">Direction</a></div><div class="ttdeci">Direction</div><div class="ttdoc">Some direction on the compass rose. </div><div class="ttdef"><b>Definition:</b> game_classes.hpp:7</div></div>
+<div class="ttc" id="game__classes_8hpp_html_a224b9163917ac32fc95a60d8c1eec3aaa8d9c307cb7f3c4a32822a51922d1ceaa"><div class="ttname"><a href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aaa8d9c307cb7f3c4a32822a51922d1ceaa">Direction::N</a></div></div>
+<div class="ttc" id="game__classes_8hpp_html_abb33048118db6efb091a45294fffd538"><div class="ttname"><a href="../../dc/d52/game__classes_8hpp.html#abb33048118db6efb091a45294fffd538">operator*</a></div><div class="ttdeci">Direction operator*(Point src, Point dest)</div><div class="ttdoc">Direction by 2 points. </div><div class="ttdef"><b>Definition:</b> game_classes.cpp:15</div></div>
+<div class="ttc" id="game__classes_8hpp_html_a16250dbe58d4580aa957b7086489498a"><div class="ttname"><a href="../../dc/d52/game__classes_8hpp.html#a16250dbe58d4580aa957b7086489498a">operator++</a></div><div class="ttdeci">Direction &amp; operator++(Direction &amp;rhs)</div><div class="ttdoc">Direction rotate 90. </div><div class="ttdef"><b>Definition:</b> game_classes.cpp:32</div></div>
+<div class="ttc" id="game__classes_8hpp_html_a224b9163917ac32fc95a60d8c1eec3aaa5dbc98dcc983a70728bd082d1a47546e"><div class="ttname"><a href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aaa5dbc98dcc983a70728bd082d1a47546e">Direction::S</a></div></div>
+<div class="ttc" id="game__classes_8hpp_html_a5dea3f07ccd43cf7042c728d769e92fc"><div class="ttname"><a href="../../dc/d52/game__classes_8hpp.html#a5dea3f07ccd43cf7042c728d769e92fc">operator!</a></div><div class="ttdeci">Direction operator!(Direction &amp;rhs)</div><div class="ttdoc">Negate direction. </div><div class="ttdef"><b>Definition:</b> game_classes.cpp:3</div></div>
+<div class="ttc" id="structPoint_html"><div class="ttname"><a href="../../d8/d43/structPoint.html">Point</a></div><div class="ttdoc">A 2d natural coordinate. </div><div class="ttdef"><b>Definition:</b> game_classes.hpp:16</div></div>
+<div class="ttc" id="game__classes_8hpp_html_a1fe596e8b3805cf0dfdfe357d7574e86"><div class="ttname"><a href="../../dc/d52/game__classes_8hpp.html#a1fe596e8b3805cf0dfdfe357d7574e86">operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Direction &amp;rhs)</div><div class="ttdoc">Print Direction. </div><div class="ttdef"><b>Definition:</b> game_classes.cpp:44</div></div>
+<div class="ttc" id="game__classes_8hpp_html_a224b9163917ac32fc95a60d8c1eec3aaa3a3ea00cfc35332cedf6e5e9a32e94da"><div class="ttname"><a href="../../dc/d52/game__classes_8hpp.html#a224b9163917ac32fc95a60d8c1eec3aaa3a3ea00cfc35332cedf6e5e9a32e94da">Direction::E</a></div></div>
+<div class="ttc" id="game__classes_8cpp_html"><div class="ttname"><a href="../../d8/ddc/game__classes_8cpp.html">game_classes.cpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

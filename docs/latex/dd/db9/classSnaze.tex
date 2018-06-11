@@ -1,0 +1,326 @@
+\hypertarget{classSnaze}{}\section{Referência à classe Snaze}
+\label{classSnaze}\index{Snaze@{Snaze}}
+
+
+Controle sobre as informações da cobra.  
+
+
+
+
+{\ttfamily \#include $<$snake.\+h$>$}
+
+
+
+Diagrama de colaboração para Snaze\+:
+% FIG 0
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSnaze_adfe6d312b7839c8e81d9c05c43367870}{Snaze} (int pos1=1, int pos2=1, int pont=0, int life=5)
+\begin{DoxyCompactList}\small\item\em Construtor padrão da cobra. \end{DoxyCompactList}\item 
+void \hyperlink{classSnaze_aa044b29757e0177ec1b386ca4765d3fa}{set\+\_\+position} (std\+::pair$<$ int, int $>$ pos)
+\begin{DoxyCompactList}\small\item\em Modifica a posição da cobra para uma posição definida. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \hyperlink{classSnaze_a81158f1529cf56aedb109a449fbba85b}{get\+\_\+position} ()
+\begin{DoxyCompactList}\small\item\em Retorna a posição da cobra. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \hyperlink{classSnaze_acc7755b314cb101bf9524fca1025a6da}{get\+\_\+old\+\_\+position} ()
+\begin{DoxyCompactList}\small\item\em Retorna a posição anterior da cobra (ajudar na inclusão do corpo). \end{DoxyCompactList}\item 
+void \hyperlink{classSnaze_a1746ce635a204cc0bd4544e6cfbcbdbc}{add\+\_\+size} ()
+\begin{DoxyCompactList}\small\item\em Adição de uma nova parte da calda na posição anterior da cobra. \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ std\+::pair$<$ int, int $>$ $>$ \& \hyperlink{classSnaze_a63c97c00033ad4e47f5609016a0cb0f3}{get\+\_\+tamanho} ()
+\begin{DoxyCompactList}\small\item\em Retorna o vetor com as caldas. \end{DoxyCompactList}\item 
+void \hyperlink{classSnaze_af621f316459a63cc4db4b55d577fe2ef}{print\+\_\+pos} ()
+\begin{DoxyCompactList}\small\item\em Imprime a posição da cobra (fins de testes). \end{DoxyCompactList}\item 
+int \hyperlink{classSnaze_a6704ada161bc8559e71401d5bad59b58}{get\+\_\+tamanho\+\_\+size} ()
+\begin{DoxyCompactList}\small\item\em Retorna o tamanho da calda. \end{DoxyCompactList}\item 
+void \hyperlink{classSnaze_a437fb5a032ce59212b62bf484e208d0d}{set\+\_\+score} (int \hyperlink{classSnaze_a437683faf08157e2c1e549c3ea1de441}{x})
+\begin{DoxyCompactList}\small\item\em Configura a pontuação da cobra. \end{DoxyCompactList}\item 
+int \hyperlink{classSnaze_a62bf08554d8952b29c040c4b2c572dab}{get\+\_\+score} ()
+\begin{DoxyCompactList}\small\item\em Retorna pontuação. \end{DoxyCompactList}\item 
+void \hyperlink{classSnaze_a937b8d382ef2babd14ac37f1e2831be8}{set\+\_\+life} (int \hyperlink{classSnaze_a437683faf08157e2c1e549c3ea1de441}{x})
+\begin{DoxyCompactList}\small\item\em Configura a quantidade de vidas da cobra. \end{DoxyCompactList}\item 
+int \hyperlink{classSnaze_a9c5c5706980645098dc478bc6fe255a5}{get\+\_\+life} ()
+\begin{DoxyCompactList}\small\item\em Retorna a quantidade de vidas. \end{DoxyCompactList}\item 
+void \hyperlink{classSnaze_afb6cfbbeffc84c668c7c205623557654}{marcarpontuacao} ()
+\begin{DoxyCompactList}\small\item\em Marca a pontuação cada vez que come a maçã. \end{DoxyCompactList}\item 
+void \hyperlink{classSnaze_afd115b41dab7febbfbf56f7cbf207479}{perdervida} ()
+\begin{DoxyCompactList}\small\item\em Perder uma vida. \end{DoxyCompactList}\item 
+void \hyperlink{classSnaze_ade218832f4a4a1e69a6893f1cf2fea0e}{mover\+\_\+corpo} ()
+\begin{DoxyCompactList}\small\item\em Move a calda cada vez que a cobra anda. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \hyperlink{classSnaze_aa3cfb02da86f2d37c632a6e4a720722e}{get\+\_\+calda} (int i)
+\begin{DoxyCompactList}\small\item\em Retorna a posição de uma determinada posição da calda. \end{DoxyCompactList}\item 
+void \hyperlink{classSnaze_ad9ec515cbd75483373a1919dd321b5ad}{begin\+\_\+size} ()
+\begin{DoxyCompactList}\small\item\em Remove o rabo e deixa só a cabeça. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classSnaze_a437683faf08157e2c1e549c3ea1de441}{x}
+\begin{DoxyCompactList}\small\item\em Posição na horizontal. \end{DoxyCompactList}\item 
+int \hyperlink{classSnaze_aa444c1837a1dd4ae9af946e26533df54}{y}
+\begin{DoxyCompactList}\small\item\em Posição na vertical. \end{DoxyCompactList}\item 
+int \hyperlink{classSnaze_ac1c892159efbc10b5e84cd4eb8107e7c}{pontos}
+\begin{DoxyCompactList}\small\item\em Quantos pontos possui. \end{DoxyCompactList}\item 
+\hyperlink{classsc_1_1vector}{sc\+::vector}$<$ std\+::pair$<$ int, int $>$ $>$ \hyperlink{classSnaze_a4419e9300564766a252510d81c6c3827}{tamanho}
+\begin{DoxyCompactList}\small\item\em Vetor com as coordenadas do corpo da IA. \end{DoxyCompactList}\item 
+int \hyperlink{classSnaze_ac561e4dd85557cf710c1ddbe51b6517f}{vidas}
+\begin{DoxyCompactList}\small\item\em Quantidade de vidas. \end{DoxyCompactList}\item 
+int \hyperlink{classSnaze_aab6383a16dddde062cece7fc239bfe89}{x\+\_\+old}
+\begin{DoxyCompactList}\small\item\em Posição anterior a atual em x. \end{DoxyCompactList}\item 
+int \hyperlink{classSnaze_a89b6ed8b54d38796b79dbbe364e70180}{y\+\_\+old}
+\begin{DoxyCompactList}\small\item\em Posição anterior a atual em y. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Controle sobre as informações da cobra. 
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classSnaze_adfe6d312b7839c8e81d9c05c43367870}\label{classSnaze_adfe6d312b7839c8e81d9c05c43367870}} 
+\index{Snaze@{Snaze}!Snaze@{Snaze}}
+\index{Snaze@{Snaze}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{Snaze()}{Snaze()}}
+{\footnotesize\ttfamily Snaze\+::\+Snaze (\begin{DoxyParamCaption}\item[{int}]{pos1 = {\ttfamily 1},  }\item[{int}]{pos2 = {\ttfamily 1},  }\item[{int}]{pont = {\ttfamily 0},  }\item[{int}]{life = {\ttfamily 5} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor padrão da cobra. 
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classSnaze_a1746ce635a204cc0bd4544e6cfbcbdbc}\label{classSnaze_a1746ce635a204cc0bd4544e6cfbcbdbc}} 
+\index{Snaze@{Snaze}!add\+\_\+size@{add\+\_\+size}}
+\index{add\+\_\+size@{add\+\_\+size}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{add\+\_\+size()}{add\_size()}}
+{\footnotesize\ttfamily void Snaze\+::add\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adição de uma nova parte da calda na posição anterior da cobra. 
+
+\mbox{\Hypertarget{classSnaze_ad9ec515cbd75483373a1919dd321b5ad}\label{classSnaze_ad9ec515cbd75483373a1919dd321b5ad}} 
+\index{Snaze@{Snaze}!begin\+\_\+size@{begin\+\_\+size}}
+\index{begin\+\_\+size@{begin\+\_\+size}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{begin\+\_\+size()}{begin\_size()}}
+{\footnotesize\ttfamily void Snaze\+::begin\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove o rabo e deixa só a cabeça. 
+
+\mbox{\Hypertarget{classSnaze_aa3cfb02da86f2d37c632a6e4a720722e}\label{classSnaze_aa3cfb02da86f2d37c632a6e4a720722e}} 
+\index{Snaze@{Snaze}!get\+\_\+calda@{get\+\_\+calda}}
+\index{get\+\_\+calda@{get\+\_\+calda}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{get\+\_\+calda()}{get\_calda()}}
+{\footnotesize\ttfamily std\+::pair$<$int,int$>$ Snaze\+::get\+\_\+calda (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna a posição de uma determinada posição da calda. 
+
+\mbox{\Hypertarget{classSnaze_a9c5c5706980645098dc478bc6fe255a5}\label{classSnaze_a9c5c5706980645098dc478bc6fe255a5}} 
+\index{Snaze@{Snaze}!get\+\_\+life@{get\+\_\+life}}
+\index{get\+\_\+life@{get\+\_\+life}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{get\+\_\+life()}{get\_life()}}
+{\footnotesize\ttfamily int Snaze\+::get\+\_\+life (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna a quantidade de vidas. 
+
+\mbox{\Hypertarget{classSnaze_acc7755b314cb101bf9524fca1025a6da}\label{classSnaze_acc7755b314cb101bf9524fca1025a6da}} 
+\index{Snaze@{Snaze}!get\+\_\+old\+\_\+position@{get\+\_\+old\+\_\+position}}
+\index{get\+\_\+old\+\_\+position@{get\+\_\+old\+\_\+position}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{get\+\_\+old\+\_\+position()}{get\_old\_position()}}
+{\footnotesize\ttfamily std\+::pair$<$int,int$>$ Snaze\+::get\+\_\+old\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna a posição anterior da cobra (ajudar na inclusão do corpo). 
+
+\mbox{\Hypertarget{classSnaze_a81158f1529cf56aedb109a449fbba85b}\label{classSnaze_a81158f1529cf56aedb109a449fbba85b}} 
+\index{Snaze@{Snaze}!get\+\_\+position@{get\+\_\+position}}
+\index{get\+\_\+position@{get\+\_\+position}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{get\+\_\+position()}{get\_position()}}
+{\footnotesize\ttfamily std\+::pair$<$int,int$>$ Snaze\+::get\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna a posição da cobra. 
+
+\mbox{\Hypertarget{classSnaze_a62bf08554d8952b29c040c4b2c572dab}\label{classSnaze_a62bf08554d8952b29c040c4b2c572dab}} 
+\index{Snaze@{Snaze}!get\+\_\+score@{get\+\_\+score}}
+\index{get\+\_\+score@{get\+\_\+score}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{get\+\_\+score()}{get\_score()}}
+{\footnotesize\ttfamily int Snaze\+::get\+\_\+score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna pontuação. 
+
+\mbox{\Hypertarget{classSnaze_a63c97c00033ad4e47f5609016a0cb0f3}\label{classSnaze_a63c97c00033ad4e47f5609016a0cb0f3}} 
+\index{Snaze@{Snaze}!get\+\_\+tamanho@{get\+\_\+tamanho}}
+\index{get\+\_\+tamanho@{get\+\_\+tamanho}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{get\+\_\+tamanho()}{get\_tamanho()}}
+{\footnotesize\ttfamily \hyperlink{classsc_1_1vector}{sc\+::vector}$<$std\+::pair$<$int,int$>$ $>$\& Snaze\+::get\+\_\+tamanho (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna o vetor com as caldas. 
+
+\mbox{\Hypertarget{classSnaze_a6704ada161bc8559e71401d5bad59b58}\label{classSnaze_a6704ada161bc8559e71401d5bad59b58}} 
+\index{Snaze@{Snaze}!get\+\_\+tamanho\+\_\+size@{get\+\_\+tamanho\+\_\+size}}
+\index{get\+\_\+tamanho\+\_\+size@{get\+\_\+tamanho\+\_\+size}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{get\+\_\+tamanho\+\_\+size()}{get\_tamanho\_size()}}
+{\footnotesize\ttfamily int Snaze\+::get\+\_\+tamanho\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna o tamanho da calda. 
+
+\mbox{\Hypertarget{classSnaze_afb6cfbbeffc84c668c7c205623557654}\label{classSnaze_afb6cfbbeffc84c668c7c205623557654}} 
+\index{Snaze@{Snaze}!marcarpontuacao@{marcarpontuacao}}
+\index{marcarpontuacao@{marcarpontuacao}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{marcarpontuacao()}{marcarpontuacao()}}
+{\footnotesize\ttfamily void Snaze\+::marcarpontuacao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Marca a pontuação cada vez que come a maçã. 
+
+\mbox{\Hypertarget{classSnaze_ade218832f4a4a1e69a6893f1cf2fea0e}\label{classSnaze_ade218832f4a4a1e69a6893f1cf2fea0e}} 
+\index{Snaze@{Snaze}!mover\+\_\+corpo@{mover\+\_\+corpo}}
+\index{mover\+\_\+corpo@{mover\+\_\+corpo}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{mover\+\_\+corpo()}{mover\_corpo()}}
+{\footnotesize\ttfamily void Snaze\+::mover\+\_\+corpo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Move a calda cada vez que a cobra anda. 
+
+\mbox{\Hypertarget{classSnaze_afd115b41dab7febbfbf56f7cbf207479}\label{classSnaze_afd115b41dab7febbfbf56f7cbf207479}} 
+\index{Snaze@{Snaze}!perdervida@{perdervida}}
+\index{perdervida@{perdervida}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{perdervida()}{perdervida()}}
+{\footnotesize\ttfamily void Snaze\+::perdervida (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Perder uma vida. 
+
+\mbox{\Hypertarget{classSnaze_af621f316459a63cc4db4b55d577fe2ef}\label{classSnaze_af621f316459a63cc4db4b55d577fe2ef}} 
+\index{Snaze@{Snaze}!print\+\_\+pos@{print\+\_\+pos}}
+\index{print\+\_\+pos@{print\+\_\+pos}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{print\+\_\+pos()}{print\_pos()}}
+{\footnotesize\ttfamily void Snaze\+::print\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Imprime a posição da cobra (fins de testes). 
+
+\mbox{\Hypertarget{classSnaze_a937b8d382ef2babd14ac37f1e2831be8}\label{classSnaze_a937b8d382ef2babd14ac37f1e2831be8}} 
+\index{Snaze@{Snaze}!set\+\_\+life@{set\+\_\+life}}
+\index{set\+\_\+life@{set\+\_\+life}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{set\+\_\+life()}{set\_life()}}
+{\footnotesize\ttfamily void Snaze\+::set\+\_\+life (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Configura a quantidade de vidas da cobra. 
+
+\mbox{\Hypertarget{classSnaze_aa044b29757e0177ec1b386ca4765d3fa}\label{classSnaze_aa044b29757e0177ec1b386ca4765d3fa}} 
+\index{Snaze@{Snaze}!set\+\_\+position@{set\+\_\+position}}
+\index{set\+\_\+position@{set\+\_\+position}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{set\+\_\+position()}{set\_position()}}
+{\footnotesize\ttfamily void Snaze\+::set\+\_\+position (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, int $>$}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica a posição da cobra para uma posição definida. 
+
+\mbox{\Hypertarget{classSnaze_a437fb5a032ce59212b62bf484e208d0d}\label{classSnaze_a437fb5a032ce59212b62bf484e208d0d}} 
+\index{Snaze@{Snaze}!set\+\_\+score@{set\+\_\+score}}
+\index{set\+\_\+score@{set\+\_\+score}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{set\+\_\+score()}{set\_score()}}
+{\footnotesize\ttfamily void Snaze\+::set\+\_\+score (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Configura a pontuação da cobra. 
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classSnaze_ac1c892159efbc10b5e84cd4eb8107e7c}\label{classSnaze_ac1c892159efbc10b5e84cd4eb8107e7c}} 
+\index{Snaze@{Snaze}!pontos@{pontos}}
+\index{pontos@{pontos}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{pontos}{pontos}}
+{\footnotesize\ttfamily int Snaze\+::pontos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Quantos pontos possui. 
+
+\mbox{\Hypertarget{classSnaze_a4419e9300564766a252510d81c6c3827}\label{classSnaze_a4419e9300564766a252510d81c6c3827}} 
+\index{Snaze@{Snaze}!tamanho@{tamanho}}
+\index{tamanho@{tamanho}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{tamanho}{tamanho}}
+{\footnotesize\ttfamily \hyperlink{classsc_1_1vector}{sc\+::vector}$<$std\+::pair$<$int,int$>$ $>$ Snaze\+::tamanho\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vetor com as coordenadas do corpo da IA. 
+
+\mbox{\Hypertarget{classSnaze_ac561e4dd85557cf710c1ddbe51b6517f}\label{classSnaze_ac561e4dd85557cf710c1ddbe51b6517f}} 
+\index{Snaze@{Snaze}!vidas@{vidas}}
+\index{vidas@{vidas}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{vidas}{vidas}}
+{\footnotesize\ttfamily int Snaze\+::vidas\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Quantidade de vidas. 
+
+\mbox{\Hypertarget{classSnaze_a437683faf08157e2c1e549c3ea1de441}\label{classSnaze_a437683faf08157e2c1e549c3ea1de441}} 
+\index{Snaze@{Snaze}!x@{x}}
+\index{x@{x}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int Snaze\+::x\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Posição na horizontal. 
+
+\mbox{\Hypertarget{classSnaze_aab6383a16dddde062cece7fc239bfe89}\label{classSnaze_aab6383a16dddde062cece7fc239bfe89}} 
+\index{Snaze@{Snaze}!x\+\_\+old@{x\+\_\+old}}
+\index{x\+\_\+old@{x\+\_\+old}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{x\+\_\+old}{x\_old}}
+{\footnotesize\ttfamily int Snaze\+::x\+\_\+old\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Posição anterior a atual em x. 
+
+\mbox{\Hypertarget{classSnaze_aa444c1837a1dd4ae9af946e26533df54}\label{classSnaze_aa444c1837a1dd4ae9af946e26533df54}} 
+\index{Snaze@{Snaze}!y@{y}}
+\index{y@{y}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int Snaze\+::y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Posição na vertical. 
+
+\mbox{\Hypertarget{classSnaze_a89b6ed8b54d38796b79dbbe364e70180}\label{classSnaze_a89b6ed8b54d38796b79dbbe364e70180}} 
+\index{Snaze@{Snaze}!y\+\_\+old@{y\+\_\+old}}
+\index{y\+\_\+old@{y\+\_\+old}!Snaze@{Snaze}}
+\subsubsection{\texorpdfstring{y\+\_\+old}{y\_old}}
+{\footnotesize\ttfamily int Snaze\+::y\+\_\+old\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Posição anterior a atual em y. 
+
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{snake_8h}{snake.\+h}\end{DoxyCompactItemize}

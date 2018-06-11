@@ -1,0 +1,288 @@
+\hypertarget{classSnazeGame}{}\section{Referência à classe Snaze\+Game}
+\label{classSnazeGame}\index{Snaze\+Game@{Snaze\+Game}}
+
+
+{\ttfamily \#include $<$game.\+h$>$}
+
+
+
+Diagrama de colaboração para Snaze\+Game\+:
+% FIG 0
+\subsection*{Tipos Públicos}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1}{Estados} \{ \newline
+\hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1afc64d93c34fbd8df2d79fefbb8513c8f}{S\+T\+A\+RT} = 0, 
+\hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a96daa8d1688cbf422ad289b82e3e1d49}{R\+U\+N\+N\+I\+NG}, 
+\hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a45fe6e347b32aabd0854ab91e434b633}{P\+R\+O\+C\+E\+S\+S\+I\+N\+G\+\_\+\+E\+V\+E\+N\+TS}, 
+\hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a30387f75fa4f94a804d1010ab5784276}{U\+P\+D\+A\+T\+I\+NG}, 
+\newline
+\hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1af7314565e55dcf48d180288a376dccec}{R\+E\+N\+D\+E\+R\+I\+NG}, 
+\hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1ac5e341ca42210bd95d5cf25621c7a613}{A\+P\+P\+L\+E\+\_\+\+O\+V\+ER}, 
+\hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1ad89c12ed069a00f65612ea3dc9f8a698}{L\+E\+V\+E\+L\+\_\+\+UP}, 
+\hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a86eedf6a4b84c34f610f2a5c9e65a3a5}{D\+E\+AD}, 
+\newline
+\hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a25d7611aaf59f55bef9266b861ea7208}{W\+ON}, 
+\hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a1d07a70b0238ff34f848549583262ee9}{G\+A\+M\+E\+\_\+\+O\+V\+ER}
+ \}\begin{DoxyCompactList}\small\item\em Estados possíveis do jogo. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classSnazeGame_ac104ea6197c75780b2e0f2da3a293caa}{initialize\+\_\+game} (std\+::string inputdata)
+\begin{DoxyCompactList}\small\item\em Inicializa o jogo, configurando todas as classes, como a maça, a cobra e o mapa (leitura). \end{DoxyCompactList}\item 
+void \hyperlink{classSnazeGame_a8a9f2f626de17c2e592a579b15e1592f}{process\+\_\+events} ()
+\begin{DoxyCompactList}\small\item\em Processa todas as ações executas pelo jogador, ou pela IA. \end{DoxyCompactList}\item 
+void \hyperlink{classSnazeGame_a288103ac611e57f980d595bca35e399a}{update} ()
+\begin{DoxyCompactList}\small\item\em Atualiza as informações no mapa, como se o usuário passou de nível, mordeu a maça ou houve colisão. \end{DoxyCompactList}\item 
+void \hyperlink{classSnazeGame_a67f9c90252d094a048b1cda89f36b3a0}{render} ()
+\begin{DoxyCompactList}\small\item\em Gera a situação do jogo para o usuário. \end{DoxyCompactList}\item 
+bool \hyperlink{classSnazeGame_a5692397592a88a256071660b8bfe5231}{game\+\_\+over} ()
+\begin{DoxyCompactList}\small\item\em Verifica se é possível que o jogo continue. \end{DoxyCompactList}\item 
+\hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1}{Estados} \hyperlink{classSnazeGame_a9b3002a7863a8c3f6fb5d6689ebf400a}{get\+\_\+state} ()
+\begin{DoxyCompactList}\small\item\em Retorna o estado do jogo. \end{DoxyCompactList}\item 
+bool \hyperlink{classSnazeGame_a829f1052a228d6f8bc31fb064695389e}{colisao} ()
+\begin{DoxyCompactList}\small\item\em Verifica se ocorreu alguma colisão. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{classMaps}{Maps} $>$ \hyperlink{classSnazeGame_a0bae7bc31a288d55714d90f574cc8bd1}{mapas}
+\begin{DoxyCompactList}\small\item\em Armazena todos os mapas recebidos do arquivo externo. \end{DoxyCompactList}\item 
+\hyperlink{classSnaze}{Snaze} \hyperlink{classSnazeGame_a86f1f0364ec7e8fe6559418236ea7e04}{cobrinha}
+\begin{DoxyCompactList}\small\item\em Cobra. \end{DoxyCompactList}\item 
+\hyperlink{classLevel}{Level} \hyperlink{classSnazeGame_a5940b3ae2bdfe8ad2c38d8144a77e9b2}{nivel}
+\begin{DoxyCompactList}\small\item\em Níveis. \end{DoxyCompactList}\item 
+\hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1}{Estados} \hyperlink{classSnazeGame_aa0305588eeb6fee59039ba51df01ebc2}{state}
+\begin{DoxyCompactList}\small\item\em Estado do jogo. \end{DoxyCompactList}\item 
+\hyperlink{classPlayer}{Player} \hyperlink{classSnazeGame_a61268a99fe9578f17b7b6565349aa5a9}{player}
+\begin{DoxyCompactList}\small\item\em Jogador. \end{DoxyCompactList}\item 
+\hyperlink{classApple}{Apple} \hyperlink{classSnazeGame_a346b1696a5d5807c012e4b24bbba1e8b}{apple}
+\begin{DoxyCompactList}\small\item\em Maça. \end{DoxyCompactList}\item 
+\hyperlink{classAI}{AI} \hyperlink{classSnazeGame_adaf01e03323aed1a69936416e5aa44db}{ia}
+\begin{DoxyCompactList}\small\item\em Funcionamento da IA. \end{DoxyCompactList}\item 
+std\+::chrono\+::steady\+\_\+clock\+::time\+\_\+point \hyperlink{classSnazeGame_a394c65f61b0cf9c4a5fc5a24d0b5b4f4}{m\+\_\+clock}
+\begin{DoxyCompactList}\small\item\em Controle do tempo antes do próximo movimento da IA. \end{DoxyCompactList}\item 
+bool \hyperlink{classSnazeGame_accfde443b3ec29be803b24cda85fd4fe}{player\+\_\+\+Human} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentação das enumerações}
+\mbox{\Hypertarget{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1}\label{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1}} 
+\index{Snaze\+Game@{Snaze\+Game}!Estados@{Estados}}
+\index{Estados@{Estados}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{Estados}{Estados}}
+{\footnotesize\ttfamily enum \hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1}{Snaze\+Game\+::\+Estados}}
+
+
+
+Estados possíveis do jogo. 
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+RT@{S\+T\+A\+RT}!Snaze\+Game@{Snaze\+Game}}\index{Snaze\+Game@{Snaze\+Game}!S\+T\+A\+RT@{S\+T\+A\+RT}}}\mbox{\Hypertarget{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1afc64d93c34fbd8df2d79fefbb8513c8f}\label{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1afc64d93c34fbd8df2d79fefbb8513c8f}} 
+S\+T\+A\+RT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+U\+N\+N\+I\+NG@{R\+U\+N\+N\+I\+NG}!Snaze\+Game@{Snaze\+Game}}\index{Snaze\+Game@{Snaze\+Game}!R\+U\+N\+N\+I\+NG@{R\+U\+N\+N\+I\+NG}}}\mbox{\Hypertarget{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a96daa8d1688cbf422ad289b82e3e1d49}\label{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a96daa8d1688cbf422ad289b82e3e1d49}} 
+R\+U\+N\+N\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+R\+O\+C\+E\+S\+S\+I\+N\+G\+\_\+\+E\+V\+E\+N\+TS@{P\+R\+O\+C\+E\+S\+S\+I\+N\+G\+\_\+\+E\+V\+E\+N\+TS}!Snaze\+Game@{Snaze\+Game}}\index{Snaze\+Game@{Snaze\+Game}!P\+R\+O\+C\+E\+S\+S\+I\+N\+G\+\_\+\+E\+V\+E\+N\+TS@{P\+R\+O\+C\+E\+S\+S\+I\+N\+G\+\_\+\+E\+V\+E\+N\+TS}}}\mbox{\Hypertarget{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a45fe6e347b32aabd0854ab91e434b633}\label{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a45fe6e347b32aabd0854ab91e434b633}} 
+P\+R\+O\+C\+E\+S\+S\+I\+N\+G\+\_\+\+E\+V\+E\+N\+TS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+P\+D\+A\+T\+I\+NG@{U\+P\+D\+A\+T\+I\+NG}!Snaze\+Game@{Snaze\+Game}}\index{Snaze\+Game@{Snaze\+Game}!U\+P\+D\+A\+T\+I\+NG@{U\+P\+D\+A\+T\+I\+NG}}}\mbox{\Hypertarget{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a30387f75fa4f94a804d1010ab5784276}\label{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a30387f75fa4f94a804d1010ab5784276}} 
+U\+P\+D\+A\+T\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+N\+D\+E\+R\+I\+NG@{R\+E\+N\+D\+E\+R\+I\+NG}!Snaze\+Game@{Snaze\+Game}}\index{Snaze\+Game@{Snaze\+Game}!R\+E\+N\+D\+E\+R\+I\+NG@{R\+E\+N\+D\+E\+R\+I\+NG}}}\mbox{\Hypertarget{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1af7314565e55dcf48d180288a376dccec}\label{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1af7314565e55dcf48d180288a376dccec}} 
+R\+E\+N\+D\+E\+R\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A\+P\+P\+L\+E\+\_\+\+O\+V\+ER@{A\+P\+P\+L\+E\+\_\+\+O\+V\+ER}!Snaze\+Game@{Snaze\+Game}}\index{Snaze\+Game@{Snaze\+Game}!A\+P\+P\+L\+E\+\_\+\+O\+V\+ER@{A\+P\+P\+L\+E\+\_\+\+O\+V\+ER}}}\mbox{\Hypertarget{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1ac5e341ca42210bd95d5cf25621c7a613}\label{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1ac5e341ca42210bd95d5cf25621c7a613}} 
+A\+P\+P\+L\+E\+\_\+\+O\+V\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+E\+V\+E\+L\+\_\+\+UP@{L\+E\+V\+E\+L\+\_\+\+UP}!Snaze\+Game@{Snaze\+Game}}\index{Snaze\+Game@{Snaze\+Game}!L\+E\+V\+E\+L\+\_\+\+UP@{L\+E\+V\+E\+L\+\_\+\+UP}}}\mbox{\Hypertarget{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1ad89c12ed069a00f65612ea3dc9f8a698}\label{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1ad89c12ed069a00f65612ea3dc9f8a698}} 
+L\+E\+V\+E\+L\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+E\+AD@{D\+E\+AD}!Snaze\+Game@{Snaze\+Game}}\index{Snaze\+Game@{Snaze\+Game}!D\+E\+AD@{D\+E\+AD}}}\mbox{\Hypertarget{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a86eedf6a4b84c34f610f2a5c9e65a3a5}\label{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a86eedf6a4b84c34f610f2a5c9e65a3a5}} 
+D\+E\+AD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+ON@{W\+ON}!Snaze\+Game@{Snaze\+Game}}\index{Snaze\+Game@{Snaze\+Game}!W\+ON@{W\+ON}}}\mbox{\Hypertarget{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a25d7611aaf59f55bef9266b861ea7208}\label{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a25d7611aaf59f55bef9266b861ea7208}} 
+W\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{G\+A\+M\+E\+\_\+\+O\+V\+ER@{G\+A\+M\+E\+\_\+\+O\+V\+ER}!Snaze\+Game@{Snaze\+Game}}\index{Snaze\+Game@{Snaze\+Game}!G\+A\+M\+E\+\_\+\+O\+V\+ER@{G\+A\+M\+E\+\_\+\+O\+V\+ER}}}\mbox{\Hypertarget{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a1d07a70b0238ff34f848549583262ee9}\label{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1a1d07a70b0238ff34f848549583262ee9}} 
+G\+A\+M\+E\+\_\+\+O\+V\+ER&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classSnazeGame_a829f1052a228d6f8bc31fb064695389e}\label{classSnazeGame_a829f1052a228d6f8bc31fb064695389e}} 
+\index{Snaze\+Game@{Snaze\+Game}!colisao@{colisao}}
+\index{colisao@{colisao}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{colisao()}{colisao()}}
+{\footnotesize\ttfamily bool Snaze\+Game\+::colisao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica se ocorreu alguma colisão. 
+
+\mbox{\Hypertarget{classSnazeGame_a5692397592a88a256071660b8bfe5231}\label{classSnazeGame_a5692397592a88a256071660b8bfe5231}} 
+\index{Snaze\+Game@{Snaze\+Game}!game\+\_\+over@{game\+\_\+over}}
+\index{game\+\_\+over@{game\+\_\+over}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{game\+\_\+over()}{game\_over()}}
+{\footnotesize\ttfamily bool Snaze\+Game\+::game\+\_\+over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica se é possível que o jogo continue. 
+
+\mbox{\Hypertarget{classSnazeGame_a9b3002a7863a8c3f6fb5d6689ebf400a}\label{classSnazeGame_a9b3002a7863a8c3f6fb5d6689ebf400a}} 
+\index{Snaze\+Game@{Snaze\+Game}!get\+\_\+state@{get\+\_\+state}}
+\index{get\+\_\+state@{get\+\_\+state}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{get\+\_\+state()}{get\_state()}}
+{\footnotesize\ttfamily \hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1}{Estados} Snaze\+Game\+::get\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna o estado do jogo. 
+
+\mbox{\Hypertarget{classSnazeGame_ac104ea6197c75780b2e0f2da3a293caa}\label{classSnazeGame_ac104ea6197c75780b2e0f2da3a293caa}} 
+\index{Snaze\+Game@{Snaze\+Game}!initialize\+\_\+game@{initialize\+\_\+game}}
+\index{initialize\+\_\+game@{initialize\+\_\+game}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{initialize\+\_\+game()}{initialize\_game()}}
+{\footnotesize\ttfamily void Snaze\+Game\+::initialize\+\_\+game (\begin{DoxyParamCaption}\item[{std\+::string}]{inputdata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inicializa o jogo, configurando todas as classes, como a maça, a cobra e o mapa (leitura). 
+
+Coloca o estado do jogo para iniciado. \mbox{\Hypertarget{classSnazeGame_a8a9f2f626de17c2e592a579b15e1592f}\label{classSnazeGame_a8a9f2f626de17c2e592a579b15e1592f}} 
+\index{Snaze\+Game@{Snaze\+Game}!process\+\_\+events@{process\+\_\+events}}
+\index{process\+\_\+events@{process\+\_\+events}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{process\+\_\+events()}{process\_events()}}
+{\footnotesize\ttfamily void Snaze\+Game\+::process\+\_\+events (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Processa todas as ações executas pelo jogador, ou pela IA. 
+
+Recebe o tempo atual. \mbox{\Hypertarget{classSnazeGame_a67f9c90252d094a048b1cda89f36b3a0}\label{classSnazeGame_a67f9c90252d094a048b1cda89f36b3a0}} 
+\index{Snaze\+Game@{Snaze\+Game}!render@{render}}
+\index{render@{render}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Snaze\+Game\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gera a situação do jogo para o usuário. 
+
+\mbox{\Hypertarget{classSnazeGame_a288103ac611e57f980d595bca35e399a}\label{classSnazeGame_a288103ac611e57f980d595bca35e399a}} 
+\index{Snaze\+Game@{Snaze\+Game}!update@{update}}
+\index{update@{update}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Snaze\+Game\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Atualiza as informações no mapa, como se o usuário passou de nível, mordeu a maça ou houve colisão. 
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classSnazeGame_a346b1696a5d5807c012e4b24bbba1e8b}\label{classSnazeGame_a346b1696a5d5807c012e4b24bbba1e8b}} 
+\index{Snaze\+Game@{Snaze\+Game}!apple@{apple}}
+\index{apple@{apple}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{apple}{apple}}
+{\footnotesize\ttfamily \hyperlink{classApple}{Apple} Snaze\+Game\+::apple\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maça. 
+
+\mbox{\Hypertarget{classSnazeGame_a86f1f0364ec7e8fe6559418236ea7e04}\label{classSnazeGame_a86f1f0364ec7e8fe6559418236ea7e04}} 
+\index{Snaze\+Game@{Snaze\+Game}!cobrinha@{cobrinha}}
+\index{cobrinha@{cobrinha}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{cobrinha}{cobrinha}}
+{\footnotesize\ttfamily \hyperlink{classSnaze}{Snaze} Snaze\+Game\+::cobrinha\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cobra. 
+
+\mbox{\Hypertarget{classSnazeGame_adaf01e03323aed1a69936416e5aa44db}\label{classSnazeGame_adaf01e03323aed1a69936416e5aa44db}} 
+\index{Snaze\+Game@{Snaze\+Game}!ia@{ia}}
+\index{ia@{ia}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{ia}{ia}}
+{\footnotesize\ttfamily \hyperlink{classAI}{AI} Snaze\+Game\+::ia\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Funcionamento da IA. 
+
+\mbox{\Hypertarget{classSnazeGame_a394c65f61b0cf9c4a5fc5a24d0b5b4f4}\label{classSnazeGame_a394c65f61b0cf9c4a5fc5a24d0b5b4f4}} 
+\index{Snaze\+Game@{Snaze\+Game}!m\+\_\+clock@{m\+\_\+clock}}
+\index{m\+\_\+clock@{m\+\_\+clock}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{m\+\_\+clock}{m\_clock}}
+{\footnotesize\ttfamily std\+::chrono\+::steady\+\_\+clock\+::time\+\_\+point Snaze\+Game\+::m\+\_\+clock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Controle do tempo antes do próximo movimento da IA. 
+
+\mbox{\Hypertarget{classSnazeGame_a0bae7bc31a288d55714d90f574cc8bd1}\label{classSnazeGame_a0bae7bc31a288d55714d90f574cc8bd1}} 
+\index{Snaze\+Game@{Snaze\+Game}!mapas@{mapas}}
+\index{mapas@{mapas}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{mapas}{mapas}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classMaps}{Maps}$>$ Snaze\+Game\+::mapas\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Armazena todos os mapas recebidos do arquivo externo. 
+
+\mbox{\Hypertarget{classSnazeGame_a5940b3ae2bdfe8ad2c38d8144a77e9b2}\label{classSnazeGame_a5940b3ae2bdfe8ad2c38d8144a77e9b2}} 
+\index{Snaze\+Game@{Snaze\+Game}!nivel@{nivel}}
+\index{nivel@{nivel}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{nivel}{nivel}}
+{\footnotesize\ttfamily \hyperlink{classLevel}{Level} Snaze\+Game\+::nivel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Níveis. 
+
+\mbox{\Hypertarget{classSnazeGame_a61268a99fe9578f17b7b6565349aa5a9}\label{classSnazeGame_a61268a99fe9578f17b7b6565349aa5a9}} 
+\index{Snaze\+Game@{Snaze\+Game}!player@{player}}
+\index{player@{player}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{player}{player}}
+{\footnotesize\ttfamily \hyperlink{classPlayer}{Player} Snaze\+Game\+::player\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Jogador. 
+
+\mbox{\Hypertarget{classSnazeGame_accfde443b3ec29be803b24cda85fd4fe}\label{classSnazeGame_accfde443b3ec29be803b24cda85fd4fe}} 
+\index{Snaze\+Game@{Snaze\+Game}!player\+\_\+\+Human@{player\+\_\+\+Human}}
+\index{player\+\_\+\+Human@{player\+\_\+\+Human}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{player\+\_\+\+Human}{player\_Human}}
+{\footnotesize\ttfamily bool Snaze\+Game\+::player\+\_\+\+Human = false\hspace{0.3cm}{\ttfamily [private]}}
+
+Controle de qual tipo de jogador deve ser executado. true = jogador humano ; false = IA. \mbox{\Hypertarget{classSnazeGame_aa0305588eeb6fee59039ba51df01ebc2}\label{classSnazeGame_aa0305588eeb6fee59039ba51df01ebc2}} 
+\index{Snaze\+Game@{Snaze\+Game}!state@{state}}
+\index{state@{state}!Snaze\+Game@{Snaze\+Game}}
+\subsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \hyperlink{classSnazeGame_a10ea6cb420042fdbfcade4f0261af5c1}{Estados} Snaze\+Game\+::state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Estado do jogo. 
+
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{game_8h}{game.\+h}\end{DoxyCompactItemize}

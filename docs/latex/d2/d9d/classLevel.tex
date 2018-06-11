@@ -1,0 +1,250 @@
+\hypertarget{classLevel}{}\section{Referência à classe Level}
+\label{classLevel}\index{Level@{Level}}
+
+
+Configura todas as informações ocorridas nos níveis.  
+
+
+
+
+{\ttfamily \#include $<$level.\+h$>$}
+
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLevel_a77d956a65bbff2de6e105e16f2792353}{Level} (int niv=0)
+\begin{DoxyCompactList}\small\item\em Construtor padrão do nível começando em 0. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a843e6dc68560b09ea31b8650e916c088}{level\+\_\+up} (\hyperlink{classApple}{Apple} \&apple, \hyperlink{classSnaze}{Snaze} \&cobra)
+\begin{DoxyCompactList}\small\item\em Controlador para validação sobre o próximo nível. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a0e39d944b4e0a37f25ad5de0a5e37492}{add\+\_\+maps} (std\+::vector$<$ \hyperlink{classMaps}{Maps} $>$ map)
+\begin{DoxyCompactList}\small\item\em Adiciona os mapas a classe \hyperlink{classLevel}{Level}. \end{DoxyCompactList}\item 
+int \hyperlink{classLevel_a27555723585164ed6258be2320e83458}{all\+\_\+levels} ()
+\begin{DoxyCompactList}\small\item\em Retorna a quantidade de níveis. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a85a1a85f3d2a5e8438718e7438c383cd}{eat\+\_\+apple} (\hyperlink{classApple}{Apple} \&apple)
+\begin{DoxyCompactList}\small\item\em Faz com que a cobra coma a maçã. \end{DoxyCompactList}\item 
+int \hyperlink{classLevel_a63a8d05dda7cbcfd812e8a99c47415e7}{get\+\_\+level} ()
+\begin{DoxyCompactList}\small\item\em Retorna qual o nível atual. \end{DoxyCompactList}\item 
+bool \hyperlink{classLevel_a84ae9945f973c39236b08a50b0ec878f}{win} (\hyperlink{classApple}{Apple} \&apple)
+\begin{DoxyCompactList}\small\item\em Verifica se não há mais níveis e a quantidade de maças é 0. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a19bfdf725454de061d80cc23a370677d}{configurar\+\_\+apple} (\hyperlink{classApple}{Apple} \&apple)
+\begin{DoxyCompactList}\small\item\em Configura a posição da maçã no mapa, de forma que ela não fique em cima de paredes ou em cima da cobra (corpo). \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a4ee0703973ca3ea41f056ffd775fc95f}{insert\+\_\+apple} (\hyperlink{classApple}{Apple} \&apple)
+\begin{DoxyCompactList}\small\item\em Insere a maçã em um local determinado. \end{DoxyCompactList}\item 
+bool \hyperlink{classLevel_a6956ffc5e9752ef3510268d839951218}{snake\+\_\+in\+\_\+apple} (\hyperlink{classApple}{Apple} \&apple)
+\begin{DoxyCompactList}\small\item\em Verifica se a cobra está na maçã, ou seja se a cobra comeu a maçã. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a3502a6e0ebca94ed3529dd9bae317823}{print\+\_\+all\+\_\+maps} ()
+\begin{DoxyCompactList}\small\item\em Imprime todos os níveis. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a3b73a93c34030adbfe08794d61ed3840}{print\+\_\+current\+\_\+map} ()
+\begin{DoxyCompactList}\small\item\em Imprime apenas o nível atual. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_ac42ca0b4e7c6c493ddaa00ed06fb2e3f}{change\+\_\+snaze\+\_\+pos} (std\+::pair$<$ int, int $>$ coordenadas, \hyperlink{classSnaze}{Snaze} \&cobra)
+\begin{DoxyCompactList}\small\item\em Modifica a posição da cobra. \end{DoxyCompactList}\item 
+\hyperlink{classMaps}{Maps} \& \hyperlink{classLevel_a1687e136ca75db79f5b3ac51a6f3c268}{get\+\_\+current\+\_\+level} ()
+\begin{DoxyCompactList}\small\item\em Recebe o mapa do nível atual. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a00b118e009a3c8e8b4f33de9493e3a6a}{inserir\+\_\+calda} (\hyperlink{classSnaze}{Snaze} \&cobra)
+\begin{DoxyCompactList}\small\item\em Insere a calda, ou seja, faz com que seja inserida a calda na cobra. \end{DoxyCompactList}\item 
+void \hyperlink{classLevel_a4f17b96d65d88f2c0764417c6acb435c}{limpa\+\_\+mapa} ()
+\begin{DoxyCompactList}\small\item\em Limpa a configuração do mapa anterior, onde tem corpo da cobra não tem mais. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{classMaps}{Maps} $>$ \hyperlink{classLevel_a8b1c3287f0f55ae114562e9aaa0914c4}{levels}
+\begin{DoxyCompactList}\small\item\em Vetor com todos os mapas de cada level. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classLevel_af40fbdea10408d1ae09698d49e072aa6}{nivel}
+\begin{DoxyCompactList}\small\item\em Controle de qual o nível atual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descrição detalhada}
+Configura todas as informações ocorridas nos níveis. 
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classLevel_a77d956a65bbff2de6e105e16f2792353}\label{classLevel_a77d956a65bbff2de6e105e16f2792353}} 
+\index{Level@{Level}!Level@{Level}}
+\index{Level@{Level}!Level@{Level}}
+\subsubsection{\texorpdfstring{Level()}{Level()}}
+{\footnotesize\ttfamily Level\+::\+Level (\begin{DoxyParamCaption}\item[{int}]{niv = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor padrão do nível começando em 0. 
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classLevel_a0e39d944b4e0a37f25ad5de0a5e37492}\label{classLevel_a0e39d944b4e0a37f25ad5de0a5e37492}} 
+\index{Level@{Level}!add\+\_\+maps@{add\+\_\+maps}}
+\index{add\+\_\+maps@{add\+\_\+maps}!Level@{Level}}
+\subsubsection{\texorpdfstring{add\+\_\+maps()}{add\_maps()}}
+{\footnotesize\ttfamily void Level\+::add\+\_\+maps (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{classMaps}{Maps} $>$}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adiciona os mapas a classe \hyperlink{classLevel}{Level}. 
+
+\mbox{\Hypertarget{classLevel_a27555723585164ed6258be2320e83458}\label{classLevel_a27555723585164ed6258be2320e83458}} 
+\index{Level@{Level}!all\+\_\+levels@{all\+\_\+levels}}
+\index{all\+\_\+levels@{all\+\_\+levels}!Level@{Level}}
+\subsubsection{\texorpdfstring{all\+\_\+levels()}{all\_levels()}}
+{\footnotesize\ttfamily int Level\+::all\+\_\+levels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna a quantidade de níveis. 
+
+\mbox{\Hypertarget{classLevel_ac42ca0b4e7c6c493ddaa00ed06fb2e3f}\label{classLevel_ac42ca0b4e7c6c493ddaa00ed06fb2e3f}} 
+\index{Level@{Level}!change\+\_\+snaze\+\_\+pos@{change\+\_\+snaze\+\_\+pos}}
+\index{change\+\_\+snaze\+\_\+pos@{change\+\_\+snaze\+\_\+pos}!Level@{Level}}
+\subsubsection{\texorpdfstring{change\+\_\+snaze\+\_\+pos()}{change\_snaze\_pos()}}
+{\footnotesize\ttfamily void Level\+::change\+\_\+snaze\+\_\+pos (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, int $>$}]{coordenadas,  }\item[{\hyperlink{classSnaze}{Snaze} \&}]{cobra }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica a posição da cobra. 
+
+\mbox{\Hypertarget{classLevel_a19bfdf725454de061d80cc23a370677d}\label{classLevel_a19bfdf725454de061d80cc23a370677d}} 
+\index{Level@{Level}!configurar\+\_\+apple@{configurar\+\_\+apple}}
+\index{configurar\+\_\+apple@{configurar\+\_\+apple}!Level@{Level}}
+\subsubsection{\texorpdfstring{configurar\+\_\+apple()}{configurar\_apple()}}
+{\footnotesize\ttfamily void Level\+::configurar\+\_\+apple (\begin{DoxyParamCaption}\item[{\hyperlink{classApple}{Apple} \&}]{apple }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Configura a posição da maçã no mapa, de forma que ela não fique em cima de paredes ou em cima da cobra (corpo). 
+
+\mbox{\Hypertarget{classLevel_a85a1a85f3d2a5e8438718e7438c383cd}\label{classLevel_a85a1a85f3d2a5e8438718e7438c383cd}} 
+\index{Level@{Level}!eat\+\_\+apple@{eat\+\_\+apple}}
+\index{eat\+\_\+apple@{eat\+\_\+apple}!Level@{Level}}
+\subsubsection{\texorpdfstring{eat\+\_\+apple()}{eat\_apple()}}
+{\footnotesize\ttfamily void Level\+::eat\+\_\+apple (\begin{DoxyParamCaption}\item[{\hyperlink{classApple}{Apple} \&}]{apple }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Faz com que a cobra coma a maçã. 
+
+\mbox{\Hypertarget{classLevel_a1687e136ca75db79f5b3ac51a6f3c268}\label{classLevel_a1687e136ca75db79f5b3ac51a6f3c268}} 
+\index{Level@{Level}!get\+\_\+current\+\_\+level@{get\+\_\+current\+\_\+level}}
+\index{get\+\_\+current\+\_\+level@{get\+\_\+current\+\_\+level}!Level@{Level}}
+\subsubsection{\texorpdfstring{get\+\_\+current\+\_\+level()}{get\_current\_level()}}
+{\footnotesize\ttfamily \hyperlink{classMaps}{Maps}\& Level\+::get\+\_\+current\+\_\+level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Recebe o mapa do nível atual. 
+
+\mbox{\Hypertarget{classLevel_a63a8d05dda7cbcfd812e8a99c47415e7}\label{classLevel_a63a8d05dda7cbcfd812e8a99c47415e7}} 
+\index{Level@{Level}!get\+\_\+level@{get\+\_\+level}}
+\index{get\+\_\+level@{get\+\_\+level}!Level@{Level}}
+\subsubsection{\texorpdfstring{get\+\_\+level()}{get\_level()}}
+{\footnotesize\ttfamily int Level\+::get\+\_\+level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna qual o nível atual. 
+
+\mbox{\Hypertarget{classLevel_a00b118e009a3c8e8b4f33de9493e3a6a}\label{classLevel_a00b118e009a3c8e8b4f33de9493e3a6a}} 
+\index{Level@{Level}!inserir\+\_\+calda@{inserir\+\_\+calda}}
+\index{inserir\+\_\+calda@{inserir\+\_\+calda}!Level@{Level}}
+\subsubsection{\texorpdfstring{inserir\+\_\+calda()}{inserir\_calda()}}
+{\footnotesize\ttfamily void Level\+::inserir\+\_\+calda (\begin{DoxyParamCaption}\item[{\hyperlink{classSnaze}{Snaze} \&}]{cobra }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insere a calda, ou seja, faz com que seja inserida a calda na cobra. 
+
+\mbox{\Hypertarget{classLevel_a4ee0703973ca3ea41f056ffd775fc95f}\label{classLevel_a4ee0703973ca3ea41f056ffd775fc95f}} 
+\index{Level@{Level}!insert\+\_\+apple@{insert\+\_\+apple}}
+\index{insert\+\_\+apple@{insert\+\_\+apple}!Level@{Level}}
+\subsubsection{\texorpdfstring{insert\+\_\+apple()}{insert\_apple()}}
+{\footnotesize\ttfamily void Level\+::insert\+\_\+apple (\begin{DoxyParamCaption}\item[{\hyperlink{classApple}{Apple} \&}]{apple }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Insere a maçã em um local determinado. 
+
+\mbox{\Hypertarget{classLevel_a843e6dc68560b09ea31b8650e916c088}\label{classLevel_a843e6dc68560b09ea31b8650e916c088}} 
+\index{Level@{Level}!level\+\_\+up@{level\+\_\+up}}
+\index{level\+\_\+up@{level\+\_\+up}!Level@{Level}}
+\subsubsection{\texorpdfstring{level\+\_\+up()}{level\_up()}}
+{\footnotesize\ttfamily void Level\+::level\+\_\+up (\begin{DoxyParamCaption}\item[{\hyperlink{classApple}{Apple} \&}]{apple,  }\item[{\hyperlink{classSnaze}{Snaze} \&}]{cobra }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Controlador para validação sobre o próximo nível. 
+
+\mbox{\Hypertarget{classLevel_a4f17b96d65d88f2c0764417c6acb435c}\label{classLevel_a4f17b96d65d88f2c0764417c6acb435c}} 
+\index{Level@{Level}!limpa\+\_\+mapa@{limpa\+\_\+mapa}}
+\index{limpa\+\_\+mapa@{limpa\+\_\+mapa}!Level@{Level}}
+\subsubsection{\texorpdfstring{limpa\+\_\+mapa()}{limpa\_mapa()}}
+{\footnotesize\ttfamily void Level\+::limpa\+\_\+mapa (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Limpa a configuração do mapa anterior, onde tem corpo da cobra não tem mais. 
+
+\mbox{\Hypertarget{classLevel_a3502a6e0ebca94ed3529dd9bae317823}\label{classLevel_a3502a6e0ebca94ed3529dd9bae317823}} 
+\index{Level@{Level}!print\+\_\+all\+\_\+maps@{print\+\_\+all\+\_\+maps}}
+\index{print\+\_\+all\+\_\+maps@{print\+\_\+all\+\_\+maps}!Level@{Level}}
+\subsubsection{\texorpdfstring{print\+\_\+all\+\_\+maps()}{print\_all\_maps()}}
+{\footnotesize\ttfamily void Level\+::print\+\_\+all\+\_\+maps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Imprime todos os níveis. 
+
+\mbox{\Hypertarget{classLevel_a3b73a93c34030adbfe08794d61ed3840}\label{classLevel_a3b73a93c34030adbfe08794d61ed3840}} 
+\index{Level@{Level}!print\+\_\+current\+\_\+map@{print\+\_\+current\+\_\+map}}
+\index{print\+\_\+current\+\_\+map@{print\+\_\+current\+\_\+map}!Level@{Level}}
+\subsubsection{\texorpdfstring{print\+\_\+current\+\_\+map()}{print\_current\_map()}}
+{\footnotesize\ttfamily void Level\+::print\+\_\+current\+\_\+map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Imprime apenas o nível atual. 
+
+\mbox{\Hypertarget{classLevel_a6956ffc5e9752ef3510268d839951218}\label{classLevel_a6956ffc5e9752ef3510268d839951218}} 
+\index{Level@{Level}!snake\+\_\+in\+\_\+apple@{snake\+\_\+in\+\_\+apple}}
+\index{snake\+\_\+in\+\_\+apple@{snake\+\_\+in\+\_\+apple}!Level@{Level}}
+\subsubsection{\texorpdfstring{snake\+\_\+in\+\_\+apple()}{snake\_in\_apple()}}
+{\footnotesize\ttfamily bool Level\+::snake\+\_\+in\+\_\+apple (\begin{DoxyParamCaption}\item[{\hyperlink{classApple}{Apple} \&}]{apple }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica se a cobra está na maçã, ou seja se a cobra comeu a maçã. 
+
+\mbox{\Hypertarget{classLevel_a84ae9945f973c39236b08a50b0ec878f}\label{classLevel_a84ae9945f973c39236b08a50b0ec878f}} 
+\index{Level@{Level}!win@{win}}
+\index{win@{win}!Level@{Level}}
+\subsubsection{\texorpdfstring{win()}{win()}}
+{\footnotesize\ttfamily bool Level\+::win (\begin{DoxyParamCaption}\item[{\hyperlink{classApple}{Apple} \&}]{apple }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verifica se não há mais níveis e a quantidade de maças é 0. 
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classLevel_a8b1c3287f0f55ae114562e9aaa0914c4}\label{classLevel_a8b1c3287f0f55ae114562e9aaa0914c4}} 
+\index{Level@{Level}!levels@{levels}}
+\index{levels@{levels}!Level@{Level}}
+\subsubsection{\texorpdfstring{levels}{levels}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{classMaps}{Maps}$>$ Level\+::levels\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vetor com todos os mapas de cada level. 
+
+\mbox{\Hypertarget{classLevel_af40fbdea10408d1ae09698d49e072aa6}\label{classLevel_af40fbdea10408d1ae09698d49e072aa6}} 
+\index{Level@{Level}!nivel@{nivel}}
+\index{nivel@{nivel}!Level@{Level}}
+\subsubsection{\texorpdfstring{nivel}{nivel}}
+{\footnotesize\ttfamily unsigned int Level\+::nivel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Controle de qual o nível atual. 
+
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{level_8h}{level.\+h}\end{DoxyCompactItemize}

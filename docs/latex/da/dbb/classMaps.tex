@@ -1,0 +1,218 @@
+\hypertarget{classMaps}{}\section{Referência à classe Maps}
+\label{classMaps}\index{Maps@{Maps}}
+
+
+{\ttfamily \#include $<$maps.\+h$>$}
+
+\subsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMaps_ab6b20c54c22fc74b5e1d72fb245047b4}{Maps} (int x=0, int y=0)
+\begin{DoxyCompactList}\small\item\em Construtor principal. \end{DoxyCompactList}\item 
+void \hyperlink{classMaps_aea314b57c9d092f2a40eed4f3e2fa196}{add\+\_\+objects} (std\+::vector$<$ char $>$ linhas)
+\begin{DoxyCompactList}\small\item\em Adiciona os objetos do mapa. \end{DoxyCompactList}\item 
+void \hyperlink{classMaps_a0a7f0ddaeb883334dfa9a16bfc0b3356}{clear\+\_\+all} ()
+\begin{DoxyCompactList}\small\item\em Limpa todo o mapa, tornando ele inutilizavel. \end{DoxyCompactList}\item 
+char \hyperlink{classMaps_a7217b2b2818eb73c1cf5505f3837d665}{get\+\_\+value} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Retorna qual o que há naquela posição. \end{DoxyCompactList}\item 
+void \hyperlink{classMaps_af3d935925e955f25aa02659b6c670245}{changexey} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Modifica o valor de x e de y. \end{DoxyCompactList}\item 
+void \hyperlink{classMaps_a511070b444b7e3ab8afc5b22d77d3290}{change\+\_\+value} (int x, int y, char value)
+\begin{DoxyCompactList}\small\item\em Modifica um valor em uma determinada posição. \end{DoxyCompactList}\item 
+void \hyperlink{classMaps_a0ed4b3dd55951294a26ef3c54ede92fb}{change\+\_\+x} (int valor)
+\begin{DoxyCompactList}\small\item\em Modifica o valor da largura do mapa. \end{DoxyCompactList}\item 
+void \hyperlink{classMaps_ae66359ffa0d8570dd5d6329a5733047d}{change\+\_\+y} (int valor)
+\begin{DoxyCompactList}\small\item\em Modifica o valor da altura do mapa. \end{DoxyCompactList}\item 
+int \hyperlink{classMaps_ab77f2fa68caba59dca05fb403edc9099}{return\+\_\+x} ()
+\begin{DoxyCompactList}\small\item\em Retorna o valor da largura do mapa. \end{DoxyCompactList}\item 
+int \hyperlink{classMaps_a93da8a525b47eabad3a9f31ab8c5cfc5}{return\+\_\+y} ()
+\begin{DoxyCompactList}\small\item\em Retorna o valor da altura do mapa. \end{DoxyCompactList}\item 
+void \hyperlink{classMaps_a068e03c298dd238deb000702dec960e8}{print\+Vector} ()
+\begin{DoxyCompactList}\small\item\em Imprime o mapa. \end{DoxyCompactList}\item 
+std\+::pair$<$ int, int $>$ \hyperlink{classMaps_a5db28b22a32d650536c264c0354e3e72}{snaze\+\_\+position} ()
+\begin{DoxyCompactList}\small\item\em Retorna a posição da cobra. \end{DoxyCompactList}\item 
+void \hyperlink{classMaps_a441ea7041e0a6c21e546417d17a5c744}{change\+\_\+snaze\+\_\+position} (std\+::pair$<$ int, int $>$ coordenadas, \hyperlink{classSnaze}{Snaze} \&cobra)
+\begin{DoxyCompactList}\small\item\em Modifica a posição da cobra no mapa, de forma que ela sempre estará apontando para a direção a qual ela está andando. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos Privados}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classMaps_aad719df183010234d9888873e9926970}{x\+\_\+total}
+\begin{DoxyCompactList}\small\item\em Altura do mapa. \end{DoxyCompactList}\item 
+int \hyperlink{classMaps_af6b314d34d63fc6f1567251e4b84447b}{y\+\_\+total}
+\begin{DoxyCompactList}\small\item\em Largura do mapa. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ char $>$ $>$ \hyperlink{classMaps_a7549d33bd2d17520c6b25bc43916bee6}{mapa}
+\begin{DoxyCompactList}\small\item\em Mapa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentação dos Construtores \& Destrutor}
+\mbox{\Hypertarget{classMaps_ab6b20c54c22fc74b5e1d72fb245047b4}\label{classMaps_ab6b20c54c22fc74b5e1d72fb245047b4}} 
+\index{Maps@{Maps}!Maps@{Maps}}
+\index{Maps@{Maps}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{Maps()}{Maps()}}
+{\footnotesize\ttfamily Maps\+::\+Maps (\begin{DoxyParamCaption}\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor principal. 
+
+
+
+\subsection{Documentação dos métodos}
+\mbox{\Hypertarget{classMaps_aea314b57c9d092f2a40eed4f3e2fa196}\label{classMaps_aea314b57c9d092f2a40eed4f3e2fa196}} 
+\index{Maps@{Maps}!add\+\_\+objects@{add\+\_\+objects}}
+\index{add\+\_\+objects@{add\+\_\+objects}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{add\+\_\+objects()}{add\_objects()}}
+{\footnotesize\ttfamily void Maps\+::add\+\_\+objects (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $>$}]{linhas }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adiciona os objetos do mapa. 
+
+\mbox{\Hypertarget{classMaps_a441ea7041e0a6c21e546417d17a5c744}\label{classMaps_a441ea7041e0a6c21e546417d17a5c744}} 
+\index{Maps@{Maps}!change\+\_\+snaze\+\_\+position@{change\+\_\+snaze\+\_\+position}}
+\index{change\+\_\+snaze\+\_\+position@{change\+\_\+snaze\+\_\+position}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{change\+\_\+snaze\+\_\+position()}{change\_snaze\_position()}}
+{\footnotesize\ttfamily void Maps\+::change\+\_\+snaze\+\_\+position (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, int $>$}]{coordenadas,  }\item[{\hyperlink{classSnaze}{Snaze} \&}]{cobra }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica a posição da cobra no mapa, de forma que ela sempre estará apontando para a direção a qual ela está andando. 
+
+\mbox{\Hypertarget{classMaps_a511070b444b7e3ab8afc5b22d77d3290}\label{classMaps_a511070b444b7e3ab8afc5b22d77d3290}} 
+\index{Maps@{Maps}!change\+\_\+value@{change\+\_\+value}}
+\index{change\+\_\+value@{change\+\_\+value}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{change\+\_\+value()}{change\_value()}}
+{\footnotesize\ttfamily void Maps\+::change\+\_\+value (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{char}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica um valor em uma determinada posição. 
+
+\mbox{\Hypertarget{classMaps_a0ed4b3dd55951294a26ef3c54ede92fb}\label{classMaps_a0ed4b3dd55951294a26ef3c54ede92fb}} 
+\index{Maps@{Maps}!change\+\_\+x@{change\+\_\+x}}
+\index{change\+\_\+x@{change\+\_\+x}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{change\+\_\+x()}{change\_x()}}
+{\footnotesize\ttfamily void Maps\+::change\+\_\+x (\begin{DoxyParamCaption}\item[{int}]{valor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica o valor da largura do mapa. 
+
+\mbox{\Hypertarget{classMaps_ae66359ffa0d8570dd5d6329a5733047d}\label{classMaps_ae66359ffa0d8570dd5d6329a5733047d}} 
+\index{Maps@{Maps}!change\+\_\+y@{change\+\_\+y}}
+\index{change\+\_\+y@{change\+\_\+y}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{change\+\_\+y()}{change\_y()}}
+{\footnotesize\ttfamily void Maps\+::change\+\_\+y (\begin{DoxyParamCaption}\item[{int}]{valor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica o valor da altura do mapa. 
+
+\mbox{\Hypertarget{classMaps_af3d935925e955f25aa02659b6c670245}\label{classMaps_af3d935925e955f25aa02659b6c670245}} 
+\index{Maps@{Maps}!changexey@{changexey}}
+\index{changexey@{changexey}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{changexey()}{changexey()}}
+{\footnotesize\ttfamily void Maps\+::changexey (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Modifica o valor de x e de y. 
+
+\mbox{\Hypertarget{classMaps_a0a7f0ddaeb883334dfa9a16bfc0b3356}\label{classMaps_a0a7f0ddaeb883334dfa9a16bfc0b3356}} 
+\index{Maps@{Maps}!clear\+\_\+all@{clear\+\_\+all}}
+\index{clear\+\_\+all@{clear\+\_\+all}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{clear\+\_\+all()}{clear\_all()}}
+{\footnotesize\ttfamily void Maps\+::clear\+\_\+all (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Limpa todo o mapa, tornando ele inutilizavel. 
+
+\mbox{\Hypertarget{classMaps_a7217b2b2818eb73c1cf5505f3837d665}\label{classMaps_a7217b2b2818eb73c1cf5505f3837d665}} 
+\index{Maps@{Maps}!get\+\_\+value@{get\+\_\+value}}
+\index{get\+\_\+value@{get\+\_\+value}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{get\+\_\+value()}{get\_value()}}
+{\footnotesize\ttfamily char Maps\+::get\+\_\+value (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna qual o que há naquela posição. 
+
+\mbox{\Hypertarget{classMaps_a068e03c298dd238deb000702dec960e8}\label{classMaps_a068e03c298dd238deb000702dec960e8}} 
+\index{Maps@{Maps}!print\+Vector@{print\+Vector}}
+\index{print\+Vector@{print\+Vector}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{print\+Vector()}{printVector()}}
+{\footnotesize\ttfamily void Maps\+::print\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Imprime o mapa. 
+
+\mbox{\Hypertarget{classMaps_ab77f2fa68caba59dca05fb403edc9099}\label{classMaps_ab77f2fa68caba59dca05fb403edc9099}} 
+\index{Maps@{Maps}!return\+\_\+x@{return\+\_\+x}}
+\index{return\+\_\+x@{return\+\_\+x}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{return\+\_\+x()}{return\_x()}}
+{\footnotesize\ttfamily int Maps\+::return\+\_\+x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna o valor da largura do mapa. 
+
+\mbox{\Hypertarget{classMaps_a93da8a525b47eabad3a9f31ab8c5cfc5}\label{classMaps_a93da8a525b47eabad3a9f31ab8c5cfc5}} 
+\index{Maps@{Maps}!return\+\_\+y@{return\+\_\+y}}
+\index{return\+\_\+y@{return\+\_\+y}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{return\+\_\+y()}{return\_y()}}
+{\footnotesize\ttfamily int Maps\+::return\+\_\+y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna o valor da altura do mapa. 
+
+\mbox{\Hypertarget{classMaps_a5db28b22a32d650536c264c0354e3e72}\label{classMaps_a5db28b22a32d650536c264c0354e3e72}} 
+\index{Maps@{Maps}!snaze\+\_\+position@{snaze\+\_\+position}}
+\index{snaze\+\_\+position@{snaze\+\_\+position}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{snaze\+\_\+position()}{snaze\_position()}}
+{\footnotesize\ttfamily std\+::pair$<$int,int$>$ Maps\+::snaze\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna a posição da cobra. 
+
+
+
+\subsection{Documentação dos dados membro}
+\mbox{\Hypertarget{classMaps_a7549d33bd2d17520c6b25bc43916bee6}\label{classMaps_a7549d33bd2d17520c6b25bc43916bee6}} 
+\index{Maps@{Maps}!mapa@{mapa}}
+\index{mapa@{mapa}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{mapa}{mapa}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::vector$<$ char $>$ $>$ Maps\+::mapa\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mapa. 
+
+\mbox{\Hypertarget{classMaps_aad719df183010234d9888873e9926970}\label{classMaps_aad719df183010234d9888873e9926970}} 
+\index{Maps@{Maps}!x\+\_\+total@{x\+\_\+total}}
+\index{x\+\_\+total@{x\+\_\+total}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{x\+\_\+total}{x\_total}}
+{\footnotesize\ttfamily int Maps\+::x\+\_\+total\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Altura do mapa. 
+
+\mbox{\Hypertarget{classMaps_af6b314d34d63fc6f1567251e4b84447b}\label{classMaps_af6b314d34d63fc6f1567251e4b84447b}} 
+\index{Maps@{Maps}!y\+\_\+total@{y\+\_\+total}}
+\index{y\+\_\+total@{y\+\_\+total}!Maps@{Maps}}
+\subsubsection{\texorpdfstring{y\+\_\+total}{y\_total}}
+{\footnotesize\ttfamily int Maps\+::y\+\_\+total\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Largura do mapa. 
+
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{maps_8h}{maps.\+h}\end{DoxyCompactItemize}

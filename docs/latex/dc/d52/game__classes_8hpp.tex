@@ -1,0 +1,107 @@
+\hypertarget{game__classes_8hpp}{}\section{Referência ao ficheiro include/game\+\_\+classes.hpp}
+\label{game__classes_8hpp}\index{include/game\+\_\+classes.\+hpp@{include/game\+\_\+classes.\+hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+classes.\+cpp\char`\"{}}\newline
+Diagrama de dependências de inclusão para game\+\_\+classes.\+hpp\+:
+% FIG 0
+Este grafo mostra quais são os ficheiros que incluem directamente ou indirectamente este ficheiro\+:
+% FIG 1
+\subsection*{Componentes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPoint}{Point}
+\begin{DoxyCompactList}\small\item\em A 2d natural coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerações}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \{ \hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa8d9c307cb7f3c4a32822a51922d1ceaa}{Direction\+::N}, 
+\hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa5dbc98dcc983a70728bd082d1a47546e}{Direction\+::S}, 
+\hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa3a3ea00cfc35332cedf6e5e9a32e94da}{Direction\+::E}, 
+\hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa61e9c06ea9a85a5088a499df6458d276}{Direction\+::W}
+ \}\begin{DoxyCompactList}\small\item\em Some direction on the compass rose. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Funções}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \hyperlink{game__classes_8hpp_a5dea3f07ccd43cf7042c728d769e92fc}{operator!} (\hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \&rhs)
+\begin{DoxyCompactList}\small\item\em Negate direction. \end{DoxyCompactList}\item 
+\hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \hyperlink{game__classes_8hpp_abb33048118db6efb091a45294fffd538}{operator$\ast$} (\hyperlink{structPoint}{Point} src, \hyperlink{structPoint}{Point} dest)
+\begin{DoxyCompactList}\small\item\em Direction by 2 points. \end{DoxyCompactList}\item 
+std\+::ostream \& \hyperlink{game__classes_8hpp_a1fe596e8b3805cf0dfdfe357d7574e86}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \&rhs)
+\begin{DoxyCompactList}\small\item\em Print Direction. \end{DoxyCompactList}\item 
+\hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \& \hyperlink{game__classes_8hpp_a16250dbe58d4580aa957b7086489498a}{operator++} (\hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \&rhs)
+\begin{DoxyCompactList}\small\item\em Direction rotate 90. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Documentação dos valores da enumeração}
+\mbox{\Hypertarget{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}\label{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}} 
+\index{game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}!Direction@{Direction}}
+\index{Direction@{Direction}!game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}}
+\subsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily enum \hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Some direction on the compass rose. 
+
+\begin{DoxyEnumFields}{Valores de enumerações}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N@{N}!game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}}\index{game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}!N@{N}}}\mbox{\Hypertarget{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa8d9c307cb7f3c4a32822a51922d1ceaa}\label{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa8d9c307cb7f3c4a32822a51922d1ceaa}} 
+N&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S@{S}!game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}}\index{game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}!S@{S}}}\mbox{\Hypertarget{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa5dbc98dcc983a70728bd082d1a47546e}\label{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa5dbc98dcc983a70728bd082d1a47546e}} 
+S&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E@{E}!game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}}\index{game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}!E@{E}}}\mbox{\Hypertarget{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa3a3ea00cfc35332cedf6e5e9a32e94da}\label{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa3a3ea00cfc35332cedf6e5e9a32e94da}} 
+E&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W@{W}!game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}}\index{game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}!W@{W}}}\mbox{\Hypertarget{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa61e9c06ea9a85a5088a499df6458d276}\label{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa61e9c06ea9a85a5088a499df6458d276}} 
+W&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Documentação das funções}
+\mbox{\Hypertarget{game__classes_8hpp_a5dea3f07ccd43cf7042c728d769e92fc}\label{game__classes_8hpp_a5dea3f07ccd43cf7042c728d769e92fc}} 
+\index{game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}!operator"!@{operator"!}}
+\index{operator"!@{operator"!}!game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}}
+\subsubsection{\texorpdfstring{operator"!()}{operator!()}}
+{\footnotesize\ttfamily \hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} operator! (\begin{DoxyParamCaption}\item[{\hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Negate direction. 
+
+\mbox{\Hypertarget{game__classes_8hpp_abb33048118db6efb091a45294fffd538}\label{game__classes_8hpp_abb33048118db6efb091a45294fffd538}} 
+\index{game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} operator$\ast$ (\begin{DoxyParamCaption}\item[{\hyperlink{structPoint}{Point}}]{src,  }\item[{\hyperlink{structPoint}{Point}}]{dest }\end{DoxyParamCaption})}
+
+
+
+Direction by 2 points. 
+
+\mbox{\Hypertarget{game__classes_8hpp_a16250dbe58d4580aa957b7086489498a}\label{game__classes_8hpp_a16250dbe58d4580aa957b7086489498a}} 
+\index{game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}!operator++@{operator++}}
+\index{operator++@{operator++}!game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}}
+\subsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily \hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}\& operator++ (\begin{DoxyParamCaption}\item[{\hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Direction rotate 90. 
+
+\mbox{\Hypertarget{game__classes_8hpp_a1fe596e8b3805cf0dfdfe357d7574e86}\label{game__classes_8hpp_a1fe596e8b3805cf0dfdfe357d7574e86}} 
+\index{game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!game\+\_\+classes.\+hpp@{game\+\_\+classes.\+hpp}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{game__classes_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Print Direction. 
+

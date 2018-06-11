@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['g',['g',['../df/df1/structCell.html#acd60bf8f417807a2b1e5beaa1a8ddb3e',1,'Cell']]],
+  ['game_2eh',['game.h',['../d2/dd5/game_8h.html',1,'']]],
+  ['game_5fclasses_2ecpp',['game_classes.cpp',['../d8/ddc/game__classes_8cpp.html',1,'']]],
+  ['game_5fclasses_2ehpp',['game_classes.hpp',['../dc/d52/game__classes_8hpp.html',1,'']]],
+  ['game_5fover',['GAME_OVER',['../da/df2/classSnazeGame.html#a10ea6cb420042fdbfcade4f0261af5c1a1d07a70b0238ff34f848549583262ee9',1,'SnazeGame::GAME_OVER()'],['../da/df2/classSnazeGame.html#a5692397592a88a256071660b8bfe5231',1,'SnazeGame::game_over()']]],
+  ['gerarcoordenadas',['gerarCoordenadas',['../de/db6/classApple.html#a8251ad4f785ec75c8b26891a54ee9979',1,'Apple']]],
+  ['get_5faparencia',['get_aparencia',['../de/db6/classApple.html#a4b4decead81e29c16a9dd4c7a3e70107',1,'Apple']]],
+  ['get_5fcalda',['get_calda',['../dd/db9/classSnaze.html#aa3cfb02da86f2d37c632a6e4a720722e',1,'Snaze']]],
+  ['get_5fcoordenadas',['get_coordenadas',['../de/db6/classApple.html#a84bbb1315d93e54972ff4b1a49b5b88a',1,'Apple']]],
+  ['get_5fcurrent_5flevel',['get_current_level',['../d2/d9d/classLevel.html#a1687e136ca75db79f5b3ac51a6f3c268',1,'Level']]],
+  ['get_5flevel',['get_level',['../d2/d9d/classLevel.html#a63a8d05dda7cbcfd812e8a99c47415e7',1,'Level']]],
+  ['get_5flife',['get_life',['../dd/db9/classSnaze.html#a9c5c5706980645098dc478bc6fe255a5',1,'Snaze']]],
+  ['get_5fold_5fposition',['get_old_position',['../dd/db9/classSnaze.html#acc7755b314cb101bf9524fca1025a6da',1,'Snaze']]],
+  ['get_5fposition',['get_position',['../dd/db9/classSnaze.html#a81158f1529cf56aedb109a449fbba85b',1,'Snaze']]],
+  ['get_5fquantity',['get_quantity',['../de/db6/classApple.html#afc60cf395df30061e4776f56dcc7d24f',1,'Apple']]],
+  ['get_5fscore',['get_score',['../dd/db9/classSnaze.html#a62bf08554d8952b29c040c4b2c572dab',1,'Snaze']]],
+  ['get_5fstate',['get_state',['../da/df2/classSnazeGame.html#a9b3002a7863a8c3f6fb5d6689ebf400a',1,'SnazeGame']]],
+  ['get_5ftamanho',['get_tamanho',['../dd/db9/classSnaze.html#a63c97c00033ad4e47f5609016a0cb0f3',1,'Snaze']]],
+  ['get_5ftamanho_5fsize',['get_tamanho_size',['../dd/db9/classSnaze.html#a6704ada161bc8559e71401d5bad59b58',1,'Snaze']]],
+  ['get_5fvalue',['get_value',['../da/dbb/classMaps.html#a7217b2b2818eb73c1cf5505f3837d665',1,'Maps']]],
+  ['goto_5ffree_5fway',['goto_free_way',['../da/df5/classAI.html#ab74866f1d674f96d1a7ae37b6b677982',1,'AI']]]
+];
