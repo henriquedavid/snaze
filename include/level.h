@@ -14,7 +14,7 @@ class Level{
 		/// Controlador para validação sobre o próximo nível.
 		void level_up( Apple & apple, Snaze & cobra ){
 			// Verifica se a quantidade de maçãs realmente é 0.
-			if(apple.get_quantity() == 0){
+			if(apple.get_quantity() == 1){
 				// Aumenta a variavel nível.
 				nivel++;
 				// Torna a quantidade de maçãs para 5.
@@ -55,7 +55,7 @@ class Level{
 
 		/// Verifica se não há mais níveis e a quantidade de maças é 0.
 		bool win(Apple & apple){
-			if(nivel+1 >= levels.size() && apple.get_quantity() == 0)
+			if(nivel+1 >= levels.size() && apple.get_quantity() == 1)
 				return true;
 			return false;
 		}
