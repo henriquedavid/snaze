@@ -56,3 +56,10 @@ Organização dos dados em githubs diferentes.
 O algoritmo A* (ou A star) é um dos principais meios de se encontrar um determinado caminho utilizando vias.
 A sua utilização garante que seja possivel encontrar um caminho mesmo com obstáculos, como no jogo é necessário
 encontrar um caminho, em que possui paredes o qual pode atrapalhar o caminho, então é uma boa forma de resolver o problema.
+
+### Criar mapas
+
+Para criar novos mapas basta tratar todas as paredes como #, e o local da cobra basta coloca-la em qualquer posição utilizando >, <, v ou ^.
+Note que para o mapa funcionar corretamente é recomendado que todos os mapas possuam as mesmas dimensões. Primeiramente você insere a dimensão,
+e então informa o mapa, e por fim insere -. O '-' serve como indicação que aquele é o final do mapa, devendo assim ser incluido até mesmo no último mapa.
+Mais opções de como devem ser os mapas basta acessar a pasta data/.
