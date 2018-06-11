@@ -107,7 +107,7 @@ bool AI::aStarSearch( Level & lvl, Apple & app, Snaze & sna )
 
     // Cria uma lista fechada e inicializa com falso, de forma que nenhuma célula tenha sido inicializada
     // ainda.
-    bool closedList[map.return_y()][map.return_x()];
+    bool closedList[map.return_x()][map.return_y()];
     memset(closedList, false, sizeof (closedList));
     
  
