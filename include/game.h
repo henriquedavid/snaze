@@ -192,7 +192,7 @@ public:
 
 	/// Gera a situação do jogo para o usuário.
 	void render(){
-        system("clear");
+        //system("clear");
 		//std::cout << "Tamanho da cobra = " << cobrinha.get_tamanho_size() << std::endl ;
 		//cobrinha.print_pos();
 		// Mostra os dados de level atual e o total de levels.
