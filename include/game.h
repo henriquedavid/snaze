@@ -76,8 +76,8 @@ public:
 		char modo;
 
 		std::cout << "O jogador está configurado para ser a IA, deseja modificar para você controlar a cobra?\n(y/n) :";
-		std::cin >> modo;
-
+		//std::cin >> modo;
+		modo = 'n';
 		while( modo != 'y' && modo != 'n' ){
 			std::cout << "Digite uma opção válida: \n(y/n) :";
 			std::cin >> modo;
@@ -192,7 +192,7 @@ public:
 
 	/// Gera a situação do jogo para o usuário.
 	void render(){
-        //system("clear");
+        system("clear");
 		//std::cout << "Tamanho da cobra = " << cobrinha.get_tamanho_size() << std::endl ;
 		//cobrinha.print_pos();
 		// Mostra os dados de level atual e o total de levels.
@@ -214,7 +214,7 @@ public:
 			return true;
 		}
 		// Verifica se o jogador já passou por todos os níveis.
-		if(nivel.win(apple)){
+		if(nivel.win(apple) && apple.get_quantity() == 0){
 			state = WON;
 			return true;
 		}

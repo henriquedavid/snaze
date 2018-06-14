@@ -7,6 +7,11 @@ class Level{
 		unsigned int nivel;
 
 	public:
+
+		void show(){
+			std::cout << "X = " << get_current_level().return_x() << " Y = " << get_current_level().return_y() << std::endl;
+			print_current_map();
+		}
 		
 		/// Construtor padrão do nível começando em 0.
 		Level( int niv = 0 ) : nivel(niv) {/*empty*/}
@@ -14,7 +19,7 @@ class Level{
 		/// Controlador para validação sobre o próximo nível.
 		void level_up( Apple & apple, Snaze & cobra ){
 			// Verifica se a quantidade de maçãs realmente é 0.
-			if(apple.get_quantity() == 1){
+			if(apple.get_quantity() == 0){
 				// Aumenta a variavel nível.
 				nivel++;
 				// Torna a quantidade de maçãs para 5.
@@ -23,6 +28,7 @@ class Level{
 				apple.show_apple();
 				// Reseta o tamanho da cobra.
 				cobra.begin_size();
+				show();
 			} else{
 				// Faz a cobra comer a maçã.
 				eat_apple(apple);
@@ -55,8 +61,15 @@ class Level{
 
 		/// Verifica se não há mais níveis e a quantidade de maças é 0.
 		bool win(Apple & apple){
-			if(nivel+1 >= levels.size() && apple.get_quantity() == 1)
+			if(nivel+1 < levels.size())
+				return false;
+
+			if(apple.get_quantity() == 0)
 				return true;
+	//		if(nivel+1 >= levels.size() && apple.get_quantity() == 0)
+	//			return true;
+			//if(nivel+1 >= levels.size() && apple.get_quantity() == 0)
+			//	return true;
 			return false;
 		}
 
@@ -73,7 +86,8 @@ class Level{
 			if( elemento != '#' && elemento != '.' && elemento != '-'){
 				apple.show_apple();
 				apple.set_coordenadas(std::make_pair(v_x, v_y));
-				insert_apple(apple);
+				if(apple.get_quantity() != 0 && nivel+1 <= levels.size())
+					insert_apple(apple);
 				}
 			else
 				configurar_apple(apple);

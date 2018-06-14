@@ -30,6 +30,7 @@ std::vector<Maps> readMaps( std::string name_input ){
 	// Verifica se deve modificar x e y.
 	bool muda_x_y = true;
 
+	bool more_100 = false;
 	// Variaveis auxiliares.
 	int x = 0;
 	int y = 0;
@@ -100,6 +101,10 @@ std::vector<Maps> readMaps( std::string name_input ){
 			if(cobra == true)
 				mapa.add_objects(valores);
 
+			if(x > 100 || y > 100){
+				more_100 = true;
+			}
+
 			x_s = "";
 			y_s = "";
 			x = 0;
@@ -119,6 +124,11 @@ std::vector<Maps> readMaps( std::string name_input ){
 		std::cout << "done!\n";
 	else{
 		std::cout << "sorry, this isn't a valid file!\n";
+		exit(-1);
+	}
+
+	if(more_100){
+		std::cout << "Invalid maps!\n";
 		exit(-1);
 	}
 
