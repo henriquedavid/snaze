@@ -16,12 +16,26 @@ class Level{
 		/// Construtor padrão do nível começando em 0.
 		Level( int niv = 0 ) : nivel(niv) {/*empty*/}
 
+		int get_quantity_levels(){
+			return levels.size();
+		}
+
 		/// Controlador para validação sobre o próximo nível.
 		void level_up( Apple & apple, Snaze & cobra ){
 			// Verifica se a quantidade de maçãs realmente é 0.
-			if(apple.get_quantity() == 0){
-				// Aumenta a variavel nível.
+
+			if( nivel+1 < levels.size() && apple.get_quantity() == 1){
 				nivel++;
+				apple.set_quantity(6);
+				apple.show_apple();
+				cobra.begin_size();
+				show();
+			}
+
+			if( apple.get_quantity() == 0 ){
+				// Aumenta a variavel nível.
+				if(nivel+1 != levels.size())
+					nivel++;
 				// Torna a quantidade de maçãs para 5.
 				apple.set_quantity(5);
 				// Ativa a visualização da maçã.
@@ -61,13 +75,8 @@ class Level{
 
 		/// Verifica se não há mais níveis e a quantidade de maças é 0.
 		bool win(Apple & apple){
-			if(nivel+1 < levels.size())
-				return false;
-
-			if(apple.get_quantity() == 0)
+			if(nivel+1 >= levels.size() && apple.get_quantity() == 0)
 				return true;
-	//		if(nivel+1 >= levels.size() && apple.get_quantity() == 0)
-	//			return true;
 			//if(nivel+1 >= levels.size() && apple.get_quantity() == 0)
 			//	return true;
 			return false;

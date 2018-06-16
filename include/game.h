@@ -214,6 +214,11 @@ public:
 			return true;
 		}
 		// Verifica se o jogador já passou por todos os níveis.
+		if(nivel.win(apple) && apple.get_quantity() == 1 && nivel.get_level() != nivel.get_quantity_levels()){
+			state = WON;
+			return true;
+		}
+
 		if(nivel.win(apple) && apple.get_quantity() == 0){
 			state = WON;
 			return true;
