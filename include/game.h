@@ -76,8 +76,8 @@ public:
 		char modo;
 
 		std::cout << "O jogador está configurado para ser a IA, deseja modificar para você controlar a cobra?\n(y/n) :";
-		//std::cin >> modo;
-		modo = 'n';
+		std::cin >> modo;
+
 		while( modo != 'y' && modo != 'n' ){
 			std::cout << "Digite uma opção válida: \n(y/n) :";
 			std::cin >> modo;
@@ -195,6 +195,11 @@ public:
         system("clear");
 		//std::cout << "Tamanho da cobra = " << cobrinha.get_tamanho_size() << std::endl ;
 		//cobrinha.print_pos();
+
+        if(player_Human == true){
+        	std::cout << "0 - Baixo | 1 - Cima | 2 - Direita | 3 - Esquerda\n";
+        }
+
 		// Mostra os dados de level atual e o total de levels.
 		std::cout << "Level atual = " << (nivel.get_level()+1) << " | Total de Levels = " << nivel.all_levels() << std::endl;
 		// Mostra a quantidade de vidas e de maças.

@@ -127,6 +127,7 @@ std::vector<Maps> readMaps( std::string name_input ){
 		exit(-1);
 	}
 
+	// Verifica se o mapa possui alguma dimensão maior que 100.
 	if(more_100){
 		std::cout << "Invalid maps!\n";
 		exit(-1);
