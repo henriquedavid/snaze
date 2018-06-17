@@ -29,6 +29,7 @@ class Player{
 				if(map.get_value(x+1,y) != '#' && map.get_value(x+1,y) != '-')
 					cobra.set_position(std::make_pair(x+1,y));
 				else{
+					cobra.perdervida();
 					int sentido;
 					Movimento mov;
 					std::cout << "################   Insira a próxima posição da Cobra:   ###############\n";
@@ -50,6 +51,7 @@ class Player{
 				if(map.get_value(x-1,y) != '#' && map.get_value(x-1,y) != '-')
 					cobra.set_position(std::make_pair(x-1,y));
 				else{
+					cobra.perdervida();
 					int sentido;
 					Movimento mov;
 					std::cout << "################   Insira a próxima posição da Cobra:   ###############\n";
@@ -71,6 +73,7 @@ class Player{
 				if(map.get_value(x, y-1) && map.get_value(x,y+1) != '-')
 					cobra.set_position(std::make_pair(x,y+1));
 				else{
+					cobra.perdervida();
 					int sentido;
 					Movimento mov;
 					std::cout << "################   Insira a próxima posição da Cobra:   ###############\n";
