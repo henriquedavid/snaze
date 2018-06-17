@@ -74,9 +74,10 @@ public:
 	void printVector(){
 
 		for( auto i(0) ; i < x_total; ++i ){
+			std::cout << "########################";
 			for( auto j(0); j < y_total ; ++j )
 				std::cout << mapa[i][j];
-			std::cout << std::endl;
+			std::cout << "######################" << std::endl;
 		}
 
 	}

@@ -48,7 +48,9 @@ public:
 	/// Inicializa o jogo, configurando todas as classes, como a maça, a cobra e o mapa (leitura).
 	void initialize_game(std::string inputdata){
 		/// Coloca o estado do jogo para iniciado.
+		system("clear");
 		state = START;
+		game_init();
 
 		// Realiza a leitura dos dados.
 		this->mapas = readMaps(inputdata);
@@ -66,16 +68,22 @@ public:
 		cobrinha.set_position(atual.snaze_position());
 
 		// Informa a quantidade de vidas e o total de níveis.
-		std::cout << "Level atual = " << (nivel.get_level()+1) << "  Total de Levels = " << nivel.all_levels() << std::endl;
+		std::cout << "###########                                                  ##########\n";
+		std::cout << "###########      Level atual = " << (nivel.get_level()+1) << "   |  Total de Levels = " << nivel.all_levels() << "    ##########"<< std::endl;
+		std::cout << "###########                                                  ##########\n";
 		// Informa a quantidade de vidas e maças.
-		std::cout << "Vidas = " << cobrinha.get_life() << "  Maças: " << apple.get_quantity() << " de 5." << std::endl;
+		std::cout << "###########            ";
+		std::cout << "Vidas = " << cobrinha.get_life() << "  Maças: " << apple.get_quantity() << " de 5.";
+		std::cout << "             ##########\n";
+		std::cout << "###########                                                  ##########\n";
+		std::cout << "#######################################################################\n";
 
 		// Imprime o nível atual.
 		nivel.print_current_map();
 
 		char modo;
 
-		std::cout << "O jogador está configurado para ser a IA, deseja modificar para você controlar a cobra?\n(y/n) :";
+		std::cout << "########      O jogador está configurado para ser a IA,        ########\n########    deseja modificar para você controlar a cobra?        ######\n                          (y/n) :";
 		std::cin >> modo;
 
 		while( modo != 'y' && modo != 'n' ){
@@ -116,7 +124,7 @@ public:
 			int sentido = 0;
 
 			// Recebe qual a posição desejada.
-	        std::cout << "Insira a próxima posição da Cobra:\n";
+	        std::cout << "################   Insira a próxima posição da Cobra:   ###############\n";
 			std::cin >> sentido;
 
 			// Gera novo movimento.
@@ -134,7 +142,7 @@ public:
 				mov = Player::Movimento::WEST;
 
 			// Envia as informações para processar no mapa os dados.
-        	player.next_move(cobrinha, apple, mov);
+        	player.next_move(cobrinha, apple, mov, nivel.get_current_level());
 		
 		} else{
 
@@ -197,13 +205,20 @@ public:
 		//cobrinha.print_pos();
 
         if(player_Human == true){
-        	std::cout << "0 - Baixo | 1 - Cima | 2 - Direita | 3 - Esquerda\n";
+        	std::cout << "#######################################################################\n";
+        	std::cout << "######     0 - Baixo | 1 - Cima | 2 - Direita | 3 - Esquerda     ######\n";
         }
-
+        game_init();
 		// Mostra os dados de level atual e o total de levels.
-		std::cout << "Level atual = " << (nivel.get_level()+1) << " | Total de Levels = " << nivel.all_levels() << std::endl;
-		// Mostra a quantidade de vidas e de maças.
-		std::cout << "Vidas = " << cobrinha.get_life() << " | Maças: " << apple.get_quantity() << " de 5." << " | Pontos: " << cobrinha.get_score() <<  std::endl;
+		std::cout << "###########                                                  ##########\n";
+		std::cout << "###########      Level atual = " << (nivel.get_level()+1) << "   |  Total de Levels = " << nivel.all_levels() << "    ##########"<< std::endl;
+		std::cout << "###########                                                  ##########\n";
+		// Informa a quantidade de vidas e maças.
+		std::cout << "###########            ";
+		std::cout << "Vidas = " << cobrinha.get_life() << "  Maças: " << apple.get_quantity() << " de 5.";
+		std::cout << "             ##########\n";
+		std::cout << "###########                                                  ##########\n";
+		std::cout << "#######################################################################\n";
 		// Faz com que a calda ande com a cobra.
 		nivel.inserir_calda(cobrinha);
 
