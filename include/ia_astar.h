@@ -37,8 +37,9 @@ bool AI::isUnBlocked(Point p, Level & niv)
 bool AI::isDestination(Point p, Apple & apple)
 {
     auto applePos = apple.get_coordenadas();
-    if(p.x == applePos.first and p.y == applePos.second)
+    if(p.x == applePos.first and p.y == applePos.second){
         return true;
+    }
 
     return false;
 }
@@ -89,6 +90,8 @@ bool AI::aStarSearch( Level & lvl, Apple & app, Snaze & sna )
     // Atribui as coordenadas a uma classe Point.
     Point appll(coordeApple.first, coordeApple.second);
     Point src(coorde.first, coorde.second);
+    
+
     
     // Verifica se o ponto da cobra está dentro do mapa.
     if (!isValid(src, lvl))

@@ -1,5 +1,5 @@
 #include "memory"
-#include <chrono>
+#include <unistd.h>
 
 using PlayerRef = std::unique_ptr<Player>;
 
@@ -36,8 +36,6 @@ private:
 	Apple apple;
 	/// Funcionamento da IA.
 	AI ia;
-	/// Controle do tempo antes do próximo movimento da IA.
-    std::chrono::steady_clock::time_point m_clock;
 
     /// Controle de qual tipo de jogador deve ser executado.
     /// true = jogador humano ; false = IA.
@@ -98,21 +96,10 @@ public:
 
 
 
-		// Configura tempo para o atual.
-        m_clock = std::chrono::steady_clock::now();
 	}
 
 	/// Processa todas as ações executas pelo jogador, ou pela IA.
 	void process_events(){
-		/// Recebe o tempo atual.
-        std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
-        // Verifica quanto tempo se passou.
-        double elapsed_time = std::chrono::duration_cast<std::chrono::milliseconds>(now-m_clock).count();
-        if(elapsed_time < 150.0)
-            return;
-        
-        // Ajusta para o novo tempo.
-        m_clock = std::chrono::steady_clock::now();
 
         // Modifica o estado para processar os eventos.
 		state = PROCESSING_EVENTS;
@@ -122,9 +109,10 @@ public:
 		// Verifica se está configurado para jogar a IA ou um humano.
 		if(player_Human == true){
 			int sentido = 0;
+			//unsigned char tecla;
 
 			// Recebe qual a posição desejada.
-	        std::cout << "################   Insira a próxima posição da Cobra:   ###############\n";
+	        std::cout << "################   Insira o próximo movimento da Cobra:   ###############\n";
 			std::cin >> sentido;
 
 			// Gera novo movimento.
@@ -149,25 +137,31 @@ public:
 			// Recebe as coordenadas da cobra no mapa.
 			auto coordCobra = cobrinha.get_position();
 
-	        // Chama a IA para gerar o próximo movimento.
-	        switch(ia.next_move(nivel, apple, cobrinha)){
-	        	// Configura a posição da cobra a partir da IA..
-				case Direction::N:
-					cobrinha.set_position(std::make_pair(--coordCobra.first,coordCobra.second));
-					break;
-				case Direction::S:
-					cobrinha.set_position(std::make_pair(++coordCobra.first,coordCobra.second));
-					break;
-				case Direction::E:
-					cobrinha.set_position(std::make_pair(coordCobra.first,++coordCobra.second));
-					break;
-				case Direction::W:
-					cobrinha.set_position(std::make_pair(coordCobra.first,--coordCobra.second));
-					break;
-				default:
-					throw std::runtime_error("[ERROR]: Invalid player movement detected.");
+			try{
 
-        	}
+		        // Chama a IA para gerar o próximo movimento.
+		        switch(ia.next_move(nivel, apple, cobrinha)){
+	        		// Configura a posição da cobra a partir da IA..
+					case Direction::N:
+						cobrinha.set_position(std::make_pair(--coordCobra.first,coordCobra.second));
+						break;
+					case Direction::S:
+						cobrinha.set_position(std::make_pair(++coordCobra.first,coordCobra.second));
+						break;
+					case Direction::E:
+						cobrinha.set_position(std::make_pair(coordCobra.first,++coordCobra.second));
+						break;
+					case Direction::W:
+						cobrinha.set_position(std::make_pair(coordCobra.first,--coordCobra.second));
+						break;
+					default:
+						throw std::runtime_error("[ERROR]: Invalid player movement detected.");
+				}
+
+			} catch( std::runtime_error ex ){
+				cobrinha.set_life(1);
+			}
+
         }
 
 	}
@@ -228,6 +222,10 @@ public:
 
 	/// Verifica se é possível que o jogo continue.
 	bool game_over(){
+
+		// Intervalo de tempo.
+        usleep(100000);
+
 		// Verifica a quantidade vidas.
 		if(cobrinha.get_life() == 0){
 			state = APPLE_OVER;

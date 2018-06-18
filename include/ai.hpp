@@ -47,7 +47,7 @@ class AI : public Player
         bool isUnBlocked(Point p, Level & niv);
         /// Verifica se é onde está a maçã.
         bool isDestination(Point p, Apple & apple);
-        /// Calcula o valor de 'h' de forma que seja um bom caminho.
+        /// Calcula o valor de 'h' de forma que seja um bom caminho. H que informa os custos de movimentos para encontrar o menor.
         double calculateHValue(Point p, Apple & apple);
         /// Traça o caminho do ponto de partida ao destino.
         void tracePath(Apple & apple);

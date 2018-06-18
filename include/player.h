@@ -22,19 +22,20 @@ class Player{
 			int x = posSnaze.first;
 			int y = posSnaze.second;
 
-
-
-
 			if(movimento == NORTH){
 				if(map.get_value(x+1,y) != '#' && map.get_value(x+1,y) != '-')
 					cobra.set_position(std::make_pair(x+1,y));
 				else{
+					
 					cobra.perdervida();
+
+					map.printVector();
+
 					int sentido;
 					Movimento mov;
-					std::cout << "################   Insira a próxima posição da Cobra:   ###############\n";
+					std::cout << "################   Movimento inválido! Insira a posição da Cobra:   ###############\n";
 					std::cin >> sentido;
-					
+
 					if( sentido == 0 )
 						mov = Player::Movimento::NORTH;
 					else if( sentido == 1)
@@ -52,11 +53,14 @@ class Player{
 					cobra.set_position(std::make_pair(x-1,y));
 				else{
 					cobra.perdervida();
+
+					map.printVector();
+
 					int sentido;
 					Movimento mov;
-					std::cout << "################   Insira a próxima posição da Cobra:   ###############\n";
+					std::cout << "################   Movimento inválido! Insira a próxima posição da Cobra:   ###############\n";
 					std::cin >> sentido;
-					
+
 					if( sentido == 0 )
 						mov = Player::Movimento::NORTH;
 					else if( sentido == 1)
@@ -74,9 +78,12 @@ class Player{
 					cobra.set_position(std::make_pair(x,y+1));
 				else{
 					cobra.perdervida();
+
+					map.printVector();
+
 					int sentido;
 					Movimento mov;
-					std::cout << "################   Insira a próxima posição da Cobra:   ###############\n";
+					std::cout << "################   Movimento inválido! Insira a próxima posição da Cobra:   ###############\n";
 					std::cin >> sentido;
 					
 					if( sentido == 0 )
@@ -96,8 +103,13 @@ class Player{
 					cobra.set_position(std::make_pair(x,y-1));
 				else{
 					int sentido;
+
+
+					map.printVector();
+
+
 					Movimento mov;
-					std::cout << "################   Insira a próxima posição da Cobra:   ###############\n";
+					std::cout << "################   Movimento inválido! Insira a próxima posição da Cobra:   ###############\n";
 					std::cin >> sentido;
 					
 					if( sentido == 0 )
