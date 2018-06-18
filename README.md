@@ -63,3 +63,7 @@ Para criar novos mapas basta tratar todas as paredes como #, e o local da cobra 
 Note que para o mapa funcionar corretamente é recomendado que todos os mapas possuam as mesmas dimensões. Primeiramente você insere a dimensão,
 e então informa o mapa, e por fim insere -. O '-' serve como indicação que aquele é o final do mapa, devendo assim ser incluido até mesmo no último mapa.
 Mais opções de como devem ser os mapas basta acessar a pasta data/.
+
+### Observações
+
+A cobra em alguns momentos fica estática, ou até mesmo retorna a tela de GAME OVER porque ela marca a localização a qual ela já passou, a qual é marcada também por sua calda e ela interpreta sua calda como obstáculo, então quando ela procura uma maneira de sair mas a sua calda impata então ela perde o jogo.
