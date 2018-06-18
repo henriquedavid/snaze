@@ -32,7 +32,7 @@ Na pasta do executável:
 
 ou
 
-Caso o executável foi gerado pelo make, na pasta principal execute 
+Caso o executável foi gerado pelo cmake, na pasta principal execute 
 
 ```
 ./bin/snaze arqEntrada
