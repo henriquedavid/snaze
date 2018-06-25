@@ -194,6 +194,10 @@ public:
 
 	/// Gera a situação do jogo para o usuário.
 	void render(){
+
+		if(apple.get_quantity() == 5 )
+			cobrinha.begin_size();
+
         system("clear");
 		//std::cout << "Tamanho da cobra = " << cobrinha.get_tamanho_size() << std::endl ;
 		//cobrinha.print_pos();
